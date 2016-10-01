@@ -1,0 +1,17 @@
+machine:
+  node:
+    version: 4.2.4
+dependencies:
+  pre:
+    - npm config set spin false
+  override:
+    - npm install -g bower
+    - npm install
+    - bower install
+  cache_directories:
+    - "bower_components"
+test:
+  override:
+    - COVERAGE=true ./node_modules/.bin/ember test
+  post:
+    - cp -R coverage* $CIRCLE_TEST_REPORTS
