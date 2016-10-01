@@ -31,3 +31,7 @@ install:
 
 script:
   - COVERAGE=true npm test
+
+after_script:
+  - codeclimate-test-reporter < coverage/lcov.info
+
