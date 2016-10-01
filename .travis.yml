@@ -30,4 +30,4 @@ install:
   - bower install
 
 script:
-  - npm test
+  - COVERAGE=true npm test
