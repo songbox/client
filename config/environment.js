@@ -3,6 +3,7 @@
 module.exports = function(environment) {
   var ENV = {
     modulePrefix: 'songbox',
+    podModulePrefix: 'songbox/pods',
     environment: environment,
     rootURL: '/',
     locationType: 'auto',
