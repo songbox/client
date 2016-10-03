@@ -1,6 +1,15 @@
 export default [
   {
     id: 1,
+    title: 'Sonbox Intro',
+    author: 'Andreas Böhrnsen',
+    textFormat: 'opensong',
+    text: `
+;Thanks for using the app!
+    `
+  },
+  {
+    id: 2,
     title: 'Amazing Grace',
     author: 'John Newton',
     textFormat: 'opensong',

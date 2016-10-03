@@ -7,13 +7,28 @@ const Router = Ember.Router.extend({
 });
 
 Router.map(function() {
-  this.route('songs', function () {
-    this.route('song', {
-      path: ':song_id',
+
+  this.route('app', function () {
+
+    this.route('songs', {
       resetNamespace: true
     }, function () {
+      this.route('add');
+
+      this.route('song', {
+        path: ':song_id',
+        resetNamespace: true
+      }, function () {
+      });
+    });
+
+    this.route('lists', {
+      resetNamespace: true
+    }, function () {
+      this.route('add');
     });
   });
+
 });
 
 export default Router;
