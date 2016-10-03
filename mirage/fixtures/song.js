@@ -3,6 +3,7 @@ export default [
     id: 1,
     title: 'Amazing Grace',
     author: 'John Newton',
+    textFormat: 'opensong',
     text: `[V1]
 .D       D7          G         D
  Amazing grace how sweet the sound

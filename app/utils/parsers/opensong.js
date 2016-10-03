@@ -1,4 +1,3 @@
-
 /*
 
 json = [
@@ -19,7 +18,7 @@ json = [
 ]
 
 */
-export default function parseOpensong(lyrics) {
+export default function opensong(lyrics) {
   lyrics = lyrics.replace(/\r\n?/g, '\n');
   let lyricsLines = lyrics.split("\n");
 
