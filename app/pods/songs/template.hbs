@@ -1,13 +1,13 @@
 <h1>{{t "songs.header"}}</h1>
 
 <ul>
-{{#each model as |song|}}
-  <li>
-  {{#link-to 'song' song.id}}
-    {{song.title}}
-  {{/link-to}}
-  </li>
-{{/each}}
+  {{#each model as |song|}}
+    <li>
+      {{#link-to 'song' song.id}}
+        {{song.title}}
+      {{/link-to}}
+    </li>
+  {{/each}}
 </ul>
 
 {{outlet}}
