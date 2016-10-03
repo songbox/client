@@ -1,0 +1,9 @@
+<h1>{{t "songs.header"}}</h1>
+
+{{#each model as |song|}}
+  {{#link-to 'song' song.id}}
+    {{song.title}}
+  {{/link-to}}
+{{/each}}
+
+{{outlet}}

@@ -1,0 +1,11 @@
+/* jshint node:true */
+'use strict';
+
+module.exports = {
+  extends: 'recommended',
+
+  rules: {
+    'bare-strings': true,
+    'invalid-interactive': true
+  }
+};

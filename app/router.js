@@ -8,6 +8,11 @@ const Router = Ember.Router.extend({
 
 Router.map(function() {
   this.route('songs', function () {
+    this.route('song', {
+      path: ':song_id',
+      resetNamespace: true
+    }, function () {
+    });
   });
 });
 
