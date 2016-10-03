@@ -1,8 +1,12 @@
 export default {
   // routes
+  "login": {
+    "button": "Login"
+  },
   "app": {
     "link-songs": "Songs",
-    "link-lists": "Lists"
+    "link-lists": "Lists",
+    "link-logout": "Logout"
   },
   "songs": {
     "header": "Songs"

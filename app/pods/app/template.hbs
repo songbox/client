@@ -4,4 +4,8 @@
   <li>{{#link-to "lists"}}{{t "app.link-lists"}}{{/link-to}}</li>
 </ul>
 
+<ul>
+  <li><a {{action (route-action "logout")}}>{{t "app.link-logout"}}</a></li>
+</ul>
+
 {{outlet}}

@@ -8,6 +8,8 @@ const Router = Ember.Router.extend({
 
 Router.map(function() {
 
+  this.route('login');
+
   this.route('app', function () {
 
     this.route('songs', {
