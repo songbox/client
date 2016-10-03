@@ -1,0 +1,34 @@
+<div class="song-section">
+  {{!-- Header --}}
+  {{#if section.header}}
+    <h2 class="header">{{section.header}}</h2>
+  {{/if}}
+
+  {{#each section.lines as |line|}}
+    {{!-- Chords and Lyrics --}}
+    {{#if (or line.lyrics line.chords)}}
+      <table>
+        <tr class="chords">
+          {{#each line.chords as |chord|}}
+            <td>{{chord}}</td>
+          {{/each}}
+        </tr>
+        {{#each line.lyrics as |lyrics|}}
+          <tr class='lyrics'>
+            {{#each lyrics as |l|}}
+              <td>{{l}}</td>
+            {{/each}}
+          </tr>
+        {{/each}}
+      </table>
+    {{/if}}
+
+    {{!-- Comments --}}
+    {{#if line.comments}}
+      <div class="comments">
+        {{comments}}
+      </div>
+    {{/if}}
+  {{/each}}
+
+</div>
