@@ -38,6 +38,10 @@ deploy:
   provider: heroku
   api_key:
     secure: a12cTUBkYfkrLI5gwm1ppJdP6RJXvyURsTYk6shfQOWERDG290EXfKCzKUbjzIdEUbpvW22AKSmiKy/+SW6oMuPPuXobMZWPjBc+M0+z32RoyEjlXF5N6RR88ZCuqQRgmzN8o/HiDaoweuDjLBnYe7nn+/QbkF5XbkLF/Ni4ryfQdVln2VlBJIV4sNCie6FbVibVZkSDT1W8xG69L55qv7uXZeVmfU4vN2vHgyT1qD0C0NbaMcbYfZA72ni8TuQSk3nk7o8MdzHTQxLtfl3OqkzgDGswnOTdUUnsfzZs9kuCvG+RH8EP2KdNCOXI7JRwaWXe9t0sW4gVvkkmOQAcSJHv6qLMy+ziCu3ZizpH73Vm35anlZGgUwVTGhA8IAuXjipO64jroNnQwdQSombuS0zTERsvPFUoSDy/0cQs9WwNBSCzzQshnXy5URBeA9JVd2wnhAqYmnHpRx8y8Pal32isCnqC9MgkR2yanhh4tcMYFH3qSVHrgiW/zQrfH11rzu2wHuDplSu3UtkPR3D9jV95njAGr5DPQqyrmm/8lg/OEODdNPJ+o5jVRPxjFzsCP+SsAlRmdXXekURTgYEox+Q6AvQIYm425LAIudVm4n19SryFPQy1Yt7Pq62IF+I9XDsIUJ8eN0Pp14br7glAHvSHPe8uM9Jz0yNJoWAMoCU=
-  app: songboxapp
+  app: songbox-app
   on:
     repo: songbox/client
+
+notifications:
+  email: false
+
