@@ -10,7 +10,9 @@ Router.map(function() {
 
   this.route('login');
 
-  this.route('app', function () {
+  this.route('app', {
+    path: 'a'
+  }, function () {
 
     this.route('songs', {
       resetNamespace: true
