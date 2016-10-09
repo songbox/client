@@ -1,7 +1,9 @@
+$roboto-font-path: "/assets/";
+@import "materialize";
+
+@import "pod-styles";
 
 body {
-  background-color: lightblue;
-  font-family: Verdana, sans-serif;
+  background-color: color("indigo", "darken-1");
 }
 
-@import 'pod-styles';
