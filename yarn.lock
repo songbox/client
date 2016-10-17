@@ -1548,9 +1548,9 @@ ember-cli-broccoli@0.16.10:
     rimraf "^2.2.8"
     rsvp "^3.0.17"
 
-ember-cli-code-coverage@0.3.2:
-  version "0.3.2"
-  resolved "https://registry.yarnpkg.com/ember-cli-code-coverage/-/ember-cli-code-coverage-0.3.2.tgz#c6e4dc24312708998971b668663e381fff2d10e0"
+ember-cli-code-coverage@0.3.4:
+  version "0.3.4"
+  resolved "https://registry.yarnpkg.com/ember-cli-code-coverage/-/ember-cli-code-coverage-0.3.4.tgz#be1593ca577ccebf8676479e1632c55fadc69f99"
   dependencies:
     babel-core "^5.8.38"
     body-parser "^1.15.0"
