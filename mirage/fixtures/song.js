@@ -3,7 +3,7 @@ export default [
     id: 1,
     title: 'Sonbox Intro',
     author: 'Andreas Böhrnsen',
-    textFormat: 'opensong',
+    format: 'opensong',
     text: `
 ;Thanks for using the app!
     `
@@ -12,7 +12,11 @@ export default [
     id: 2,
     title: 'Amazing Grace',
     author: 'John Newton',
-    textFormat: 'opensong',
+    tempo: '',
+    time: '',
+    license: '',
+    ccli: '',
+    format: 'opensong',
     text: `[V1]
 .D       D7          G         D
  Amazing grace how sweet the sound
