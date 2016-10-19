@@ -59,8 +59,7 @@ module.exports = function(environment) {
   }
 
   if (environment === 'production') {
-
-    ENV['ember-cli-mirage'].enabled = true;
+    ENV.api.host = 'https://songbox-api.herokuapp.com'
   }
 
   return ENV;
