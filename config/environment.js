@@ -26,9 +26,7 @@ module.exports = function(environment) {
   };
 
   ENV['ember-simple-auth'] = {
-    authenticationRoute: 'auth.login',
-    routeIfAlreadyAuthenticated: 'app.index',
-    routeAfterAuthentication: 'app.index'
+    authenticationRoute: 'auth.login'
   };
 
   ENV['flashMessageDefaults'] = {

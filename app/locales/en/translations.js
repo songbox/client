@@ -1,7 +1,10 @@
 export default {
   // routes
   "login": {
-    "button": "Login"
+    "button": "Login",
+    "flash-200": "Successfully logged in!",
+    "flash-401": "There was a problem with your username or password, please try again",
+    "flash-500": "Server Error"
   },
   "app": {
     "link-songs": "Songs",
