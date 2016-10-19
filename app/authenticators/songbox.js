@@ -1,18 +1,6 @@
-import Ember from 'ember';
-import Base from 'ember-simple-auth/authenticators/base';
+import OAuth2PasswordGrant from 'ember-simple-auth/authenticators/oauth2-password-grant';
+import config from '../config/environment';
 
-const {
-  RSVP
-} = Ember;
-
-export default Base.extend({
-  restore(/*data*/) {
-    return RSVP.reject();
-  },
-  authenticate(/*options*/) {
-    return RSVP.resolve();
-  },
-  invalidate(/*data*/) {
-    return RSVP.resolve();
-  }
+export default OAuth2PasswordGrant.extend({
+  serverTokenEndpoint: `${config.api.host}/${config.api.namespace}/token`
 });

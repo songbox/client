@@ -20,6 +20,22 @@ module.exports = function(environment) {
     }
   };
 
+  ENV['api'] = {
+    host: 'http://localhost:4000',
+    namespace: 'api'
+  };
+
+  ENV['ember-simple-auth'] = {
+    authenticationRoute: 'auth.login',
+    routeIfAlreadyAuthenticated: 'app.index',
+    routeAfterAuthentication: 'app.index'
+  };
+
+  ENV['flashMessageDefaults'] = {
+    timeout: 3000,
+    extendedTimeout: 375
+  };
+
   ENV['ember-cli-mirage'] = {
   };
 
