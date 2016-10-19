@@ -7,7 +7,7 @@
   <div class="row">
     {{x-input
       value=model.email
-      errors=(v-get model 'email' 'messages')
+      errors=(v-get this 'model.email' 'messages')
       classNames='col s12'
       type='email'
       label='Username'}}
@@ -15,7 +15,7 @@
   <div class="row">
     {{x-input
       value=model.password
-      errors=(v-get model 'password' 'messages')
+      errors=(v-get this 'model.password' 'messages')
       classNames='col s12'
       type='password'
       label='Password'}}
