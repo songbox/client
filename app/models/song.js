@@ -14,7 +14,7 @@ export default DS.Model.extend({
   time: attr('string'),
 
   text: attr('string'),
-  format: attr('string'),
+  format: attr('string', { defaultValue: 'opensong' }),
 
   license: attr('string'),
   ccli: attr('number')
