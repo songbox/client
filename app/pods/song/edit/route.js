@@ -4,7 +4,7 @@ export default Ember.Route.extend({
   actions: {
     save(song) {
       song.save().then(() => {
-        this.transitionTo('songs');
+        this.transitionTo('song', song);
       });
     }
   }
