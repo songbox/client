@@ -17,6 +17,9 @@ export default {
   "songs.index": {
     "text": "Select a song"
   },
+  "songs.new": {
+    "header": "Add a new Song"
+  },
   "lists": {
     "header": "Lists"
   }

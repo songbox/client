@@ -20,7 +20,7 @@ Router.map(function() {
     this.route('songs', {
       resetNamespace: true
     }, function () {
-      this.route('add');
+      this.route('new');
 
       this.route('song', {
         path: ':song_id',
