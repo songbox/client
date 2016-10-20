@@ -26,6 +26,7 @@ Router.map(function() {
         path: ':song_id',
         resetNamespace: true
       }, function () {
+        this.route('edit');
       });
     });
 

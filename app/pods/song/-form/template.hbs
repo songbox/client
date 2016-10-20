@@ -1,0 +1,27 @@
+
+{{#x-card
+  onsubmit=(route-action "save" model)
+  title="Add new song"
+  buttonText="Save"
+  buttonDisabled=model.validations.messages.length}}
+
+  <div class="row">
+    {{x-input
+      value=model.title
+      errors=(v-get model "title" "messages")
+      classNames="col s12"
+      type="text"
+      label="Title"}}
+  </div>
+  <div class="row">
+    {{x-input
+      value=model.author
+      errors=(v-get model "author" "messages")
+      classNames="col s12"
+      type="text"
+      label="Author"}}
+  </div>
+  <div class="row">
+    {{textarea value=model.text}}
+  </div>
+{{/x-card}}

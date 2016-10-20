@@ -1,1 +1,5 @@
-{{x-song song=model}}
+{{#x-card}}
+  {{x-song song=model}}
+{{/x-card}}
+
+{{#link-to "song.edit" model}}{{t "song.index.link-edit"}}{{/link-to}}
