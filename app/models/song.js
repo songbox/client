@@ -1,8 +1,7 @@
 import DS from 'ember-data';
 
 const {
-  attr,
-  belongsTo
+  attr
 } = DS;
 
 export default DS.Model.extend({
@@ -18,8 +17,5 @@ export default DS.Model.extend({
   format: attr('string'),
 
   license: attr('string'),
-  ccli: attr('number'),
-
-  // relationships
-  list: belongsTo('list')
+  ccli: attr('number')
 });
