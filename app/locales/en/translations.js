@@ -12,7 +12,9 @@ export default {
     "link-logout": "Logout"
   },
   "songs": {
-    "header": "Songs"
+    "header": "Songs",
+    "link-new": "New Song",
+    "link-import": "Import Songs"
   },
   "songs.index": {
     "text": "Select a song"
