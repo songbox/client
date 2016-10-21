@@ -12,6 +12,7 @@ export default function() {
 
   this.get('/songs');
   this.get('/songs/:id');
+  this.post('/songs');
 
   this.get('/lists');
 }

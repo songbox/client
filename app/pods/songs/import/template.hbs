@@ -1,0 +1,5 @@
+<form {{action "doImport" model on="submit"}}>
+  {{input type="file" multiple="multiple" value=model.files}}
+
+  <button type="submit">Save</button>
+</form>

@@ -21,6 +21,7 @@ Router.map(function() {
       resetNamespace: true
     }, function () {
       this.route('new');
+      this.route('import');
 
       this.route('song', {
         path: ':song_id',
