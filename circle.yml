@@ -1,6 +1,7 @@
 machine:
   node:
     version: 6.9.1
+
 dependencies:
   pre:
     - npm config set spin false
@@ -10,8 +11,23 @@ dependencies:
     - bower install
   cache_directories:
     - "bower_components"
+
 test:
   override:
     - COVERAGE=true ./node_modules/.bin/ember test
   post:
     - cp -R coverage* $CIRCLE_TEST_REPORTS
+
+deployment:
+  development:
+    branch: develop
+    commands:
+      - ./node_modules/.bin/ember deploy development
+  staging:
+    branch: master
+    commands:
+      - ./node_modules/.bin/ember deploy staging
+  production:
+    branch: production
+    commands:
+      - ./node_modules/.bin/ember deploy production
