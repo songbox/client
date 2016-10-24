@@ -1,3 +1,5 @@
+/* eslint no-console: ["error", { allow: ["warn", "error"] }] */
+
 import Ember from 'ember';
 import { readAsText } from 'songbox/utils/promise-file-reader';
 
@@ -38,7 +40,7 @@ export default Ember.Route.extend({
 
             break;
           default:
-            console.log(file.type + ' not supported yet');
+            console.warn(file.type + ' not supported yet');
         }
       });
     }
