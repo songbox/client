@@ -13,6 +13,16 @@ Router.map(function() {
     this.route('register');
   });
 
+  this.route('viewer', {
+    path: 'v'
+  }, function () {
+    this.route('not_found');
+    this.route('room', {
+      path: ':room_id',
+    }, function () {
+    });
+  });
+
   this.route('app', {
     path: 'a'
   }, function () {

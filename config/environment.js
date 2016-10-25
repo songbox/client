@@ -24,6 +24,9 @@ module.exports = function(environment) {
     host: 'http://localhost:4000',
     namespace: 'api'
   };
+  ENV['ws'] = {
+    host: 'ws://localhost:4000'
+  };
 
   ENV['ember-simple-auth'] = {
     authenticationRoute: 'auth.login'
@@ -44,7 +47,7 @@ module.exports = function(environment) {
     // ENV.APP.LOG_TRANSITIONS_INTERNAL = true;
     // ENV.APP.LOG_VIEW_LOOKUPS = true;
 
-    ENV['ember-cli-mirage'].enabled = true;
+    ENV['ember-cli-mirage'].enabled = false;
   }
 
   if (environment === 'test') {
@@ -60,6 +63,7 @@ module.exports = function(environment) {
 
   if (environment === 'production') {
     ENV.api.host = 'https://songbox-api.herokuapp.com'
+    ENV.ws.host = 'wss://songbox-api.herokuapp.com'
   }
 
   return ENV;
