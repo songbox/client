@@ -19,6 +19,10 @@ json = [
 
 */
 export default function opensong(lyrics) {
+  if (! lyrics) {
+    return [];
+  }
+
   lyrics = lyrics.replace(/\r\n?/g, '\n');
   let lyricsLines = lyrics.split("\n");
 
