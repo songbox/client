@@ -9,17 +9,18 @@ const {
 
 export default PhoenixSocket.extend({
   session: service(),
+  flashMessages: service(),
 
   init() {
     // You may listen to open, "close" and "error"
     this.on('open', () => {
-      console.log('Socket was opened!');
+      this.get('flashMessages').success('Socket was opened!');
     });
     this.on('close', () => {
-      console.log('Socket was closed!');
+      this.get('flashMessages').danger('Socket was closed!');
     });
     this.on('error', () => {
-      console.log('Socket could not be opened!');
+      this.get('flashMessages').danger('Socket could not be opened!');
     });
   },
 
