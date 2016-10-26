@@ -15,7 +15,7 @@ export default Ember.Route.extend({
     }
   },
 
-  setupController(controller, model) {
+  setupController(controller/*, model*/) {
     this.get('pubsub').connectViewer();
     this.get('pubsub')
       .joinChannel("room:123", { type: 'Viewer' })
