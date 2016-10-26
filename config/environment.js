@@ -62,8 +62,8 @@ module.exports = function(environment) {
   }
 
   if (environment === 'production') {
-    ENV.api.host = 'https://songbox-api.herokuapp.com'
-    ENV.ws.host = 'ws://songbox-api.herokuapp.com' // FIXME: not secure! Need to add SSL endpoint on Heroku
+    ENV.api.host = 'https://songbox-api.herokuapp.com';
+    ENV.ws.host = 'https://songbox-api.herokuapp.com';
   }
 
   return ENV;
