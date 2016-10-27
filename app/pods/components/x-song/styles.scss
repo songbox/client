@@ -1,11 +1,15 @@
 & {
+  // minimum width
+  table, td {
+    width: 1px;
+  }
+
   table {
     border-collapse: collapse;
     white-space: pre;
   }
 
   td {
-    width: 1px; // minimum width
     padding-left: 0;
     padding-right: 0;
   }
