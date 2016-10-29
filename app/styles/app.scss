@@ -1,9 +1,15 @@
 $roboto-font-path: "/assets/";
-@import "materialize";
+@import "songbox-materialize";
 
 @import "pod-styles";
 
-body {
-  background-color: color("indigo", "darken-1");
+@import "routes/application";
+@import "routes/app";
+
+html, body {
+  padding: 0;
+  margin: 0;
+
+  background-color: #f0f0f0;
 }
 
