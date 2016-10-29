@@ -1,0 +1,15 @@
+
+<h1>Songs</h1>
+
+{{#link-to "songs.new"}}{{t "songs.link-new"}}{{/link-to}}
+{{#link-to "songs.import"}}{{t "songs.link-import"}}{{/link-to}}
+
+<ul>
+  {{#each (sort-by "title" songs) as |song|}}
+    <li>
+      {{#link-to 'song' song.id}}
+        {{song.title}}
+      {{/link-to}}
+    </li>
+  {{/each}}
+</ul>

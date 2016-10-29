@@ -1,16 +1,4 @@
-<h1>{{t "songs.header"}}</h1>
-
-{{#link-to "songs.new"}}{{t "songs.link-new"}}{{/link-to}}
-{{#link-to "songs.import"}}{{t "songs.link-import"}}{{/link-to}}
-
-<ul>
-  {{#each (sort-by "title" model) as |song|}}
-    <li>
-      {{#link-to 'song' song.id}}
-        {{song.title}}
-      {{/link-to}}
-    </li>
-  {{/each}}
-</ul>
+{{to-elsewhere named="sidebar" send=(component "songs-sidebar" songs=model)}}
 
 {{outlet}}
+
