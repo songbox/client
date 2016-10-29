@@ -59,6 +59,7 @@
     "ember-simple-auth": "1.1.0",
     "ember-truth-helpers": "1.2.0",
     "flexi": "1.2.0",
+    "liquid-fire": "0.26.4",
     "loader.js": "^4.0.1"
   }
 }
