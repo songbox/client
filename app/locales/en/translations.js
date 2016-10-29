@@ -12,15 +12,17 @@ export default {
     "link-logout": "Logout"
   },
   "songs": {
-    "header": "Songs",
-    "link-new": "New Song",
-    "link-import": "Import Songs"
+    "link-new": "New",
+    "link-import": "Import"
   },
   "songs.index": {
     "text": "Select a song"
   },
   "songs.new": {
     "header": "Add a new Song"
+  },
+  "song.index": {
+    "link-edit": "Edit"
   },
   "lists": {
     "header": "Lists"
