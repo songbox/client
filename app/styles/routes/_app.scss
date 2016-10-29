@@ -1,0 +1,27 @@
+
+body.app {
+
+  header {
+    height: 60px;
+    background-color: lightgrey;
+
+    li {
+      display: inline-block;
+    }
+    li + li {
+      margin-left: 10px;
+    }
+  }
+
+  .container {
+    display: flex;
+    flex-direction: row-reverse;
+    align-content: stretch;
+
+    & > main {
+      flex-grow: 1;
+    }
+    & > aside {
+    }
+  }
+}
