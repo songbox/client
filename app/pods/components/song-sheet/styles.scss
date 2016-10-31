@@ -1,4 +1,9 @@
 & {
+
+  h1 {
+    @include typography-style(display1);
+  }
+
   // minimum width
   table, td {
     width: 1px;
@@ -20,11 +25,11 @@
 
   tr.lyrics td {
     font-size: 1.0em;
+    padding-bottom: .5em;
   }
 
   .song-section {
-    padding-left: 15px;
-    min-width: 45%;
+    min-width: 45%; // TODO: use flexbox
   }
 
   .comments {

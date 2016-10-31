@@ -1,0 +1,4 @@
+.button {
+  @include typography-style(body1);
+  text-transform: uppercase;
+}
