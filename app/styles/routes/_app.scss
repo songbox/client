@@ -2,7 +2,8 @@
 body.app {
 
   header {
-    height: 60px;
+    height: 20px;
+    padding: 20px;
     background-color: lightgrey;
 
     li {
@@ -18,10 +19,14 @@ body.app {
     flex-direction: row-reverse;
     align-content: stretch;
 
+    & > main, & > aside {
+      padding: 20px;
+    }
     & > main {
       flex-grow: 1;
     }
     & > aside {
+      width: 200px;
     }
   }
 }

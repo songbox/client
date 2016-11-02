@@ -3,6 +3,20 @@ body {
   @include typography-style(body1);
 }
 
+a {
+  @include typography-style(body1);
+  color: black;
+  text-decoration: none;
+
+  &:hover {
+    border-bottom-width: 1px;
+    border-bottom-style: solid;
+  }
+  &.active {
+    color: red;
+  }
+}
+
 // reset headings
 h1,
 h2,
