@@ -4,7 +4,7 @@ body.app {
   header {
     height: 20px;
     padding: 20px;
-    background-color: lightgrey;
+    background-color: color("grey", "lighten-2");
 
     li {
       display: inline-block;

@@ -1,11 +1,14 @@
 
+$text-color: color("grey", "darken-4");
+
 body {
   @include typography-style(body1);
+  color: $text-color;
 }
 
 a {
   @include typography-style(body1);
-  color: black;
+  color: $text-color;
   text-decoration: none;
 
   &:hover {
@@ -13,7 +16,7 @@ a {
     border-bottom-style: solid;
   }
   &.active {
-    color: red;
+    color: color("amber", "darken-4");
   }
 }
 
