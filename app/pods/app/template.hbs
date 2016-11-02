@@ -1,8 +1,23 @@
 <header>
   <ul>
-    <li class="button">{{#link-to "songs"}}{{t "app.link-songs"}}{{/link-to}}</li>
-    <li class="button">{{#link-to "lists"}}{{t "app.link-lists"}}{{/link-to}}</li>
-    <li class="button"><a {{action (route-action "logout")}}>{{t "app.link-logout"}}</a></li>
+    <li class="button">
+      {{#link-to "songs"}}
+        {{svg-icon "ic_music_note_24px"}}
+        {{t "app.link-songs"}}
+      {{/link-to}}
+    </li>
+    <li class="button">
+      {{#link-to "lists"}}
+        {{svg-icon "ic_queue_music_24px"}}
+        {{t "app.link-lists"}}
+      {{/link-to}}
+    </li>
+    <li class="button">
+      <a {{action (route-action "logout")}}>
+        {{svg-icon "ic_person_outline_24px"}}
+        {{t "app.link-logout"}}
+      </a>
+    </li>
   </ul>
 </header>
 

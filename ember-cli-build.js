@@ -9,6 +9,12 @@ module.exports = function(defaults) {
       includePaths: [
         'bower_components/materialize/sass/components'
       ]
+    },
+    svgJar: {
+      strategy: ['inline'],
+      sourceDirs: [
+        'vendor/icons'
+      ]
     }
   });
 

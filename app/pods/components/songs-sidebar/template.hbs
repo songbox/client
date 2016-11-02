@@ -1,8 +1,14 @@
 
 <h1>Songs</h1>
 
-{{#link-to "songs.new"}}{{t "songs.link-new"}}{{/link-to}}
-{{#link-to "songs.import"}}{{t "songs.link-import"}}{{/link-to}}
+{{#link-to "songs.new"}}
+  {{svg-icon "ic_add_box_24px"}}
+  {{t "songs.link-new"}}
+{{/link-to}}
+{{#link-to "songs.import"}}
+  {{svg-icon "ic_file_upload_24px"}}
+  {{t "songs.link-import"}}
+{{/link-to}}
 
 <ul>
   {{#each (sort-by "title" songs) as |song|}}
