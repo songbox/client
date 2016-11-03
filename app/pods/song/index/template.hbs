@@ -1,5 +1,8 @@
 {{#x-card}}
-  {{#link-to "song.edit" model class="button"}}{{t "song.index.link-edit"}}{{/link-to}}
+  {{#link-to "song.edit" model}}
+    {{svg-icon "ic_mode_edit_24px"}}
+    {{t "song.index.link-edit"}}
+  {{/link-to}}
 
   {{song-sheet song=model}}
 {{/x-card}}

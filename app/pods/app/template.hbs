@@ -1,18 +1,18 @@
 <header>
   <ul>
-    <li class="button">
+    <li>
       {{#link-to "songs"}}
         {{svg-icon "ic_music_note_24px"}}
         {{t "app.link-songs"}}
       {{/link-to}}
     </li>
-    <li class="button">
+    <li>
       {{#link-to "lists"}}
         {{svg-icon "ic_queue_music_24px"}}
         {{t "app.link-lists"}}
       {{/link-to}}
     </li>
-    <li class="button">
+    <li>
       <a {{action (route-action "logout")}}>
         {{svg-icon "ic_person_outline_24px"}}
         {{t "app.link-logout"}}

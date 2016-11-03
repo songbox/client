@@ -1,4 +1,13 @@
 .button {
   @include typography-style(body1);
+
+  display: inline-block;
+  height: 35px;
+  padding-left: 15px;
+  padding-right: 15px;
+
+  color: color("grey", "lighten-5");
+  background-color: color("green", "lighten-1");
+  border: 1px solid color("green", "darken-1");
   text-transform: uppercase;
 }
