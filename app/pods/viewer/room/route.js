@@ -16,11 +16,16 @@ export default Ember.Route.extend({
   },
 
   setupController(controller/*, model*/) {
+    const pathElems = window.location.pathname.split('/');
+    const roomId = pathElems[pathElems.length -1];
+
     this.get('pubsub').connectViewer();
-    this.get('pubsub')
-      .joinChannel("room:123", { type: 'Viewer' })
-      .on('share', (resp) => {
+    this.get('pubsub').joinChannel(`room:${roomId}`, { type: 'Viewer' }).then((channel) => {
+      channel.on('share', (resp) => {
         controller.set('model', resp);
       });
+    }).catch((error) => {
+      console.log(error)
+    });
   }
 });
