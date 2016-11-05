@@ -1,7 +1,7 @@
 <div class="song-section">
   {{!-- Header --}}
   {{#if section.header}}
-    <h2 class="header">{{section.header}}</h2>
+    <h2 class="header">{{song-section-header section.header}}</h2>
   {{/if}}
 
   {{#each section.lines as |line|}}
@@ -30,5 +30,4 @@
       </div>
     {{/if}}
   {{/each}}
-
 </div>
