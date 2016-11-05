@@ -1,5 +1,5 @@
 {{#x-card
-  onsubmit=(route-action "save" song)
+  onsubmit=attrs.onSave
   title="Add new song"
   buttonText="Save"
   buttonDisabled=song.validations.messages.length}}
