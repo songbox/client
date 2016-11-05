@@ -1,7 +1,24 @@
 & {
 
+  // show-chords
+  .chords {
+    display: none;
+  }
+  &.show-chords {
+    .chords {
+      display: table-row;
+    }
+  }
+
   h1 {
     @include typography-style(display1);
+    margin-bottom: 30px;
+  }
+
+  h2 {
+    @include typography-style(headline);
+    margin-top: 15px;
+    margin-bottom: 5px;
   }
 
   // minimum width
