@@ -4,7 +4,9 @@ import Ember from 'ember';
 import ENV from '../config/environment';
 
 const {
-  inject: { service }
+  assert,
+  inject: { service },
+  RSVP
 } = Ember;
 
 export default PhoenixSocket.extend({
@@ -32,6 +34,27 @@ export default PhoenixSocket.extend({
 
   connectViewer() {
     return this.connect(`${ENV.ws.host}/socket/viewer`);
+  },
+
+  joinChannel(name, params) {
+    const socket = this.get('socket');
+    assert('must connect to a socket first', socket);
+
+    return new RSVP.Promise((resolve, reject) => {
+      const channel = socket.channel(name, params);
+      channel.join()
+        .receive('ok', () => {
+          this.get('flashMessages').success('Room joined!');
+          resolve(channel);
+        })
+        .receive('error', ({ reason }) => {
+          this.get('flashMessages').danger('Room could not be joined!');
+          reject(reason);
+        })
+        .receive('timeout', () => {
+          console.log('Networking issue. Still waiting...');
+        });
+    });
   }
 
 });
