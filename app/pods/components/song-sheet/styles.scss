@@ -1,15 +1,5 @@
 & {
 
-  // show-chords
-  .chords {
-    display: none;
-  }
-  &.show-chords {
-    .chords {
-      display: table-row;
-    }
-  }
-
   h1 {
     @include typography-style(display1);
     margin-bottom: 30px;
@@ -47,6 +37,7 @@
 
   .song-section {
     min-width: 45%; // TODO: use flexbox
+    margin-bottom: 10px;
   }
 
   .comments {
