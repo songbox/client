@@ -6,11 +6,24 @@ body.app {
     padding: 20px;
     background-color: color("grey", "lighten-2");
 
+    ul {
+      display: flex;
+    }
     li {
       display: inline-block;
     }
     li + li {
       margin-left: 10px;
+    }
+
+    .screen-share {
+      margin-left: auto; // use whole space
+
+      input {
+        width: 180px;
+        height: 20px;
+        text-align: center;
+      }
     }
   }
 
