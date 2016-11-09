@@ -10,5 +10,5 @@ export default DS.Model.extend({
   password: attr('string'),
   passwordConfirmation: attr('string'),
 
-  room: belongsTo('room')
+  room: belongsTo('room', { async: false })
 });

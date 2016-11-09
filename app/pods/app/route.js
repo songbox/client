@@ -17,7 +17,7 @@ export default Ember.Route.extend(AuthenticatedRouteMixin, {
 
   model() {
     return this.get('current').load().then((user) => {
-      const channelName = `room:${user.get('id')}`;
+      const channelName = `room:${user.get('room.uid')}`;
       const channel = this.get('pubsub').joinChannel(channelName);
       return RSVP.hash({ user, channel });
     });
