@@ -2,6 +2,7 @@ import Ember from 'ember';
 
 const {
   computed,
+  computed: { readOnly },
   inject: { service }
 } = Ember;
 
@@ -14,6 +15,7 @@ export default Ember.Service.extend({
   user: computed('userId', function () {
     return this.get('store').peekRecord('user', this.get('userId'));
   }),
+  room: readOnly('user.room'),
 
   load() {
     return this.get('ajax').request('/user/current').then(json => {
