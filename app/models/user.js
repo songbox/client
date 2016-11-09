@@ -1,8 +1,14 @@
-import Model from 'ember-data/model';
-import attr from 'ember-data/attr';
+import DS from 'ember-data';
 
-export default Model.extend({
+const {
+  attr,
+  belongsTo
+} = DS;
+
+export default DS.Model.extend({
   email: attr('string'),
   password: attr('string'),
-  passwordConfirmation: attr('string')
+  passwordConfirmation: attr('string'),
+
+  room: belongsTo('room')
 });
