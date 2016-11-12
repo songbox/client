@@ -12,6 +12,7 @@ export default Ember.Route.extend(AuthenticatedRouteMixin, {
   current: service(),
 
   beforeModel() {
+    this._super();
     this.get('pubsub').connectUser();
   },
 
