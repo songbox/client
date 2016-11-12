@@ -1,0 +1,16 @@
+{{#x-card
+  onsubmit=attrs.onSave
+  title="Add new list"
+  buttonText="Save"
+  buttonDisabled=list.validations.messages.length}}
+
+  <div class="row">
+    {{x-input
+      value=list.name
+      errors=(v-get list "name" "messages")
+      classNames="col s12"
+      type="text"
+      label="Title"}}
+  </div>
+{{/x-card}}
+

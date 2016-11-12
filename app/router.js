@@ -44,7 +44,13 @@ Router.map(function() {
     this.route('lists', {
       resetNamespace: true
     }, function () {
-      this.route('add');
+      this.route('new');
+
+      this.route('list', {
+        path: ':list_id',
+        resetNamespace: true
+      }, function () {
+      });
     });
   });
 

@@ -6,7 +6,5 @@ const {
 } = DS;
 
 export default DS.Model.extend({
-  title: attr('string'),
-
-  songs: hasMany('song')
+  name: attr('string')
 });
