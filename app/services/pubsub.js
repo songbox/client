@@ -52,7 +52,7 @@ export default PhoenixSocket.extend({
           reject(reason);
         })
         .receive('timeout', () => {
-          console.log('Networking issue. Still waiting...');
+          this.get('flashMessages').info('Networking issue. Still waiting...');
         });
     });
   }
