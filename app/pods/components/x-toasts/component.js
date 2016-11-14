@@ -5,7 +5,5 @@ const {
 } = Ember;
 
 export default Ember.Component.extend({
-  flashMessages: service(),
-
-  classNames: ['toasts']
+  flashMessages: service()
 });
