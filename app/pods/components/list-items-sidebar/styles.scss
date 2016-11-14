@@ -15,8 +15,16 @@
     justify-content: space-between;
   }
   .handle {
-    width: 20px;
+    width: 30px;
     cursor: move;
     text-align: center;
+  }
+
+  // hide handle, show on hover
+  .handle {
+    display: none;
+  }
+  li:hover .handle {
+    display: block;
   }
 }
