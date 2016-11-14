@@ -1,9 +1,5 @@
 import Ember from 'ember';
 
-const {
-  run
-} = Ember;
-
 export default Ember.Route.extend({
   actions: {
     reorder(itemModels, draggedModel) {
