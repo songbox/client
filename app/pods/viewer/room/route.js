@@ -24,8 +24,6 @@ export default Ember.Route.extend({
       channel.on('share', (resp) => {
         controller.set('model', resp);
       });
-    }).catch((error) => {
-      console.log(error)
     });
   }
 });
