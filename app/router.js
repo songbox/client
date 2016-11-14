@@ -53,8 +53,8 @@ Router.map(function() {
         this.route('add');
         this.route('edit');
 
-        this.route('song', {
-          path: 'song/:song_id'
+        this.route('item', {
+          path: ':position'
         }, function () {
         });
       });

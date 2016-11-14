@@ -7,9 +7,9 @@
 {{/link-to}}
 
 {{#sortable-group tagName="ul" onChange="reorderItems" as |group|}}
-  {{#each (sort-by "rank" list.listItems) as |item|}}
+  {{#each (sort-by "rank" list.listItems) as |item index|}}
     {{#sortable-item tagName="li" model=item group=group handle=".handle"}}
-      {{#link-to 'list.song' item.list item.song}}
+      {{#link-to 'list.item' item.list (add index 1)}}
         {{item.song.title}}
       {{/link-to}}
       <span class="handle">&varr;</span>
