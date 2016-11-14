@@ -50,10 +50,17 @@ Router.map(function() {
         path: ':list_id',
         resetNamespace: true
       }, function () {
+        this.route('add');
+        this.route('edit');
+
+        this.route('song', {
+          path: 'song/:song_id'
+        }, function () {
+        });
       });
     });
-  });
 
+  });
 });
 
 export default Router;

@@ -1,0 +1,11 @@
+
+<h1>Click on the songs below</h1>
+
+<ul>
+  {{#each model.songs as |song|}}
+    <li>
+      {{song.title}}
+      <button {{action "addSong" model.list song}}>Add</button>
+    </li>
+  {{/each}}
+</ul>

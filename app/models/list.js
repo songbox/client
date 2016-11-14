@@ -6,5 +6,7 @@ const {
 } = DS;
 
 export default DS.Model.extend({
-  name: attr('string')
+  name: attr('string'),
+
+  listItems: hasMany('list_item')
 });

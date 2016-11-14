@@ -1,0 +1,8 @@
+
+body.list-add {
+  .content {
+    h1 {
+      @include typography-style(subheading2);
+    }
+  }
+}

@@ -1,0 +1,19 @@
+
+<h1>List: {{list.name}}</h1>
+
+{{#link-to "list.add"}}
+  {{svg-icon "ic_add_box_24px"}}
+  {{t "songs.link-new"}}
+{{/link-to}}
+
+{{#sortable-group tagName="ul" onChange="reorderItems" as |group|}}
+  {{#each (sort-by "rank" list.listItems) as |item|}}
+    {{#sortable-item tagName="li" model=item group=group handle=".handle"}}
+      {{#link-to 'list.song' item.list item.song}}
+        {{item.song.title}}
+      {{/link-to}}
+      <span class="handle">&varr;</span>
+    {{/sortable-item}}
+  {{/each}}
+{{/sortable-group}}
+
