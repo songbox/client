@@ -43,7 +43,8 @@ module.exports = function(environment) {
   ENV['sentry'] = {
     cdn: 'https://cdn.ravenjs.com/3.8.1/raven.min.js',
     dsn: 'https://f37ac4fa9e884542be19f40d1f0c5231@sentry.io/104448',
-    development: environment !== 'production' // enable only in production
+    development: environment !== 'production', // enable only in production
+    serviceName: 'sentry',
   };
 
   if (environment === 'development') {
