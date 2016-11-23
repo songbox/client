@@ -21,6 +21,40 @@
       label="Author"}}
   </div>
   <div class="row">
+    {{x-input
+      value=song.key
+      errors=(v-get song "key" "messages")
+      classNames="col s4"
+      type="text"
+      label="Key"}}
+    {{x-input
+      value=song.tempo
+      errors=(v-get song "tempo" "messages")
+      classNames="col s4"
+      type="text"
+      label="Tempo"}}
+    {{x-input
+      value=song.time
+      errors=(v-get song "time" "messages")
+      classNames="col s4"
+      type="text"
+      label="Time"}}
+  </div>
+  <div class="row">
+    {{x-input
+      value=song.tempo
+      errors=(v-get song "license" "messages")
+      classNames="col s8"
+      type="text"
+      label="License"}}
+    {{x-input
+      value=song.tempo
+      errors=(v-get song "ccli" "messages")
+      classNames="col s4"
+      type="text"
+      label="CCLI"}}
+  </div>
+  <div class="row">
     {{textarea value=song.text}}
   </div>
 {{/x-card}}
