@@ -1,8 +1,10 @@
+$app-header-height: 20px;
+$app-aside-width: 200px;
 
 body.app {
 
   header {
-    height: 20px;
+    height: $app-header-height;
     padding: 20px;
     background-color: color("grey", "lighten-2");
 
@@ -28,6 +30,7 @@ body.app {
   }
 
   .container {
+    position: relative;
     display: flex;
     flex-direction: row-reverse;
     align-content: stretch;
@@ -39,7 +42,12 @@ body.app {
       flex-grow: 1;
     }
     & > aside {
-      width: 200px;
+      width: $app-aside-width;
+      background-color: color("grey", "lighten-3");
+
+      & > * {
+        position: fixed;
+      }
     }
   }
 }
