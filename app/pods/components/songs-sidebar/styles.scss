@@ -8,8 +8,15 @@
   }
   ul {
     margin-top: 20px;
+    max-width: 140px;
+    max-height: calc(100vh - 180px);
+    overflow: scroll;
   }
   li {
-    height: 20px;
+    @include truncate;
+    padding: 10px 0;
+  }
+  li + li {
+    border-top: 1px solid color("grey", "lighten-1");
   }
 }
