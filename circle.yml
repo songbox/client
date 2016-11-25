@@ -6,8 +6,8 @@ dependencies:
   pre:
     - npm config set spin false
   override:
-    - npm install -g bower
-    - npm install
+    - npm install -g bower yarn
+    - yarn install
     - bower install
   cache_directories:
     - "bower_components"
