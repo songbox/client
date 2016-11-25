@@ -1,7 +1,22 @@
-{{#x-card}}
-  {{song-sheet
-    song=model
-    showSectionHeaders=false
-    showChords=false
+
+{{#burger-menu
+  animation="scale-rotate"
+  position="right"
+  translucentOverlay=false
+  as |burger|
   }}
-{{/x-card}}
+
+  {{#burger.menu itemTagName="li" as |menu|}}
+  {{/burger.menu}}
+
+  {{#burger.outlet}}
+    <main>
+      {{song-sheet
+        song=model
+        showSectionHeaders=false
+        showChords=false
+      }}
+    </main>
+  {{/burger.outlet}}
+
+{{/burger-menu}}

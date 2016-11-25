@@ -1,4 +1,25 @@
 
 body.viewer-room {
-  padding: 20px;
+  background-color: color("grey", "darken-3");
+
+  & > .ember-view {
+    height: 100%;
+  }
+
+  .bm-menu {
+    background-color: color("grey", "lighten-2");
+  }
+
+  .bm-content {
+    padding: 20px;
+
+    // burger icon
+    > a {
+      @include typography-style(title)
+      position: absolute;
+      right: 10px;
+      top: 3px;
+      border-bottom: 0;
+    }
+  }
 }
