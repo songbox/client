@@ -1,4 +1,6 @@
 & {
+  padding: 20px;
+  background-color: color("shades", "white");
 
   h1 {
     @include typography-style(display1);

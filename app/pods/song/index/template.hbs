@@ -1,9 +1,9 @@
-{{#x-card}}
-  {{#link-to "song.edit" model}}
-    {{svg-icon "ic_mode_edit_24px"}}
-    {{t "song.index.link-edit"}}
-  {{/link-to}}
+<ul class="actions">
+  <li>
+    {{#link-to "song.edit" model title=(t "song.index.link-edit")}}
+      {{svg-icon "ic_mode_edit_24px"}}
+    {{/link-to}}
+  </li>
+</ul>
 
-  {{song-sheet song=model}}
-{{/x-card}}
-
+{{song-sheet song=model}}

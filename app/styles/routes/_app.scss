@@ -58,11 +58,14 @@ body.app {
 
       ul {
         margin-top: 20px;
+        margin-left: -10px;
+        margin-right: -10px;
         max-height: calc(100vh - 240px);
         overflow: scroll;
       }
       li {
         @include truncate;
+        margin: 0 10px;
         padding: 10px 0;
       }
       li + li {
@@ -73,6 +76,7 @@ body.app {
 
   .bm-content {
     padding: 20px;
+    padding-left: 40px;
 
     > a {
       @include typography-style(title)
@@ -89,6 +93,6 @@ body.app {
         text-align: center;
       }
     }
-
   }
+
 }
