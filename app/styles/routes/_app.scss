@@ -55,6 +55,19 @@ body.app {
       flex-grow: 1;
       background-color: color("grey", "lighten-6");
       border-right: 1px solid color("grey", "lighten-2");
+
+      ul {
+        margin-top: 20px;
+        max-height: calc(100vh - 240px);
+        overflow: scroll;
+      }
+      li {
+        @include truncate;
+        padding: 10px 0;
+      }
+      li + li {
+        border-top: 1px solid color("grey", "lighten-1");
+      }
     }
   }
 

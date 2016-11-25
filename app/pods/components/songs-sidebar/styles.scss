@@ -6,17 +6,4 @@
   a + a {
     margin-left: 10px;
   }
-  ul {
-    margin-top: 20px;
-    max-width: 200px;
-    max-height: calc(100vh - 180px);
-    overflow: scroll;
-  }
-  li {
-    @include truncate;
-    padding: 10px 0;
-  }
-  li + li {
-    border-top: 1px solid color("grey", "lighten-1");
-  }
 }
