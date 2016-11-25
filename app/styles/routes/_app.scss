@@ -72,7 +72,7 @@ body.app {
     main {
       > h1 {
         @include typography-style(headline);
-        margin-top: 20%;
+        margin-top: 25vh;
         text-align: center;
       }
     }
