@@ -3,51 +3,79 @@ $app-aside-width: 200px;
 
 body.app {
 
-  header {
-    height: $app-header-height;
-    padding: 20px;
-    background-color: color("grey", "lighten-2");
+  & > .ember-view {
+    height: 100%;
+  }
 
-    ul {
-      display: flex;
-    }
-    li {
-      display: inline-block;
-    }
-    li + li {
-      margin-left: 10px;
+  .bm-menu {
+    display: flex;
+    flex-direction: column;
+
+    main, header, footer {
+      padding: 20px 10px;
     }
 
-    .screen-share {
-      margin-left: auto; // use whole space
+    header, footer {
+      height: $app-header-height;
+      background-color: color("grey", "lighten-2");
 
-      input {
-        width: 200px;
-        height: 20px;
-        text-align: center;
+      ul {
+        display: flex;
       }
+      li {
+        display: inline-block;
+      }
+      li + li {
+        margin-left: 10px;
+      }
+    }
+
+    header {
+      position: relative;
+      > a {
+        @include typography-style(title)
+        position: absolute;
+        right: 10px;
+        top: 3px;
+        border-bottom: 0;
+      }
+    }
+
+    footer {
+      .screen-share {
+        input {
+          width: 160px;
+          height: 20px;
+          text-align: center;
+        }
+      }
+    }
+
+    main {
+      flex-grow: 1;
+      background-color: color("grey", "lighten-6");
+      border-right: 1px solid color("grey", "lighten-2");
     }
   }
 
-  .container {
-    position: relative;
-    display: flex;
-    flex-direction: row-reverse;
-    align-content: stretch;
+  .bm-content {
+    padding: 20px;
 
-    & > main, & > aside {
-      padding: 20px;
+    > a {
+      @include typography-style(title)
+      position: absolute;
+      left: 10px;
+      top: 3px;
+      border-bottom: 0;
     }
-    & > main {
-      flex-grow: 1;
-    }
-    & > aside {
-      width: $app-aside-width;
-      background-color: color("grey", "lighten-3");
 
-      & > * {
-        position: fixed;
+    main {
+      > h1 {
+        @include typography-style(headline);
+        margin-top: 20%;
+        text-align: center;
       }
     }
+
   }
 }

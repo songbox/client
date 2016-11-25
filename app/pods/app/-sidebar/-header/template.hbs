@@ -1,0 +1,20 @@
+<header>
+  <a class="menu-close" {{action burger.state.actions.toggle}}>
+    {{svg-icon "ic_close_24px"}}
+  </a>
+
+  <ul>
+    <li>
+      {{#link-to "songs"}}
+        {{svg-icon "ic_music_note_24px"}}
+        {{t "app.link-songs"}}
+      {{/link-to}}
+    </li>
+    <li>
+      {{#link-to "lists"}}
+        {{svg-icon "ic_queue_music_24px"}}
+        {{t "app.link-lists"}}
+      {{/link-to}}
+    </li>
+  </ul>
+</header>

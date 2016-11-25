@@ -1,40 +1,23 @@
-<header>
-  <ul>
-    <li>
-      {{#link-to "songs"}}
-        {{svg-icon "ic_music_note_24px"}}
-        {{t "app.link-songs"}}
-      {{/link-to}}
-    </li>
-    <li>
-      {{#link-to "lists"}}
-        {{svg-icon "ic_queue_music_24px"}}
-        {{t "app.link-lists"}}
-      {{/link-to}}
-    </li>
-    <li class="screen-share">
-      {{svg-icon "ic_screen_share_24px"}}
-      <input type="text" value={{concat (host-url) (href-to "viewer.room" current.room.uid)}}>
-    </li>
-    <li>
-      <a {{action (route-action "logout")}}>
-        {{svg-icon "ic_person_outline_24px"}}
-        {{t "app.link-logout"}}
-      </a>
-    </li>
-  </ul>
-</header>
+{{#burger-menu
+  open=true
+  animation="push"
+  width=300
+  translucentOverlay=false
+  dismissOnClick=false
+  as |burger|}}
 
-<div class="container">
-  <main class="content">
-    {{liquid-outlet}}
-  </main>
+  {{#burger.menu}}
+    {{partial "app/sidebar"}}
+  {{/burger.menu}}
 
-  <aside class="sidebar">
-    {{from-elsewhere name="sidebar"}}
-  </aside>
-</div>
+  {{#burger.outlet}}
+    <a {{action burger.state.actions.toggle}}>
+      {{svg-icon "ic_menu_24px"}}
+    </a>
 
-<footer>
+    <main>
+      {{outlet}}
+    </main>
+  {{/burger.outlet}}
 
-</footer>
+{{/burger-menu}}

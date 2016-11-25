@@ -1,0 +1,15 @@
+<footer>
+  <ul>
+    <li class="screen-share">
+      {{svg-icon "ic_screen_share_24px"}}
+      <input type="text" value={{concat (host-url) (href-to "viewer.room" current.room.uid)}}>
+    </li>
+
+    <li>
+      <a {{action (route-action "logout")}}>
+        {{svg-icon "ic_person_outline_24px"}}
+        {{t "app.link-logout"}}
+      </a>
+    </li>
+  </ul>
+</footer>
