@@ -10,10 +10,21 @@ export default Ember.Component.extend({
 
   searchTerm: '',
   filteredSongs: computed('songs.[]', 'searchTerm', function () {
+    const term = this.get('searchTerm');
+
+    if (isEmpty(term)) {
+      return this.get('songs');
+    }
+
+    const regexp = new RegExp(term, 'i');
     return this.get('songs').filter((song) => {
-      const term = this.get('searchTerm');
-      const songTitle = song.get('title');
-      return isEmpty(term) || (new RegExp(term, 'i')).test(songTitle);
+      return regexp.test(song.get('title'));
     });
-  })
+  }),
+
+  actions: {
+    clearSearch() {
+      this.set('searchTerm', '');
+    }
+  }
 });
