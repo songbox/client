@@ -12,8 +12,12 @@
   {{/link-to}}
 </div>
 
+<div class="search">
+  {{input placeholder="Search..." value=searchTerm}}
+</div>
+
 <ul>
-  {{#each (sort-by "title" songs) as |song|}}
+  {{#each (sort-by "title" filteredSongs) as |song|}}
     <li>
       {{#link-to 'song' song.id}}
         {{song.title}}
