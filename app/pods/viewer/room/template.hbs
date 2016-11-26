@@ -7,9 +7,18 @@
   }}
 
   {{#burger.menu itemTagName="li" as |menu|}}
+    <ul>
+      {{#menu.item}}
+        {{input type="checkbox" checked=settings.nightMode}}
+      {{/menu.item}}
+    </ul>
   {{/burger.menu}}
 
-  {{#burger.outlet}}
+  {{#burger.outlet class=(if settings.nightMode 'night-mode')}}
+    <a {{action burger.state.actions.toggle}}>
+      {{svg-icon "ic_menu_24px"}}
+    </a>
+
     <main>
       {{song-sheet
         song=model

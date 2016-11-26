@@ -23,3 +23,14 @@ body.viewer-room {
     }
   }
 }
+
+// night mode
+.bm-content {
+  filter: invert(0);
+  transition-property: filter;
+  transition-duration: .5s;
+
+  .night-mode & {
+    filter: invert(100%);
+  }
+}
