@@ -1,5 +1,7 @@
 <h1>{{song.title}}</h1>
 
-{{#each sections as |section|}}
-  {{partial "components/song-sheet/section"}}
-{{/each}}
+<div class="song-sections">
+  {{#each sections as |section|}}
+    {{partial "components/song-sheet/section"}}
+  {{/each}}
+</div>
