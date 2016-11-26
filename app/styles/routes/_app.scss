@@ -11,11 +11,8 @@ body.app {
     display: flex;
     flex-direction: column;
 
-    main, header, footer {
-      padding: 20px 10px;
-    }
-
     header, footer {
+      padding: 20px 10px;
       height: $app-header-height;
       background-color: color("grey", "lighten-2");
 
@@ -53,24 +50,10 @@ body.app {
 
     main {
       flex-grow: 1;
+      padding: 10px;
       background-color: color("grey", "lighten-6");
       border-right: 1px solid color("grey", "lighten-2");
-
-      ul {
-        margin-top: 20px;
-        margin-left: -10px;
-        margin-right: -10px;
-        max-height: calc(100vh - 240px);
-        overflow: scroll;
-      }
-      li {
-        @include truncate;
-        margin: 0 10px;
-        padding: 10px 0;
-      }
-      li + li {
-        border-top: 1px solid color("grey", "lighten-1");
-      }
+      overflow: hidden;
     }
   }
 

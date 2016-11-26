@@ -1,10 +1,12 @@
 
 <h1>Lists</h1>
 
-{{#link-to "lists.new"}}
-  {{svg-icon "ic_add_box_24px"}}
-  {{t "songs.link-new"}}
-{{/link-to}}
+<div class="actions">
+  {{#link-to "lists.new"}}
+    {{svg-icon "ic_add_box_24px"}}
+    {{t "songs.link-new"}}
+  {{/link-to}}
+</div>
 
 <ul>
   {{#each (sort-by "name" lists) as |list|}}

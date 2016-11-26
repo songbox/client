@@ -1,17 +1,8 @@
 & {
-  h1 {
-    @include typography-style(title)
-    margin-bottom: 5px;
-  }
-  a + a {
-    margin-left: 10px;
-  }
-  ul {
-    margin-top: 20px;
-  }
+  @include sidebar;
+
   li {
     display: flex;
-    height: 20px;
     justify-content: space-between;
   }
   .handle {

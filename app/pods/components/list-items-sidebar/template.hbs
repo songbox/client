@@ -1,10 +1,12 @@
 
 <h1>List: {{list.name}}</h1>
 
-{{#link-to "list.add"}}
-  {{svg-icon "ic_add_box_24px"}}
-  {{t "songs.link-new"}}
-{{/link-to}}
+<div class="actions">
+  {{#link-to "list.add"}}
+    {{svg-icon "ic_add_box_24px"}}
+    Add
+  {{/link-to}}
+</div>
 
 {{#sortable-group tagName="ul" onChange="reorderItems" as |group|}}
   {{#each (sort-by "rank" list.listItems) as |item index|}}

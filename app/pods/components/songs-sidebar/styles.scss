@@ -1,9 +1,11 @@
 & {
-  h1 {
-    @include typography-style(title)
-    margin-bottom: 5px;
-  }
-  a + a {
-    margin-left: 10px;
+  @include sidebar;
+
+  .search {
+    display: flex;
+
+    input[type=text] {
+      flex-grow: 1;
+    }
   }
 }

@@ -1,16 +1,18 @@
 
 body.song-index {
 
-  main {
-    position: relative;
+  .bm-content {
+    main {
+      position: relative;
 
-    .actions {
-      position: absolute;
-      top: 20px;
-      left: -30px;
+      .actions {
+        position: absolute;
+        top: 20px;
+        left: -30px;
 
-      a {
-        border-bottom: 0;
+        a {
+          border-bottom: 0;
+        }
       }
     }
   }
