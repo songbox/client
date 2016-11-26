@@ -8,11 +8,18 @@
   }}
 
   {{#burger.menu itemTagName="li" as |menu|}}
-    <ul>
-      {{#menu.item}}
-        {{input type="checkbox" checked=settings.nightMode}}
-      {{/menu.item}}
-    </ul>
+    <header>
+      <h1>Songbox</h1>
+      <h2>Settings</h2>
+    </header>
+    <main>
+      <ul>
+        {{#menu.item}}
+          <label>Night Mode</label>
+          {{input type="checkbox" checked=settings.nightMode}}
+        {{/menu.item}}
+      </ul>
+    </main>
   {{/burger.menu}}
 
   {{#burger.outlet class=(if settings.nightMode 'night-mode')}}
