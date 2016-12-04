@@ -40,6 +40,11 @@ module.exports = function(environment) {
   ENV['ember-cli-mirage'] = {
   };
 
+  ENV['EmberHammertime'] = {
+    //touchActionSelectors: ['button', 'input', 'a', 'textarea'],
+    //touchActionProperties: 'touch-action: manipulation; -ms-touch-action: manipulation; cursor: pointer;'
+  };
+
   ENV['sentry'] = {
     // disable for now
     //cdn: 'https://cdn.ravenjs.com/3.8.1/raven.min.js',
