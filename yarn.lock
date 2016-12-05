@@ -1825,13 +1825,12 @@ ember-cli-deploy-revision-data@0.1.0:
     minimatch "^2.0.4"
     rsvp "^3.0.18"
 
-ember-cli-deploy-sentry@0.4.0:
-  version "0.4.0"
-  resolved "https://registry.yarnpkg.com/ember-cli-deploy-sentry/-/ember-cli-deploy-sentry-0.4.0.tgz#534de39df360eaf10a0e3b4ab0d63120040be654"
+ember-cli-deploy-sentry@0.5.1:
+  version "0.5.1"
+  resolved "https://registry.yarnpkg.com/ember-cli-deploy-sentry/-/ember-cli-deploy-sentry-0.5.1.tgz#f8b35186837b627fbc895bc9a78836faf73dc4f3"
   dependencies:
     ember-cli-babel "^5.0.0"
     ember-cli-deploy-plugin "^0.2.0"
-    form-data "^1.0.0-rc3"
     glob "^5.0.14"
     request-promise "^0.4.3"
     silent-error "^1.0.0"
@@ -2273,6 +2272,12 @@ ember-getowner-polyfill@^1.0.0, ember-getowner-polyfill@^1.0.1:
   dependencies:
     ember-cli-babel "^5.1.5"
 
+ember-hammertime@1.1.2:
+  version "1.1.2"
+  resolved "https://registry.yarnpkg.com/ember-hammertime/-/ember-hammertime-1.1.2.tgz#8664525554cda1f8097a20068ac92be68cb18c36"
+  dependencies:
+    ember-cli-babel "^5.1.6"
+
 ember-hash-helper-polyfill@0.1.1:
   version "0.1.1"
   resolved "https://registry.yarnpkg.com/ember-hash-helper-polyfill/-/ember-hash-helper-polyfill-0.1.1.tgz#141d4ac1f4d1404cc1b8ee2d76941b38a9b9a512"
@@ -2313,18 +2318,6 @@ ember-lodash@0.0.9:
     broccoli-merge-trees "^1.1.1"
     ember-cli-babel "^5.1.5"
     lodash-es "^3.10.0"
-
-ember-material-design-icons-shim@0.1.9:
-  version "0.1.9"
-  resolved "https://registry.yarnpkg.com/ember-material-design-icons-shim/-/ember-material-design-icons-shim-0.1.9.tgz#c99d37fd11cccd1a898a2a0917e9c567ebd6f7b6"
-  dependencies:
-    ember-cli-babel "^5.1.6"
-
-ember-materialize-shim@0.4.1:
-  version "0.4.1"
-  resolved "https://registry.yarnpkg.com/ember-materialize-shim/-/ember-materialize-shim-0.4.1.tgz#58d528e8f77e4314a3d2d57302f3538b0f7f057c"
-  dependencies:
-    ember-cli-babel "^5.1.6"
 
 ember-math-helpers@1.3.0:
   version "1.3.0"
@@ -2969,7 +2962,7 @@ forever-agent@~0.6.1:
   version "0.6.1"
   resolved "https://registry.yarnpkg.com/forever-agent/-/forever-agent-0.6.1.tgz#fbc71f0c41adeb37f96c577ad1ed42d8fdacca91"
 
-form-data@^1.0.0-rc3, form-data@~1.0.0-rc3:
+form-data@~1.0.0-rc3:
   version "1.0.1"
   resolved "https://registry.yarnpkg.com/form-data/-/form-data-1.0.1.tgz#ae315db9a4907fa065502304a66d7733475ee37c"
   dependencies:
