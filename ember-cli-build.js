@@ -11,6 +11,10 @@ module.exports = function(defaults) {
       includePaths: [
       ]
     },
+    sourcemaps: {
+      enabled: true, // enable also in production
+      extensions: ['js']
+    },
     svgJar: {
       strategy: ['inline'],
       sourceDirs: [

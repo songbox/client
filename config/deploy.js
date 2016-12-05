@@ -4,10 +4,18 @@ module.exports = function(deployTarget) {
   var ENV = {
     build: {
     },
-    // include other plugin configuration that applies to all deploy targets here
+    // deployment
     pagefront: {
       app: 'songbox',
       key: process.env.PAGEFRONT_KEY
+    },
+    // error monitoring
+    sentry: {
+      publicUrl: 'https://app.songbox.co',
+      sentryUrl: 'https://sentry.io',
+      sentryOrganizationSlug: 'songbox',
+      sentryProjectSlug: 'app',
+      sentryApiKey: process.env.SENTRY_KEY,
     }
   };
 
