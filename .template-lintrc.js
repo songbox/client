@@ -5,7 +5,9 @@ module.exports = {
   extends: 'recommended',
 
   rules: {
-//  'bare-strings': true,
-//  'invalid-interactive': true
+    'bare-strings': false,
+    'invalid-interactive': {
+      'additionalInteractiveTags': ['a']
+    }
   }
 };

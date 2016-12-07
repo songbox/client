@@ -1,5 +1,6 @@
 <h1>{{song.title}}</h1>
 
+{{! template-lint-disable unused-block-params }}
 <div class="song-sections {{if showMultiColumn 'multi-column'}}">
   {{#each sections as |section|}}
     {{partial "components/song-sheet/section"}}
