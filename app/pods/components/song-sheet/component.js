@@ -10,6 +10,7 @@ export default Ember.Component.extend({
 
   showChords: true,
   showSectionHeaders: true,
+  showMultiColumn: false,
 
   sections: computed('song.text', 'song.format', function () {
     const parser = parsers[this.get('song.format') || 'opensong'];

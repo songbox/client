@@ -39,7 +39,7 @@
   }
 
   // wrap sections in columns
-  .song-sections {
+  .song-sections.multi-column {
     display: flex;
     flex-direction: column;
     flex-wrap: wrap;
