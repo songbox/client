@@ -24,14 +24,14 @@
     margin-top: 10px;
     margin-left: -10px;
     margin-right: -10px;
-    max-height: calc(100vh - 210px);
-    overflow: scroll;
+    max-height: calc(100vh - 190px);
+    overflow-y: scroll;
+    -webkit-overflow-scrolling: touch; // momentum scrolling on iOS
   }
   li {
     @include truncate;
     margin: 0 10px;
     padding: 10px 0;
-    height: 20px;
   }
   li + li {
     border-top: 1px solid color("grey", "lighten-1");

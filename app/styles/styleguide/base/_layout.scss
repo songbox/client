@@ -6,3 +6,11 @@ html, body {
 
   background-color: color("grey", "lighten-5");
 }
+
+// set box-sizing
+html {
+  box-sizing: border-box;
+}
+*, *:before, *:after {
+  box-sizing: inherit;
+}
