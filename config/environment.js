@@ -45,6 +45,14 @@ module.exports = function(environment) {
     //touchActionProperties: 'touch-action: manipulation; -ms-touch-action: manipulation; cursor: pointer;'
   };
 
+  ENV['html-manifest'] = {
+    filename: 'manifest.appcache',
+    prependPath: '',
+    excludePaths: ['index.html'],
+    includePaths: ['/'],
+    network: ['*']
+  };
+
   ENV['sentry'] = {
     // disable for now
     //cdn: 'https://cdn.ravenjs.com/3.8.1/raven.min.js',

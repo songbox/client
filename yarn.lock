@@ -1281,6 +1281,16 @@ charm@^1.0.0:
   dependencies:
     inherits "^2.0.1"
 
+cheerio@^0.19.0:
+  version "0.19.0"
+  resolved "https://registry.yarnpkg.com/cheerio/-/cheerio-0.19.0.tgz#772e7015f2ee29965096d71ea4175b75ab354925"
+  dependencies:
+    css-select "~1.0.0"
+    dom-serializer "~0.1.0"
+    entities "~1.1.1"
+    htmlparser2 "~3.8.1"
+    lodash "^3.2.0"
+
 cheerio@^0.20.0:
   version "0.20.0"
   resolved "https://registry.yarnpkg.com/cheerio/-/cheerio-0.20.0.tgz#5c710f2bab95653272842ba01c6ea61b3545ec35"
@@ -1680,6 +1690,15 @@ cryptiles@2.x.x:
   dependencies:
     boom "2.x.x"
 
+css-select@~1.0.0:
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/css-select/-/css-select-1.0.0.tgz#b1121ca51848dd264e2244d058cee254deeb44b0"
+  dependencies:
+    boolbase "~1.0.0"
+    css-what "1.0"
+    domutils "1.4"
+    nth-check "~1.0.0"
+
 css-select@~1.2.0:
   version "1.2.0"
   resolved "https://registry.yarnpkg.com/css-select/-/css-select-1.2.0.tgz#2b3a110539c5355f1cd8d314623e870b121ec858"
@@ -1688,6 +1707,10 @@ css-select@~1.2.0:
     css-what "2.1"
     domutils "1.5.1"
     nth-check "~1.0.1"
+
+css-what@1.0:
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/css-what/-/css-what-1.0.0.tgz#d7cc2df45180666f99d2b14462639469e00f736c"
 
 css-what@2.1:
   version "2.1.0"
@@ -1903,6 +1926,12 @@ domhandler@2.3:
   dependencies:
     domelementtype "1"
 
+domutils@1.4:
+  version "1.4.3"
+  resolved "https://registry.yarnpkg.com/domutils/-/domutils-1.4.3.tgz#0865513796c6b306031850e175516baf80b72a6f"
+  dependencies:
+    domelementtype "1"
+
 domutils@1.5, domutils@1.5.1:
   version "1.5.1"
   resolved "https://registry.yarnpkg.com/domutils/-/domutils-1.5.1.tgz#dcd8488a26f563d61079e48c9f7b7e32373682cf"
@@ -2057,6 +2086,16 @@ ember-cli-deploy-gzip@pagefront/ember-cli-deploy-gzip#0a98e80768d089ea6488b36f2c
     redis "^0.12.1"
     rsvp "^3.0.18"
 
+ember-cli-deploy-html-manifest@0.0.5:
+  version "0.0.5"
+  resolved "https://registry.yarnpkg.com/ember-cli-deploy-html-manifest/-/ember-cli-deploy-html-manifest-0.0.5.tgz#f9dec2746bdff0a122f5e9f905dfb1a4100c9460"
+  dependencies:
+    chalk "^1.0.0"
+    cheerio "^0.19.0"
+    ember-cli-deploy-plugin "0.2.5"
+    minimatch v3.0.0
+    rsvp "^3.0.18"
+
 ember-cli-deploy-manifest@pagefront/ember-cli-deploy-manifest#d6fdaf9edb4ed23a5bf472317f1b46d9a4c3715c:
   version "0.1.0"
   resolved "https://codeload.github.com/pagefront/ember-cli-deploy-manifest/tar.gz/d6fdaf9edb4ed23a5bf472317f1b46d9a4c3715c"
@@ -2086,6 +2125,14 @@ ember-cli-deploy-plugin@0.2.0:
   dependencies:
     chalk "^1.0.0"
     core-object "0.0.2"
+
+ember-cli-deploy-plugin@0.2.5:
+  version "0.2.5"
+  resolved "https://registry.yarnpkg.com/ember-cli-deploy-plugin/-/ember-cli-deploy-plugin-0.2.5.tgz#660e572f6bc07d39cabb5ddca4fffa21db7b08e9"
+  dependencies:
+    chalk "^1.0.0"
+    core-object "0.0.2"
+    lodash "^4.6.1"
 
 ember-cli-deploy-plugin@^0.2.0:
   version "0.2.9"
@@ -2535,7 +2582,7 @@ ember-composable-helpers@1.1.2:
     broccoli-funnel "^1.0.1"
     ember-cli-babel "^5.1.6"
 
-ember-cookies@0.0.10, ember-cookies@^0.0.10:
+ember-cookies@^0.0.10:
   version "0.0.10"
   resolved "https://registry.yarnpkg.com/ember-cookies/-/ember-cookies-0.0.10.tgz#ffd74cf03b4cdea27f5a17601b1c98cf4cb673d3"
   dependencies:
@@ -5008,7 +5055,7 @@ lodash@3.7.x:
   version "3.7.0"
   resolved "https://registry.yarnpkg.com/lodash/-/lodash-3.7.0.tgz#3678bd8ab995057c07ade836ed2ef087da811d45"
 
-lodash@^3.10.0, lodash@^3.10.1, lodash@^3.5.0, lodash@^3.7.0, lodash@^3.9.3, lodash@~3.10.0:
+lodash@^3.10.0, lodash@^3.10.1, lodash@^3.2.0, lodash@^3.5.0, lodash@^3.7.0, lodash@^3.9.3, lodash@~3.10.0:
   version "3.10.1"
   resolved "https://registry.yarnpkg.com/lodash/-/lodash-3.10.1.tgz#5bf45e8e49ba4189e17d482789dfd15bd140b7b6"
 
@@ -5254,6 +5301,12 @@ minimatch@1:
 minimatch@^2.0.1, minimatch@^2.0.10, minimatch@^2.0.3, minimatch@^2.0.4, minimatch@^2.0.8:
   version "2.0.10"
   resolved "https://registry.yarnpkg.com/minimatch/-/minimatch-2.0.10.tgz#8d087c39c6b38c001b97fca7ce6d0e1e80afbac7"
+  dependencies:
+    brace-expansion "^1.0.0"
+
+minimatch@v3.0.0:
+  version "3.0.0"
+  resolved "https://registry.yarnpkg.com/minimatch/-/minimatch-3.0.0.tgz#5236157a51e4f004c177fb3c527ff7dd78f0ef83"
   dependencies:
     brace-expansion "^1.0.0"
 
@@ -5639,7 +5692,7 @@ npmlog@^4.0.0:
     gauge "~2.7.1"
     set-blocking "~2.0.0"
 
-nth-check@~1.0.1:
+nth-check@~1.0.0, nth-check@~1.0.1:
   version "1.0.1"
   resolved "https://registry.yarnpkg.com/nth-check/-/nth-check-1.0.1.tgz#9929acdf628fc2c41098deab82ac580cf149aae4"
   dependencies:
