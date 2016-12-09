@@ -1,6 +1,6 @@
 
 body.viewer-room {
-  background: linear-gradient(bottom, color("grey", "darken-1"), color("grey", "darken-3"));
+  background: linear-gradient(to bottom, color("grey", "darken-1"), color("grey", "darken-3"));
 
   & > .ember-view {
     height: 100%;

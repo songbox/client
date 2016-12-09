@@ -3,8 +3,8 @@ import makeHelper from 'ember-svg-jar/utils/make-helper';
 import makeSVG from 'ember-svg-jar/utils/make-svg';
 import inlineAssets from '../inline-assets';
 
-export function svgIcon(assetId, svgAttrs = {}) {
-  svgAttrs.class = 'icon';
+export function svgIcon(assetId, attrs = {}) {
+  const svgAttrs = Object.assign({ class: 'icon' }, attrs);
   return htmlSafe(makeSVG(assetId, svgAttrs, inlineAssets));
 }
 
