@@ -30,6 +30,9 @@ module.exports = function(environment) {
   };
   ENV['ws'] = {
     host: 'ws://localhost:4000'
+
+  ENV['fastboot'] = {
+    hostWhitelist: ['songbox.co', /^localhost:\d+$/]
   };
 
   ENV['ember-simple-auth'] = {

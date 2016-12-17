@@ -4,6 +4,8 @@ var EmberApp = require('ember-cli/lib/broccoli/ember-app');
 
 module.exports = function(defaults) {
   var app = new EmberApp(defaults, {
+    autoprefixer: {
+    },
     babel: {
       includePolyfill: true
     },
@@ -36,8 +38,12 @@ module.exports = function(defaults) {
   // please specify an object with the list of modules as keys
   // along with the exports of each module as its value.
 
-  // no rubber band scrolling on mobile
-  app.import('bower_components/inobounce/inobounce.js');
+  if (!process.env.EMBER_CLI_FASTBOOT) {
+    // This will only be included in the browser build
+
+    // no rubber band scrolling on mobile
+    app.import('bower_components/inobounce/inobounce.js');
+  }
 
   return app.toTree();
 };

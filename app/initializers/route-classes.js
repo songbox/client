@@ -7,12 +7,20 @@ export function initialize(/* container, application */) {
       var cssClass = this.toCssClass();
       // you probably don't need the application class
       // to be added to the body
-      if (cssClass !== 'application') {
+      if (cssClass === 'application') {
+        return;
+      }
+
+      if (typeof FastBoot !== 'undefined') {
+      } else {
         Ember.$('body').addClass(cssClass);
       }
     },
     deactivate() {
-      Ember.$('body').removeClass(this.toCssClass());
+      if (typeof FastBoot !== 'undefined') {
+      } else {
+        Ember.$('body').removeClass(this.toCssClass());
+      }
     },
     toCssClass() {
       return this.routeName.replace(/\./g, '-').dasherize();
