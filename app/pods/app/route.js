@@ -2,6 +2,7 @@ import Ember from 'ember';
 import AuthenticatedRouteMixin from 'ember-simple-auth/mixins/authenticated-route-mixin';
 
 const {
+  computed,
   inject: { service },
   RSVP
 } = Ember;
@@ -10,6 +11,10 @@ export default Ember.Route.extend(AuthenticatedRouteMixin, {
   pubsub: service(),
   session: service(),
   current: service(),
+
+  authenticationRoute: computed(function() {
+    return 'auth.login';
+  }),
 
   model() {
     return this.get('current').load().then((user) => {
