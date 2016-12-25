@@ -65,7 +65,8 @@
     "liquid-fire": "0.26.7",
     "loader.js": "^4.0.10",
     "material-design-icons": "^3.0.1",
-    "normalize.css": "^5.0.0"
+    "normalize.css": "^5.0.0",
+    "splicon": "^0.0.7"
   },
   "engines": {
     "node": ">= 0.12.0"
