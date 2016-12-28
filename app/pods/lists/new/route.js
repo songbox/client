@@ -1,12 +1,18 @@
 import Ember from 'ember';
 
-export default Ember.Route.extend({
+import ModelChangeset from 'songbox/mixins/routes/model-changeset';
+import ListValidation from 'songbox/validations/list';
+
+export default Ember.Route.extend(ModelChangeset, {
+  validator: ListValidation,
+
   model() {
-    return this.store.createRecord('list');
+    return {};
   },
 
   actions: {
-    save(list) {
+    save(changeset) {
+      const list = this.store.createRecord('list', changeset.get('change'));
       list.save().then(() => {
         this.transitionTo('lists');
       });

@@ -2,12 +2,12 @@
   onsubmit=attrs.onSave
   title="Add new list"
   buttonText="Save"
-  buttonDisabled=list.validations.messages.length}}
+  buttonDisabled=changeset.isInvalid}}
 
   <div class="row">
     {{x-input
-      value=list.name
-      errors=(v-get list "name" "messages")
+      value=changeset.name
+      errors=changeset.error.name.validation
       classNames="col s12"
       type="text"
       label="Title"}}

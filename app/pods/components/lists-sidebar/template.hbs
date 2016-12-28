@@ -9,7 +9,7 @@
 </div>
 
 <ul>
-  {{#each (sort-by "name" (filter-by "isNew" false lists)) as |list|}}
+  {{#each (sort-by "name" lists) as |list|}}
     <li>
       {{#link-to 'list' list.id}}
         {{list.name}}
