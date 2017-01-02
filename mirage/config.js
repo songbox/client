@@ -1,6 +1,9 @@
 import ENV from '../config/environment';
 
 export default function() {
+  this.post('https://sentry.io/**', function () {
+  });
+
   this.urlPrefix = ENV.api.host;
   this.namespace = ENV.api.namespace;
 
@@ -12,9 +15,12 @@ export default function() {
 
   this.get('/songs');
   this.get('/songs/:id');
+  this.patch('/songs/:id');
   this.post('/songs');
 
   this.get('/lists');
+  this.get('/lists/:id');
+  this.post('/lists');
 
   this.get('/rooms/:id');
 
