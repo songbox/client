@@ -1,9 +1,14 @@
 import Ember from 'ember';
 
-export default Ember.Route.extend({
+import ModelChangeset from 'songbox/mixins/routes/model-changeset';
+import SongValidation from 'songbox/validations/song';
+
+export default Ember.Route.extend(ModelChangeset, {
+  validator: SongValidation,
+
   actions: {
-    save(song) {
-      song.save().then(() => {
+    save(changeset) {
+      changeset.save().then((song) => {
         this.transitionTo('song', song);
       });
     }

@@ -1,61 +1,15 @@
-{{#x-card
-  onsubmit=attrs.onSave
-  title="Add new song"
-  buttonText="Save"
-  buttonDisabled=song.validations.messages.length}}
+{{#form-for changeset as |f|}}
+  {{f.text-field "title"}}
+  {{f.text-field "author"}}
 
-  <div class="row">
-    {{x-input
-      value=song.title
-      errors=(v-get song "title" "messages")
-      classNames="col s12"
-      type="text"
-      label="Title"}}
-  </div>
-  <div class="row">
-    {{x-input
-      value=song.author
-      errors=(v-get song "author" "messages")
-      classNames="col s12"
-      type="text"
-      label="Author"}}
-  </div>
-  <div class="row">
-    {{x-input
-      value=song.key
-      errors=(v-get song "key" "messages")
-      classNames="col s4"
-      type="text"
-      label="Key"}}
-    {{x-input
-      value=song.tempo
-      errors=(v-get song "tempo" "messages")
-      classNames="col s4"
-      type="text"
-      label="Tempo"}}
-    {{x-input
-      value=song.time
-      errors=(v-get song "time" "messages")
-      classNames="col s4"
-      type="text"
-      label="Time"}}
-  </div>
-  <div class="row">
-    {{x-input
-      value=song.license
-      errors=(v-get song "license" "messages")
-      classNames="col s8"
-      type="text"
-      label="License"}}
-    {{x-input
-      value=song.ccli
-      errors=(v-get song "ccli" "messages")
-      classNames="col s4"
-      type="text"
-      label="CCLI"}}
-  </div>
-  <div class="row">
-    {{textarea value=song.text}}
-  </div>
-{{/x-card}}
+  {{f.text-field "key"}}
+  {{f.text-field "tempo"}}
+  {{f.text-field "time"}}
 
+  {{f.text-field "license"}}
+  {{f.text-field "ccli"}}
+
+  {{f.textarea-field "text"}}
+
+  {{f.submit "Save" disabled=(or changeset.isPristine changeset.isInvalid) submit=onSave}}
+{{/form-for}}
