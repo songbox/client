@@ -6,10 +6,11 @@ import ENV from '../config/environment';
 const {
   assert,
   inject: { service },
-  RSVP
+  RSVP,
+  Service
 } = Ember;
 
-export default PhoenixSocket.extend({
+const PhoenixSocketService = PhoenixSocket.extend({
   session: service(),
   flashMessages: service(),
 
@@ -58,3 +59,27 @@ export default PhoenixSocket.extend({
   }
 
 });
+
+// DummySocketService used while dev with `ember-cli-mirage` or while testing.
+// (better to inject somewhere?)
+const DummySocketService = Service.extend({
+  connectUser() {
+    return new RSVP.resolve({
+    });
+  },
+  joinChannel(name, params) {
+    return new RSVP.resolve({
+      push() {
+      }
+    });
+  }
+});
+
+let SocketService;
+if (ENV['ember-cli-mirage'].enabled || ENV.environment === 'test') {
+  SocketService = DummySocketService;
+} else {
+  SocketService = PhoenixSocketService;
+}
+
+export default SocketService;
