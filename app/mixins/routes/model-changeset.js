@@ -10,24 +10,6 @@ export default Ember.Mixin.create({
     const validator = this.validator;
     const changeset = new Changeset(model, lookupValidator(validator), validator);
     controller.set('changeset', changeset);
-  },
-
-  actions: {
-    willTransition(transition) {
-      this._super(...arguments);
-
-      const changeset = this.get('controller.changeset');
-
-      if (changeset.get('isPristine')) {
-        return true;
-      }
-
-      const shouldDiscard = window.confirm('Do you want to discard your changes?');
-
-      if (! shouldDiscard) {
-        return transition.abort();
-      }
-    }
   }
 
 });
