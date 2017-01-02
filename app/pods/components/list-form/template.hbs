@@ -1,16 +1,4 @@
-{{#x-card
-  onsubmit=attrs.onSave
-  title="Add new list"
-  buttonText="Save"
-  buttonDisabled=changeset.isInvalid}}
-
-  <div class="row">
-    {{x-input
-      value=changeset.name
-      errors=changeset.error.name.validation
-      classNames="col s12"
-      type="text"
-      label="Title"}}
-  </div>
-{{/x-card}}
-
+{{#form-for changeset as |f|}}
+  {{f.text-field "name"}}
+  {{f.submit "Save" disabled=(or changeset.isPristine changeset.isInvalid) submit=onSave}}
+{{/form-for}}
