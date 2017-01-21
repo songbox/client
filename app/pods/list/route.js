@@ -1,6 +1,22 @@
 import Ember from 'ember';
 
+const {
+  inject: { service }
+} = Ember;
+
 export default Ember.Route.extend({
+  flashMessages: service(),
+
+  model(params) {
+    return this.store.find('list', params.list_id).catch((/*err*/) => {
+      this.get('flashMessages').warning(`Could not retrieve List with ID ${params.list_id}`);
+    });
+  },
+  afterModel(model) {
+    if (! model) {
+      this.transitionTo('lists');
+    }
+  },
   actions: {
     reorder(itemModels, draggedModel) {
       const currentItem = this.modelFor('list.item');
