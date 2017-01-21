@@ -7,7 +7,9 @@ export default Ember.Route.extend(ModelChangeset, {
   validator: ListValidation,
 
   model() {
-    return {};
+    return {
+      modelName: 'list' // used in ember-form-for
+    };
   },
 
   actions: {

@@ -7,7 +7,9 @@ export default Ember.Route.extend(ModelChangeset, {
   validator: SongValidation,
 
   model() {
-    return {};
+    return {
+      modelName: 'song' // used in ember-form-for
+    };
   },
 
   actions: {

@@ -1,4 +1,18 @@
 export default {
+  // models
+  "song": {
+    "title": "Title",
+    "author": "Author",
+    "key": "Key",
+    "tempo": "Tempo",
+    "time": "Time",
+    "license": "License",
+    "ccli": "CCLI",
+    "text": "Text"
+  },
+  "list": {
+    "name": "Name"
+  },
   // routes
   "login": {
     "button": "Login",
@@ -23,6 +37,9 @@ export default {
   },
   "song.index": {
     "link-edit": "Edit"
+  },
+  "song.edit": {
+    "header": "Edit Song \"{{title}}\""
   },
   "lists": {
     "header": "Lists"
