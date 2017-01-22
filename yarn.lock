@@ -2023,7 +2023,7 @@ ember-cli-broccoli-sane-watcher@^2.0.3:
     rsvp "^3.0.18"
     sane "^1.1.1"
 
-ember-cli-code-coverage@^0.3.8:
+ember-cli-code-coverage@^0.3.11:
   version "0.3.11"
   resolved "https://registry.yarnpkg.com/ember-cli-code-coverage/-/ember-cli-code-coverage-0.3.11.tgz#9012e14ec5d6ef27d7c6b89d4c8c22b5a49709be"
   dependencies:
@@ -6012,11 +6012,11 @@ qs@2.2.4:
   version "2.2.4"
   resolved "https://registry.yarnpkg.com/qs/-/qs-2.2.4.tgz#2e9fbcd34b540e3421c924ecd01e90aa975319c8"
 
-qs@6.2.0, qs@^6.2.0:
+qs@6.2.0, qs@^6.2.0, qs@~6.2.0:
   version "6.2.0"
   resolved "https://registry.yarnpkg.com/qs/-/qs-6.2.0.tgz#3b7848c03c2dece69a9522b0fae8c4126d745f3b"
 
-qs@6.2.1, qs@~6.2.0:
+qs@6.2.1:
   version "6.2.1"
   resolved "https://registry.yarnpkg.com/qs/-/qs-6.2.1.tgz#ce03c5ff0935bc1d9d69a9f14cbd18e568d67625"
 
