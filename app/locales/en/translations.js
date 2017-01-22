@@ -13,8 +13,12 @@ export default {
   "list": {
     "name": "Name"
   },
+  "user": {
+    "email": "Email",
+    "password": "Password"
+  },
   // routes
-  "login": {
+  "auth.login": {
     "button": "Login",
     "flash-200": "Successfully logged in!",
     "flash-401": "There was a problem with your username or password, please try again",

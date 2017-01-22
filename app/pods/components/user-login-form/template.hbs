@@ -1,0 +1,6 @@
+{{#form-for changeset as |f|}}
+  {{f.email-field "email"}}
+  {{f.password-field "password"}}
+  {{f.submit (t 'auth.login.button') submit=onSubmit}}
+{{/form-for}}
+
