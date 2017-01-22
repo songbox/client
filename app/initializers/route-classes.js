@@ -11,14 +11,12 @@ export function initialize(/* container, application */) {
         return;
       }
 
-      if (typeof FastBoot !== 'undefined') {
-      } else {
+      if (typeof FastBoot === 'undefined') {
         Ember.$('body').addClass(cssClass);
       }
     },
     deactivate() {
-      if (typeof FastBoot !== 'undefined') {
-      } else {
+      if (typeof FastBoot === 'undefined') {
         Ember.$('body').removeClass(this.toCssClass());
       }
     },

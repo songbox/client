@@ -67,7 +67,7 @@ const DummySocketService = Service.extend({
     return new RSVP.resolve({
     });
   },
-  joinChannel(name, params) {
+  joinChannel(/*name, params*/) {
     return new RSVP.resolve({
       push() {
       }
