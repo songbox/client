@@ -9,13 +9,15 @@ module.exports = function(deployTarget) {
       app: 'songbox',
       key: process.env.PAGEFRONT_KEY
     },
+    'revision-data': {
+      type: 'git-commit'
+    },
     // error monitoring
     sentry: {
-      publicUrl: 'https://app.songbox.co',
       sentryUrl: 'https://sentry.io',
       sentryOrganizationSlug: 'songbox',
       sentryProjectSlug: 'app',
-      sentryApiKey: process.env.SENTRY_KEY,
+      sentryApiKey: process.env.SENTRY_KEY
     }
   };
 
@@ -26,11 +28,13 @@ module.exports = function(deployTarget) {
 
   if (deployTarget === 'staging') {
     ENV.build.environment = 'production';
+    ENV.sentry.publicUrl = 'https://beta.songbox.co';
     // configure other plugins for staging deploy target here
   }
 
   if (deployTarget === 'production') {
     ENV.build.environment = 'production';
+    ENV.sentry.publicUrl = 'https://app.songbox.co';
     // configure other plugins for production deploy target here
   }
 
