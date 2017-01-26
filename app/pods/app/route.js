@@ -30,13 +30,10 @@ export default Ember.Route.extend(AuthenticatedRouteMixin, {
   // copied from 'AuthenticatedRouteMixin'
   afterModel(model, transition) {
     if (!this.get('session.isAuthenticated')) {
-      let authenticationRoute = this.get('authenticationRoute');
-
       if (!this.get('_isFastBoot')) {
-        transition.abort();
         this.set('session.attemptedTransition', transition);
       }
-
+      let authenticationRoute = this.get('authenticationRoute');
       return this.transitionTo(authenticationRoute);
     } else {
       return this._super(...arguments);
