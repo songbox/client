@@ -22,7 +22,25 @@ export default Ember.Route.extend(AuthenticatedRouteMixin, {
       const channelName = `room:${user.get('room.uid')}`;
       const channel = this.get('pubsub').joinChannel(channelName);
       return RSVP.hash({ user, channel });
+    }).catch((/*err*/) => {
+      return this.get('session').invalidate();
     });
+  },
+
+  // copied from 'AuthenticatedRouteMixin'
+  afterModel(model, transition) {
+    if (!this.get('session.isAuthenticated')) {
+      let authenticationRoute = this.get('authenticationRoute');
+
+      if (!this.get('_isFastBoot')) {
+        transition.abort();
+        this.set('session.attemptedTransition', transition);
+      }
+
+      return this.transitionTo(authenticationRoute);
+    } else {
+      return this._super(...arguments);
+    }
   },
 
   actions: {
