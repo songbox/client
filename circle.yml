@@ -8,9 +8,9 @@ dependencies:
   pre:
     - npm config set spin false
   override:
-    - npm install -g bower yarn
-    - yarn install
+    - npm install -g bower
     - bower install
+    - yarn install
     - npm rebuild node-sass
   cache_directories:
     - "bower_components"
