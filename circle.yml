@@ -9,6 +9,7 @@ dependencies:
     - npm install -g bower yarn
     - yarn install
     - bower install
+    - npm rebuild node-sass
   cache_directories:
     - "bower_components"
 
