@@ -1,6 +1,8 @@
 machine:
   node:
     version: 6.9.1
+  environment:
+    PATH: "${PATH}:${HOME}/${CIRCLE_PROJECT_REPONAME}/node_modules/.bin"
 
 dependencies:
   pre:
@@ -15,7 +17,7 @@ dependencies:
 
 test:
   override:
-    - COVERAGE=true ./node_modules/.bin/ember test
+    - COVERAGE=true ember test
   post:
     - cp -R coverage* $CIRCLE_TEST_REPORTS
 
@@ -23,12 +25,12 @@ deployment:
   development:
     branch: develop
     commands:
-      - ./node_modules/.bin/ember deploy development
+      - ember deploy development
   staging:
     branch: master
     commands:
-      - ./node_modules/.bin/ember deploy staging
+      - ember deploy staging
   production:
     branch: production
     commands:
-      - ./node_modules/.bin/ember deploy production
+      - ember deploy production
