@@ -44,6 +44,10 @@ module.exports = function(environment) {
     extendedTimeout: 375
   };
 
+  ENV['ember-form-for'] = {
+    errorsPath: 'error.PROPERTY_NAME.validation',
+  };
+
   ENV['ember-cli-mirage'] = {
   };
 

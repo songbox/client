@@ -2,6 +2,7 @@ import {
   create,
   clickable,
   fillable,
+  isVisible,
   visitable
 } from 'ember-cli-page-object';
 
@@ -10,6 +11,7 @@ export default create({
   form: {
     scope: 'main form',
     title: fillable('[name="song[title]"]'),
+    titleHasError: isVisible('.form-field--has-errors [name="song[title]"]'),
     text: fillable('[name="song[text]"]'),
     save: clickable('button')
   }

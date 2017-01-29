@@ -8,7 +8,7 @@ import page from 'songbox/tests/pages/song-edit';
 
 moduleForAcceptance('Acceptance | song edit');
 
-test('editing a song', function(assert) {
+test('editing a song', function (assert) {
   assert.expect(3);
 
   let { song } = seed();
@@ -26,5 +26,21 @@ test('editing a song', function(assert) {
     assert.equal(song.title, 'New Song', 'changed title');
     assert.equal(song.text, 'Song Text', 'changed text');
     assert.equal(currentURL(), `/a/songs/${song.id}`, 'redirects to song');
+  });
+});
+
+test('shows validation error', function (assert) {
+  assert.expect(1);
+
+  let { song } = seed();
+  authenticateSession(this.application);
+
+  page
+    .visit({ id: song.id })
+    .form
+      .title('');
+
+  andThen(() => {
+    assert.ok(page.form.titleHasError, 'shows error for title');
   });
 });
