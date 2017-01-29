@@ -21,9 +21,7 @@ export default Route.extend(ModelChangeset, {
   },
 
   actions: {
-    doLogin() {
-      const user = this.get('controller.changeset');
-
+    doLogin(user) {
       this.get('session').authenticate(
         'authenticator:songbox',
         user.get('email'),
