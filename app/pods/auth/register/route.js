@@ -1,20 +1,27 @@
 import Ember from 'ember';
+import ModelChangeset from 'songbox/mixins/routes/model-changeset';
+import UserValidation from 'songbox/validations/user';
 
 const {
+  Route,
   inject: { service }
 } = Ember;
 
-export default Ember.Route.extend({
+export default Route.extend(ModelChangeset, {
+  validator: UserValidation,
+
+  i18n: service(),
+  session: service(),
   flashMessages: service(),
 
   model() {
-    return this.store.createRecord('user');
+    return {
+      modelName: 'user'
+    };
   },
 
   actions: {
-    doRegister() {
-      const user = this.get('controller.model');
-
+    doRegister(user) {
       user.save().then(() => {
         this.transitionTo('auth.login');
         this.get('flashMessages').success('Registered! Please login now');

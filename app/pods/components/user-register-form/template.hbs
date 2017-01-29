@@ -1,0 +1,7 @@
+{{#form-for changeset submit=onSubmit as |f|}}
+  {{f.email-field "email"}}
+  {{f.password-field "password"}}
+  {{f.password-field "passwordConfirmation"}}
+  {{f.submit (t 'auth.register.button')}}
+{{/form-for}}
+

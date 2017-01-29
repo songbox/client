@@ -15,7 +15,8 @@ export default {
   },
   "user": {
     "email": "Email",
-    "password": "Password"
+    "password": "Password",
+    "password-confirmation": "Confirmation"
   },
   // routes
   "auth.login": {
@@ -23,6 +24,9 @@ export default {
     "flash-200": "Successfully logged in!",
     "flash-401": "There was a problem with your username or password, please try again",
     "flash-500": "Server Error"
+  },
+  "auth.register": {
+    "button": "Register"
   },
   "app": {
     "link-songs": "Songs",
