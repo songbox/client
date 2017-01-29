@@ -1,6 +1,6 @@
 import Ember from 'ember';
 import ModelChangeset from 'songbox/mixins/routes/model-changeset';
-import UserValidation from 'songbox/validations/user-login';
+import UserValidation from 'songbox/validations/user';
 
 const {
   Route,
