@@ -6,8 +6,8 @@ machine:
 
 dependencies:
   override:
-    - bower install
     - yarn install
+    - bower install
     - npm rebuild node-sass
   cache_directories:
     - "~/.cache/yarn"
