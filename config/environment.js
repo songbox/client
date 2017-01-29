@@ -46,6 +46,15 @@ module.exports = function(environment) {
 
   ENV['ember-form-for'] = {
     errorsPath: 'error.PROPERTY_NAME.validation',
+    buttonClasses: ['button', 'form-button'],
+//  fieldClasses: ['form-field'],
+//  fieldErrorClass: 'form-field--has-errors',
+//  errorClasses: ['form-field--errors'],
+//  hintClasses: ['form-field--hint'],
+//  inputClasses: ['form-field--control'],
+//  labelClasses: ['form-field--label'],
+//  resetClasses: ['form-button--reset'],
+    submitClasses: ['button', 'form-button--submit']
   };
 
   ENV['ember-cli-mirage'] = {
