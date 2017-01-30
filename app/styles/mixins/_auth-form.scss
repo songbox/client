@@ -1,0 +1,12 @@
+
+@mixin auth-form {
+  display: flex;
+  width: 100vw;
+  height: 100vh;
+
+  form {
+    margin: auto;
+    margin-top: 25%;
+    text-align: center;
+  }
+}

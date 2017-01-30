@@ -5,8 +5,5 @@ const {
 } = Ember;
 
 export default Component.extend({
-  tagName: '',
-
   changeset: null
-
 });
