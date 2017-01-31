@@ -9,5 +9,6 @@
   color: color("grey", "lighten-5");
   background-color: color("green", "lighten-1");
   border: 1px solid color("green", "darken-1");
+  border-radius: $global-border-radius;
   text-transform: uppercase;
 }

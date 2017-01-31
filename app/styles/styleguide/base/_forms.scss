@@ -1,4 +1,8 @@
 
+form {
+  border-radius: $global-border-radius;
+}
+
 .form-field {
   margin: 10px 0;
   text-align: left;
@@ -12,7 +16,7 @@
     height: 25px;
     width: 150px;
     border: solid 1px color('grey');
-    border-radius: 3px;
+    border-radius: $global-border-radius;
   }
 }
 .form-field--has-errors {
@@ -26,5 +30,6 @@
   }
 }
 .form-button--submit {
-  margin-top: 30px;
+  margin-top: 20px;
+  margin-bottom: 5px;
 }

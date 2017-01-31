@@ -1,1 +1,3 @@
-{{user-login-form changeset=changeset onSubmit=(route-action "doLogin" changeset)}}
+{{#user-login-form changeset=changeset onSubmit=(route-action "doLogin" changeset)}}
+  {{#link-to "auth.register"}}Register{{/link-to}}
+{{/user-login-form}}
