@@ -5,9 +5,10 @@
 
   form {
     margin: auto;
-    margin-top: 25%;
+    margin-top: 20vh;
     padding: 25px;
     background-color: color("shades", "white");
+    border: solid 1px color("grey", "lighten-3");
   }
   .form-button--submit {
     width: 100%;

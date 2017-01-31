@@ -11,7 +11,11 @@ a {
   color: $text-color;
   text-decoration: none;
 
-  &:hover {
+  &:focus {
+    outline: none;
+    border-color: color("yellow", "darken-1");
+  }
+  &:focus, &:hover {
     border-bottom-width: 1px;
     border-bottom-style: solid;
   }
