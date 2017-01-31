@@ -18,7 +18,7 @@ test('login', function (assert) {
     .form
       .email('john@example.com')
       .password('mysecret')
-      .login();
+      .submit();
 
   andThen(() => {
     assert.equal(currentURL(), '/a/songs', 'redirects to songs page');
@@ -36,7 +36,7 @@ test('it shows errors without server request when form invalid', function (asser
   page
     .visit()
     .form
-      .login();
+      .submit();
 
   andThen(() => {
     assert.equal(currentURL(), '/auth/login', 'stay on login page');

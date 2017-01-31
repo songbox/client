@@ -16,6 +16,6 @@ export default create({
     emailHasError: isVisible('.form-field--has-errors [name="user[email]"]'),
     passwordHasError: isVisible('.form-field--has-errors [name="user[password]"]'),
     passwordConfirmationHasError: isVisible('.form-field--has-errors [name="user[passwordConfirmation]"]'),
-    register: clickable('button')
+    submit: clickable('button')
   }
 });

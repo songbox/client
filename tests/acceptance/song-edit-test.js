@@ -19,7 +19,7 @@ test('editing a song', function (assert) {
     .form
       .title('New Song')
       .text('Song Text')
-      .save();
+      .submit();
 
   andThen(function() {
     song = server.db.songs.find(song.id);

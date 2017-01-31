@@ -22,7 +22,7 @@ test('it shows server errors in form', function (assert) {
   page
     .visit()
     .form
-      .register();
+      .submit();
 
   andThen(() => {
     assert.equal(currentURL(), '/auth/register', 'stays on registration page');

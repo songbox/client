@@ -14,6 +14,6 @@ export default create({
     password: fillable('[name="user[password]"]'),
     emailHasError: isVisible('.form-field--has-errors [name="user[email]"]'),
     passwordHasError: isVisible('.form-field--has-errors [name="user[password]"]'),
-    login: clickable('button')
+    submit: clickable('button')
   }
 });
