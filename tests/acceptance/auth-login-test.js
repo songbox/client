@@ -6,7 +6,7 @@ import { authenticateSession } from 'songbox/tests/helpers/ember-simple-auth';
 import seed from 'songbox/tests/helpers/seed-mirage-db';
 import page from 'songbox/tests/pages/auth-login';
 
-moduleForAcceptance('Acceptance | login');
+moduleForAcceptance('Acceptance | auth login');
 
 test('login', function (assert) {
   assert.expect(1);
@@ -22,6 +22,26 @@ test('login', function (assert) {
 
   andThen(() => {
     assert.equal(currentURL(), '/a/songs', 'redirects to songs page');
+  });
+});
+
+test('it shows errors without server request when form invalid', function (assert) {
+  assert.expect(3);
+
+  seed();
+  server.post('/token', function () {
+    assert.notOk('should not post to the server');
+  });
+
+  page
+    .visit()
+    .form
+      .login();
+
+  andThen(() => {
+    assert.equal(currentURL(), '/auth/login', 'stay on login page');
+    assert.ok(page.form.emailHasError, 'shows error for email');
+    assert.ok(page.form.passwordHasError, 'shows error for password');
   });
 });
 
