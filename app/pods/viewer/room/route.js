@@ -6,6 +6,7 @@ const {
 
 export default Ember.Route.extend({
   pubsub: service(),
+  fastboot: service(),
 
   model() {
     return {
@@ -16,14 +17,16 @@ export default Ember.Route.extend({
   },
 
   setupController(controller/*, model*/) {
-    const pathElems = window.location.pathname.split('/');
-    const roomId = pathElems[pathElems.length -1];
+    if (! this.get('fastboot.isFastBoot')) {
+      const pathElems = window.location.pathname.split('/');
+      const roomId = pathElems[pathElems.length -1];
 
-    this.get('pubsub').connectViewer();
-    this.get('pubsub').joinChannel(`room:${roomId}`, { type: 'Viewer' }).then((channel) => {
-      channel.on('share', (resp) => {
-        controller.set('model', resp);
+      this.get('pubsub').connectViewer();
+      this.get('pubsub').joinChannel(`room:${roomId}`, { type: 'Viewer' }).then((channel) => {
+        channel.on('share', (resp) => {
+          controller.set('model', resp);
+        });
       });
-    });
+    }
   }
 });
