@@ -18,9 +18,12 @@ export default Ember.Route.extend(AuthenticatedRouteMixin, {
 
   model() {
     return this.get('current').load().then((user) => {
-      this.get('pubsub').connectUser();
-      const channelName = `room:${user.get('room.uid')}`;
-      const channel = this.get('pubsub').joinChannel(channelName);
+      let channel = null;
+      if (! this.get('_isFastBoot')) {
+        this.get('pubsub').connectUser();
+        const channelName = `room:${user.get('room.uid')}`;
+        channel = this.get('pubsub').joinChannel(channelName);
+      }
       return RSVP.hash({ user, channel });
     }).catch((/*err*/) => {
       return this.get('session').invalidate();
@@ -29,8 +32,8 @@ export default Ember.Route.extend(AuthenticatedRouteMixin, {
 
   // copied from 'AuthenticatedRouteMixin'
   afterModel(model, transition) {
-    if (!this.get('session.isAuthenticated')) {
-      if (!this.get('_isFastBoot')) {
+    if (! this.get('session.isAuthenticated')) {
+      if (! this.get('_isFastBoot')) {
         this.set('session.attemptedTransition', transition);
       }
       let authenticationRoute = this.get('authenticationRoute');
