@@ -1,7 +1,7 @@
 import Ember from 'ember';
 
 // https://dockyard.com/blog/ember/2013/03/27/body-class-tags-in-ember
-export function initialize(/* container, application */) {
+export function initialize(/*owner*/) {
   Ember.Route.reopen({
     activate() {
       var cssClass = this.toCssClass();
@@ -11,14 +11,10 @@ export function initialize(/* container, application */) {
         return;
       }
 
-      if (typeof FastBoot === 'undefined') {
-        Ember.$('body').addClass(cssClass);
-      }
+      Ember.$('body').addClass(cssClass);
     },
     deactivate() {
-      if (typeof FastBoot === 'undefined') {
-        Ember.$('body').removeClass(this.toCssClass());
-      }
+      Ember.$('body').removeClass(this.toCssClass());
     },
     toCssClass() {
       return this.routeName.replace(/\./g, '-').dasherize();
@@ -27,7 +23,7 @@ export function initialize(/* container, application */) {
 }
 
 export default {
-  name: 'route-classes',
+  name: 'route-classes-browser',
   initialize
 };
 
