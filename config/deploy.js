@@ -17,6 +17,7 @@ module.exports = function(deployTarget) {
       sentryUrl: 'https://sentry.io',
       sentryOrganizationSlug: 'songbox',
       sentryProjectSlug: 'app',
+      sentryApiKey: 'unused', // just here because of a bug
       sentryBearerApiKey: process.env.SENTRY_KEY
     }
   };
