@@ -10,7 +10,7 @@ module.exports = function(deployTarget) {
       key: process.env.PAGEFRONT_KEY
     },
     'revision-data': {
-      type: 'git-commit'
+      //type: 'git-commit' // does not work on Heroku
     },
     // error monitoring
     sentry: {
