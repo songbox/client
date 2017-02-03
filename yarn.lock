@@ -827,18 +827,6 @@ broccoli-funnel-reducer@^1.0.0:
   version "1.0.0"
   resolved "https://registry.yarnpkg.com/broccoli-funnel-reducer/-/broccoli-funnel-reducer-1.0.0.tgz#11365b2a785aec9b17972a36df87eef24c5cc0ea"
 
-broccoli-funnel@0.2.8:
-  version "0.2.8"
-  resolved "https://registry.yarnpkg.com/broccoli-funnel/-/broccoli-funnel-0.2.8.tgz#8a78553e9c275ed08e37d4fc2ba0a15ce604a250"
-  dependencies:
-    array-equal "^1.0.0"
-    broccoli-plugin "^1.0.0"
-    debug "^2.2.0"
-    minimatch "^2.0.1"
-    mkdirp "^0.5.0"
-    symlink-or-copy "^1.0.0"
-    walk-sync-matcher "^0.2.2"
-
 broccoli-funnel@^1.0.0, broccoli-funnel@^1.0.1, broccoli-funnel@^1.0.2, broccoli-funnel@^1.0.6, broccoli-funnel@^1.0.9:
   version "1.1.0"
   resolved "https://registry.yarnpkg.com/broccoli-funnel/-/broccoli-funnel-1.1.0.tgz#dfb91a37c902456456de4a40a1881948d65b27d9"
@@ -2072,22 +2060,21 @@ ember-cli-eslint@^3.0.2:
     rsvp "^3.2.1"
     walk-sync "^0.3.0"
 
-ember-cli-fastboot@1.0.0-beta.13:
-  version "1.0.0-beta.13"
-  resolved "https://registry.yarnpkg.com/ember-cli-fastboot/-/ember-cli-fastboot-1.0.0-beta.13.tgz#3a57541638de29f7ef967ee6135e4eef8a6aa05f"
+ember-cli-fastboot@^1.0.0-beta.14:
+  version "1.0.0-beta.14"
+  resolved "https://registry.yarnpkg.com/ember-cli-fastboot/-/ember-cli-fastboot-1.0.0-beta.14.tgz#bf1611ee16a1f4bd2e3249f666af1ff6407330f7"
   dependencies:
-    broccoli-funnel "0.2.8"
+    broccoli-funnel "^1.0.0"
     broccoli-merge-trees "^1.1.1"
     broccoli-plugin "^1.2.1"
     broccoli-stew "^1.2.0"
     compression "^1.6.2"
     core-object "^2.0.5"
     debug "^2.2.0"
-    ember-cli-babel "^5.1.5"
+    ember-cli-babel "^5.1.7"
     ember-cli-version-checker "^1.1.6"
-    ember-test-helpers "^0.5.22"
     express "^4.8.5"
-    fastboot-express-middleware "1.0.0-beta.8"
+    fastboot-express-middleware "1.0.0-rc.3"
     fastboot-filter-initializers "0.0.2"
     lodash.defaults "^4.0.1"
     lodash.uniq "^4.2.0"
@@ -2247,9 +2234,9 @@ ember-cli-preprocess-registry@^3.0.0:
     process-relative-require "^1.0.0"
     silent-error "^1.0.0"
 
-ember-cli-qunit@^3.0.1:
-  version "3.1.0"
-  resolved "https://registry.yarnpkg.com/ember-cli-qunit/-/ember-cli-qunit-3.1.0.tgz#13f74e93ec0d618fe865712221898a0c35f09606"
+ember-cli-qunit@^3.1.1:
+  version "3.1.1"
+  resolved "https://registry.yarnpkg.com/ember-cli-qunit/-/ember-cli-qunit-3.1.1.tgz#7c1ebc22982c0a735eefd84ab30769675b476d7d"
   dependencies:
     broccoli-babel-transpiler "^5.5.0"
     broccoli-funnel "^1.0.1"
@@ -2613,9 +2600,9 @@ ember-lodash@0.0.9:
     ember-cli-babel "^5.1.5"
     lodash-es "^3.10.0"
 
-ember-math-helpers@^2.0.4:
-  version "2.0.4"
-  resolved "https://registry.yarnpkg.com/ember-math-helpers/-/ember-math-helpers-2.0.4.tgz#6eca50fb37abba17662ecee1a0ed089fe57fec75"
+ember-math-helpers@^2.0.5:
+  version "2.0.5"
+  resolved "https://registry.yarnpkg.com/ember-math-helpers/-/ember-math-helpers-2.0.5.tgz#df30404f54da39053a370803b4082a78a340ebde"
   dependencies:
     ember-cli-babel "^5.1.7"
 
@@ -2701,9 +2688,9 @@ ember-runtime-enumerable-includes-polyfill@^1.0.0, ember-runtime-enumerable-incl
     ember-cli-babel "^5.1.6"
     ember-cli-version-checker "^1.1.6"
 
-ember-simple-auth@^1.2.0-beta.2:
-  version "1.2.0-beta.2"
-  resolved "https://registry.yarnpkg.com/ember-simple-auth/-/ember-simple-auth-1.2.0-beta.2.tgz#b84d9e00a417f6ac8cbb1c1df2064e0c4b1348e8"
+ember-simple-auth@^1.2.0:
+  version "1.2.0"
+  resolved "https://registry.yarnpkg.com/ember-simple-auth/-/ember-simple-auth-1.2.0.tgz#6275c1580ab17aad303d51723515f3b933fb4635"
   dependencies:
     ember-cli-babel "^5.1.7"
     ember-cli-import-polyfill "^0.2.0"
@@ -2761,12 +2748,6 @@ ember-template-lint@^0.6.0:
     exists-sync "0.0.4"
     glimmer-engine "^0.18.0"
     lodash "^4.11.1"
-
-ember-test-helpers@^0.5.22:
-  version "0.5.34"
-  resolved "https://registry.yarnpkg.com/ember-test-helpers/-/ember-test-helpers-0.5.34.tgz#c8439108d1cba1d7d838c212208a5c4061471b83"
-  dependencies:
-    klassy "^0.1.3"
 
 ember-test-helpers@^0.6.0-beta.1:
   version "0.6.0"
@@ -3321,12 +3302,13 @@ fastboot-cli@^0.1.0:
     minimist "^1.2.0"
     rsvp "^3.2.1"
 
-fastboot-express-middleware@1.0.0-beta.8:
-  version "1.0.0-beta.8"
-  resolved "https://registry.yarnpkg.com/fastboot-express-middleware/-/fastboot-express-middleware-1.0.0-beta.8.tgz#d1e5262dc23a0f49f8393a0f46e9ecd75c604f3f"
+fastboot-express-middleware@1.0.0-rc.3:
+  version "1.0.0-rc.3"
+  resolved "https://registry.yarnpkg.com/fastboot-express-middleware/-/fastboot-express-middleware-1.0.0-rc.3.tgz#9b98076a815e200d071f256c95c602197dec5134"
   dependencies:
+    broccoli-module-alchemist-install "^0.1.1"
     chalk "^1.1.3"
-    fastboot "^1.0.0-beta.5"
+    fastboot "^1.0.0-rc.0"
 
 fastboot-express-middleware@^1.0.0-rc.4:
   version "1.0.0-rc.6"
@@ -3342,7 +3324,7 @@ fastboot-filter-initializers@0.0.2:
   dependencies:
     broccoli-funnel "^1.0.1"
 
-fastboot@^1.0.0-beta.5, fastboot@^1.0.0-rc.0:
+fastboot@^1.0.0-rc.0:
   version "1.0.0-rc.2"
   resolved "https://registry.yarnpkg.com/fastboot/-/fastboot-1.0.0-rc.2.tgz#759951a6862cbb22cf6641455ab527c40106aaa0"
   dependencies:
@@ -4687,10 +4669,6 @@ kind-of@^3.0.2:
   dependencies:
     is-buffer "^1.0.2"
 
-klassy@^0.1.3:
-  version "0.1.3"
-  resolved "https://registry.yarnpkg.com/klassy/-/klassy-0.1.3.tgz#c31d5756d583197d75f582b6e692872be497067f"
-
 klaw@^1.0.0:
   version "1.3.1"
   resolved "https://registry.yarnpkg.com/klaw/-/klaw-1.3.1.tgz#4088433b46b3b1ba259d78785d8e96f73ba02439"
@@ -5278,7 +5256,7 @@ minimatch@0.3, minimatch@0.x:
   dependencies:
     brace-expansion "^1.0.0"
 
-minimatch@^2.0.1, minimatch@^2.0.10, minimatch@^2.0.3, minimatch@^2.0.8:
+minimatch@^2.0.1, minimatch@^2.0.3, minimatch@^2.0.8:
   version "2.0.10"
   resolved "https://registry.yarnpkg.com/minimatch/-/minimatch-2.0.10.tgz#8d087c39c6b38c001b97fca7ce6d0e1e80afbac7"
   dependencies:
@@ -7484,12 +7462,6 @@ vow-queue@^0.4.1:
 vow@^0.4.7, vow@~0.4.0, vow@~0.4.8:
   version "0.4.13"
   resolved "https://registry.yarnpkg.com/vow/-/vow-0.4.13.tgz#e7c14f1bd9c8be0e7359a4597fe2d1ef6d1a7e88"
-
-walk-sync-matcher@^0.2.2:
-  version "0.2.2"
-  resolved "https://registry.yarnpkg.com/walk-sync-matcher/-/walk-sync-matcher-0.2.2.tgz#60baf44875b2d9a660876373ed7b8ece7332899f"
-  dependencies:
-    minimatch "^2.0.10"
 
 walk-sync@^0.1.3:
   version "0.1.3"
