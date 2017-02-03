@@ -33,7 +33,7 @@ module.exports = function(environment) {
   };
 
   ENV['fastboot'] = {
-    hostWhitelist: ['songbox.co', /^localhost:\d+$/]
+    hostWhitelist: ['songbox.co', 'songbox-app.herokuapp.com/', /^localhost:\d+$/]
   };
 
   ENV['ember-simple-auth'] = {
