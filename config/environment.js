@@ -104,8 +104,8 @@ module.exports = function(environment) {
   }
 
   if (environment === 'production') {
-    ENV.api.host = 'https://songbox-api.herokuapp.com';
-    ENV.ws.host = 'wss://songbox-api.herokuapp.com';
+    ENV.api.host = 'https://api.songbox.co';
+    ENV.ws.host = 'wss://api.songbox.co';
   }
 
   return ENV;
