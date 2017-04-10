@@ -12,3 +12,8 @@
 @import "routes/song-index";
 @import "routes/viewer-room";
 
+.ember-load-indicator {
+  @include typography-style(headline);
+  margin-top: 30vh;
+  text-align: center;
+}
