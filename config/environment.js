@@ -69,6 +69,22 @@ module.exports = function(environment) {
     //touchActionProperties: 'touch-action: manipulation; -ms-touch-action: manipulation; cursor: pointer;'
   };
 
+  ENV['metricsAdapters'] = [
+    {
+      name: 'GoogleAnalytics',
+      environments: ['development', 'production'],
+      config: {
+        id: 'UA-97096782-1',
+        // Use `analytics_debug.js` in development
+        debug: environment === 'development',
+        // Use verbose tracing of GA events
+        trace: environment === 'development',
+        // Ensure development env hits aren't sent to GA
+        sendHitTask: environment !== 'development'
+      }
+    }
+  ];
+
   ENV['sentry'] = {
     // disable for now
     //cdn: 'https://cdn.ravenjs.com/3.9.2/raven.min.js',
