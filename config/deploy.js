@@ -33,6 +33,13 @@ module.exports = function(deployTarget) {
     region: 'eu-west-1'
   };
 
+  ENV['cloudfront'] = {
+    accessKeyId: process.env.AWS_ACCESS_KEY_ID,
+    secretAccessKey: process.env.AWS_SECRET_ACCESS_KEY,
+    distribution: process.env.AWS_CLOUDFRONT_DISTRIBUTION,
+    objectPaths: ['/', '/index.html']
+  };
+
   if (deployTarget === 'development') {
     ENV.build.environment = 'development';
   }
