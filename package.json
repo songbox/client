@@ -11,11 +11,10 @@
   "repository": "",
   "scripts": {
     "build": "ember build",
-    "start": "ember fastboot --serve-assets",
+    "start": "ember serve",
+    "fastboot": "ember fastboot --serve-assets",
     "test": "ember test",
-    "heroku-postbuild": "npm rebuild node-sass",
-    "now-build": "bower install; ember build --environment=production",
-    "now-start": "PORT=8000 node server.js"
+    "heroku-postbuild": "npm rebuild node-sass"
   },
   "devDependencies": {
     "bower": "^1.8.0",
