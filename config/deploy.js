@@ -1,42 +1,52 @@
-/* jshint node: true */
+/* eslint-env node */
 
 module.exports = function(deployTarget) {
   var ENV = {
-    build: {
-    },
-    // deployment
-    pagefront: {
-      app: 'songbox',
-      key: process.env.PAGEFRONT_KEY
-    },
-    'revision-data': {
-      //type: 'git-commit' // does not work on Heroku
-    },
-    // error monitoring
-    sentry: {
-      sentryUrl: 'https://sentry.io',
-      sentryOrganizationSlug: 'songbox',
-      sentryProjectSlug: 'app',
-      sentryApiKey: 'unused', // just here because of a bug
-      sentryBearerApiKey: process.env.SENTRY_KEY
-    }
+  };
+
+  ENV['build'] = {
+  };
+
+  ENV['revision-data'] = {
+    type: 'version-commit'
+  };
+
+  ENV['sentry'] = {
+    sentryUrl: 'https://sentry.io',
+    sentryOrganizationSlug: 'songbox',
+    sentryProjectSlug: 'app',
+    sentryApiKey: 'unused', // just here because of a bug
+    sentryBearerApiKey: process.env.SENTRY_KEY
+  };
+
+  ENV['s3'] = {
+    accessKeyId: process.env.AWS_ACCESS_KEY_ID,
+    secretAccessKey: process.env.AWS_SECRET_ACCESS_KEY,
+    bucket: 'cdn.songbox.co',
+    region: 'eu-west-1',
+    prefix: deployTarget
+  };
+
+  ENV['s3-index'] = {
+    accessKeyId: process.env.AWS_ACCESS_KEY_ID,
+    secretAccessKey: process.env.AWS_SECRET_ACCESS_KEY,
+    region: 'eu-west-1'
   };
 
   if (deployTarget === 'development') {
     ENV.build.environment = 'development';
-    // configure other plugins for development deploy target here
   }
 
   if (deployTarget === 'staging') {
     ENV.build.environment = 'production';
     ENV.sentry.publicUrl = 'https://beta.songbox.co';
-    // configure other plugins for staging deploy target here
+    ENV['s3-index'].bucket = 'beta.songbox.co';
   }
 
   if (deployTarget === 'production') {
     ENV.build.environment = 'production';
     ENV.sentry.publicUrl = 'https://app.songbox.co';
-    // configure other plugins for production deploy target here
+    ENV['s3-index'].bucket = 'app.songbox.co';
   }
 
   // Note: if you need to build some configuration asynchronously, you can return

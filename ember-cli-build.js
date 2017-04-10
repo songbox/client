@@ -8,6 +8,9 @@ module.exports = function(defaults) {
     'ember-cli-babel': {
       includePolyfill: true
     },
+    fingerprint: {
+      prepend: process.env.CDN_HOST
+    },
     sassOptions: {
       includePaths: [
       ]
