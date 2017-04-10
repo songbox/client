@@ -39,6 +39,10 @@ module.exports = function(environment) {
   ENV['ember-simple-auth'] = {
   };
 
+  ENV['ember-load'] = {
+    loadingIndicatorClass: 'ember-load-indicator'
+  };
+
   ENV['flashMessageDefaults'] = {
     timeout: 3000,
     extendedTimeout: 375

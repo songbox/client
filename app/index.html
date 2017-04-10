@@ -17,6 +17,17 @@
   <body>
     {{content-for "body"}}
 
+    <noscript>
+      <style>
+        noscript h1 { padding-top: 30vh; font-size: 1.5rem; font-weight: 400; text-align: center; }
+        .ember-load-indicator { display: none; }
+      </style>
+      <h1>This app needs Javascript to be enabled.</h1>
+    </noscript>
+    <div class="ember-load-indicator">
+      Loading Songbox...
+    </div>
+
     <script src="https://cdn.ravenjs.com/3.9.2/ember/raven.min.js" crossorigin="anonymous"></script>
     <script>Raven.config('https://f37ac4fa9e884542be19f40d1f0c5231@sentry.io/104448').install();</script>
 
