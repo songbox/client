@@ -30,6 +30,14 @@ form {
     }
   }
 }
+
+.form-field.textarea-field {
+  .form-field--label {
+    padding-top: 5px; // a bit offset from top
+    vertical-align: top;
+  }
+}
+
 .form-field--has-errors {
   .form-field {
     &--control {
@@ -41,7 +49,14 @@ form {
     }
   }
 }
-.form-button--submit {
+
+.form-button, .form-button--submit {
   margin-top: 20px;
   margin-bottom: 5px;
+}
+.form-button {
+  @include button(color("grey", "darken-1"), color("grey", "lighten-4"), color("grey", "lighten-2"));
+}
+.form-button--submit {
+  @include button(color("grey", "lighten-5"), color("green", "lighten-1"), color("green", "darken-1"));
 }
