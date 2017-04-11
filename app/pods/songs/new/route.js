@@ -18,6 +18,9 @@ export default Ember.Route.extend(ModelChangeset, {
       song.save().then(() => {
         this.transitionTo('songs');
       });
+    },
+    list() {
+      this.transitionTo('songs');
     }
   }
 });

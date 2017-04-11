@@ -12,4 +12,5 @@
   {{f.textarea-field "text"}}
 
   {{f.submit "Save" disabled=(or changeset.isPristine changeset.isInvalid)}}
+  {{f.button "Cancel" classNames="" click=onCancel}}
 {{/form-for}}

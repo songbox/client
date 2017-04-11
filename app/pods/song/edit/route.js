@@ -12,6 +12,9 @@ export default Ember.Route.extend(ModelChangeset, DirtyChangeset, {
       changeset.save().then((song) => {
         this.transitionTo('song', song);
       });
+    },
+    show(song) {
+      this.transitionTo('song', song);
     }
   }
 });
