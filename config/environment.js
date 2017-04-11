@@ -50,7 +50,7 @@ module.exports = function(environment) {
 
   ENV['ember-form-for'] = {
     errorsPath: 'error.PROPERTY_NAME.validation',
-    buttonClasses: ['form-button'],
+//  buttonClasses: ['form-button'],
 //  fieldClasses: ['form-field'],
 //  fieldErrorClass: 'form-field--has-errors',
 //  errorClasses: ['form-field--errors'],
@@ -58,7 +58,7 @@ module.exports = function(environment) {
 //  inputClasses: ['form-field--control'],
 //  labelClasses: ['form-field--label'],
 //  resetClasses: ['form-button--reset'],
-    submitClasses: ['form-button--submit']
+//  submitClasses: ['form-button--submit']
   };
 
   ENV['ember-cli-mirage'] = {
