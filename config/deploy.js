@@ -36,7 +36,6 @@ module.exports = function(deployTarget) {
   ENV['cloudfront'] = {
     accessKeyId: process.env.AWS_ACCESS_KEY_ID,
     secretAccessKey: process.env.AWS_SECRET_ACCESS_KEY,
-    distribution: process.env.AWS_CLOUDFRONT_DISTRIBUTION,
     objectPaths: ['/', '/index.html']
   };
 
@@ -56,12 +55,14 @@ module.exports = function(deployTarget) {
     ENV.build.environment = 'production';
     ENV.sentry.publicUrl = 'https://beta.songbox.co';
     ENV['s3-index'].bucket = 'beta.songbox.co';
+    ENV.cloudfront.distribution = 'E12U3HZRAX3PY'
   }
 
   if (deployTarget === 'production') {
     ENV.build.environment = 'production';
     ENV.sentry.publicUrl = 'https://app.songbox.co';
     ENV['s3-index'].bucket = 'app.songbox.co';
+    ENV.cloudfront.distribution = 'E3MXXT7QS53WJA';
   }
 
   // Note: if you need to build some configuration asynchronously, you can return
