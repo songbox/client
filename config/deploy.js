@@ -40,6 +40,14 @@ module.exports = function(deployTarget) {
     objectPaths: ['/', '/index.html']
   };
 
+  ENV['html-manifest'] = {
+    filename: 'manifest.appcache',
+    prependPath: '',
+    excludePaths: ['index.html'],
+    includePaths: ['/'],
+    network: ['*']
+  };
+
   if (deployTarget === 'development') {
     ENV.build.environment = 'development';
   }
