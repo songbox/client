@@ -32,6 +32,10 @@ module.exports = function(environment) {
     host: 'ws://localhost:4000'
   };
 
+  ENV['i18n'] = {
+    defaultLocale: 'en'
+  };
+
   ENV['fastboot'] = {
     hostWhitelist: ['app.songbox.co', 'songbox-app.herokuapp.com', /^localhost:\d+$/]
   };
