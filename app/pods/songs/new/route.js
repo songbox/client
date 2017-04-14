@@ -8,15 +8,20 @@ export default Ember.Route.extend(ModelChangeset, {
 
   model() {
     return {
-      modelName: 'song' // used in ember-form-for
+      modelName: 'song', // used in ember-form-for
+      format: 'opensong'
     };
   },
 
   actions: {
     save(changeset) {
-      const song = this.store.createRecord('song', changeset.get('change'));
-      song.save().then(() => {
-        this.transitionTo('songs');
+      return changeset.validate().then(() => {
+        if (changeset.get('isValid')) {
+          const song = this.store.createRecord('song', changeset.get('change'));
+          song.save().then(() => {
+            this.transitionTo('songs');
+          });
+        }
       });
     },
     list() {
