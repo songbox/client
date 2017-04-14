@@ -32,7 +32,7 @@ test('creating a song', function (assert) {
 test('shows validation error and prevents creation', function (assert) {
   assert.expect(2);
 
-  let { song } = seed();
+  seed();
   authenticateSession(this.application);
 
   page
