@@ -6,13 +6,15 @@ import { authenticateSession } from 'songbox/tests/helpers/ember-simple-auth';
 import seed from 'songbox/tests/helpers/seed-mirage-db';
 import page from 'songbox/tests/pages/songs-new';
 
-moduleForAcceptance('Acceptance | songs new');
+moduleForAcceptance('Acceptance | songs new', {
+  beforeEach() {
+    seed();
+    authenticateSession(this.application);
+  }
+});
 
 test('creating a song', function (assert) {
   assert.expect(3);
-
-  seed();
-  authenticateSession(this.application);
 
   page
     .visit()
@@ -32,13 +34,10 @@ test('creating a song', function (assert) {
 test('shows validation error and prevents creation', function (assert) {
   assert.expect(2);
 
-  seed();
-  authenticateSession(this.application);
-
   page
     .visit()
     .form
-      .text('Song Text') // TODO: remove
+      .text('Song Text') // to make 'save' button active
       .submit();
 
   andThen(() => {
@@ -49,9 +48,6 @@ test('shows validation error and prevents creation', function (assert) {
 
 test('cancel form', function (assert) {
   assert.expect(1);
-
-  seed();
-  authenticateSession(this.application);
 
   page
     .visit()
