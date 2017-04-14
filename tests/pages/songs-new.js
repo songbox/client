@@ -13,6 +13,7 @@ export default create({
     title: fillable('[name="song[title]"]'),
     titleHasError: isVisible('.form-field--has-errors [name="song[title]"]'),
     text: fillable('[name="song[text]"]'),
-    submit: clickable('button')
+    submit: clickable('button:first'),
+    cancel: clickable('button:last')
   }
 });

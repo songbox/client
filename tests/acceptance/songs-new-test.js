@@ -46,3 +46,19 @@ test('shows validation error and prevents creation', function (assert) {
     assert.ok(page.form.titleHasError, 'shows error for title');
   });
 });
+
+test('cancel form', function (assert) {
+  assert.expect(1);
+
+  seed();
+  authenticateSession(this.application);
+
+  page
+    .visit()
+    .form
+      .cancel();
+
+  andThen(() => {
+    assert.equal(currentURL(), '/a/songs', 'redirects to song list');
+  });
+});
