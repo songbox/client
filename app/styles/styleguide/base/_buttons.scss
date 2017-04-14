@@ -16,6 +16,12 @@
     outline: none;
     box-shadow: 0px 0px 10px 0px $border-color;
   }
+  &:disabled {
+   color: desaturate($color, 50%);
+   background-color: desaturate($background-color, 50%);
+   border-color: desaturate($border-color, 50%);
+   cursor: not-allowed !important;
+  }
 }
 
 .button {
