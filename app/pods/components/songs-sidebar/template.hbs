@@ -19,10 +19,14 @@
 
 <ul>
   {{#each (sort-by "title" filteredSongs) as |song|}}
-    <li>
-      {{#link-to 'song' song.id}}
+    {{#link-to 'song' song.id tagName='li' class="item"}}
+      <div class="item__name">
         {{song.title}}
-      {{/link-to}}
-    </li>
+      </div>
+
+      <div class="item__details">
+        {{song.author}}
+      </div>
+    {{/link-to}}
   {{/each}}
 </ul>
