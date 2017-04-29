@@ -2,7 +2,6 @@ import {
   create,
   clickable,
   fillable,
-  isVisible,
   visitable
 } from 'ember-cli-page-object';
 
