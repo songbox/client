@@ -1,0 +1,8 @@
+& {
+  margin-top: 10px;
+  margin-left: -10px;
+  margin-right: -10px;
+  max-height: calc(100vh - 190px);
+  overflow-y: scroll;
+  -webkit-overflow-scrolling: touch; // momentum scrolling on iOS
+}

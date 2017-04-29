@@ -50,6 +50,7 @@ export default {
     "header": "Edit Song \"{{title}}\""
   },
   "lists": {
-    "header": "Lists"
+    "header": "Lists",
+    "link-new": "New"
   }
 };

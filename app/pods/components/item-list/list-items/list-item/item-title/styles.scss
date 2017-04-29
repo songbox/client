@@ -1,0 +1,7 @@
+& {
+  @include truncate;
+
+  &.active {
+    color: $link-active-color;
+  }
+}

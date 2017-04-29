@@ -1,19 +1,18 @@
+{{#item-list as |list|}}
+  {{list.header "Lists"}}
 
-<h1>Lists</h1>
+  {{#list.actions}}
+    {{#link-to "lists.new"}}
+      {{svg-icon "ic_add_box_24px"}}
+      {{t "lists.link-new"}}
+    {{/link-to}}
+  {{/list.actions}}
 
-<div class="actions">
-  {{#link-to "lists.new"}}
-    {{svg-icon "ic_add_box_24px"}}
-    {{t "songs.link-new"}}
-  {{/link-to}}
-</div>
+  {{#list.items (sort-by 'name' lists) as |item list|}}
+    {{#item.link 'list' list as |link|}}
+      {{link.title list.name}}
+      {{link.details list.listItems.length}}
+    {{/item.link}}
+  {{/list.items}}
 
-<ul>
-  {{#each (sort-by "name" lists) as |list|}}
-    <li>
-      {{#link-to 'list' list.id}}
-        {{list.name}}
-      {{/link-to}}
-    </li>
-  {{/each}}
-</ul>
+{{/item-list}}

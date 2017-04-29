@@ -1,0 +1,9 @@
+& {
+  position: absolute;
+  top: 6px;
+  right: 0;
+
+  a + a {
+    margin-left: 10px;
+  }
+}
