@@ -1,4 +1,4 @@
-{{#form-for changeset as |f|}}
+{{#form-for changeset submit=onSave as |f|}}
   {{f.text-field "name"}}
-  {{f.submit "Save" disabled=(or changeset.isPristine changeset.isInvalid) submit=onSave}}
+  {{f.submit "Save" disabled=(or changeset.isPristine changeset.isInvalid)}}
 {{/form-for}}
