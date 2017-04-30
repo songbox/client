@@ -3,24 +3,23 @@
 
   {{#list.filter items=songs attr="title" as |filtered|}}
 
-  {{#list.actions}}
-    {{#link-to "songs.new"}}
-      {{svg-icon "ic_add_box_24px"}}
-      {{t "songs.link-new"}}
-    {{/link-to}}
-    {{#link-to "songs.import"}}
-      {{svg-icon "ic_file_upload_24px"}}
-      {{t "songs.link-import"}}
-    {{/link-to}}
-  {{/list.actions}}
+    {{#list.actions}}
+      {{#link-to "songs.new"}}
+        {{svg-icon "ic_add_box_24px"}}
+        {{t "songs.link-new"}}
+      {{/link-to}}
+      {{#link-to "songs.import"}}
+        {{svg-icon "ic_file_upload_24px"}}
+        {{t "songs.link-import"}}
+      {{/link-to}}
+    {{/list.actions}}
 
-  {{#list.items (sort-by 'title' filtered) as |item song|}}
-    {{#item.link 'song' song as |link|}}
-      {{link.title song.title}}
-      {{link.details song.author}}
-    {{/item.link}}
-  {{/list.items}}
+    {{#list.items (sort-by 'title' filtered) as |item song|}}
+      {{#item.link 'song' song as |link|}}
+        {{link.title song.title}}
+        {{link.details song.author}}
+      {{/item.link}}
+    {{/list.items}}
 
   {{/list.filter}}
-
 {{/item-list}}
