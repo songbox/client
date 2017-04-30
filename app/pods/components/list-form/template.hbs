@@ -1,4 +1,5 @@
 {{#form-for changeset submit=onSave as |f|}}
   {{f.text-field "name"}}
   {{f.submit "Save" disabled=(or changeset.isPristine changeset.isInvalid)}}
+  {{f.button "Cancel" classNames="" click=onCancel}}
 {{/form-for}}
