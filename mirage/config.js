@@ -23,6 +23,9 @@ export default function() {
   this.get('/lists/:id');
   this.post('/lists');
 
+  this.post('/list-items');
+  this.patch('/list-items/:id');
+
   this.get('/rooms/:id');
 
   this.get('/user/current', function (schema) {
