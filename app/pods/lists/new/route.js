@@ -22,6 +22,9 @@ export default Ember.Route.extend(ModelChangeset, {
           });
         }
       });
+    },
+    show() {
+      this.transitionTo('lists');
     }
   }
 });
