@@ -13,6 +13,8 @@ export default Ember.Route.extend({
     // share song
     const channel = this.controllerFor('app').get('model.channel');
     const song = model.item.get('song');
-    channel.push('share', song.getProperties('title', 'text'));
+    if (channel) {
+      channel.push('share', song.getProperties('title', 'text'));
+    }
   }
 });
