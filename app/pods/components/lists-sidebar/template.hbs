@@ -1,11 +1,10 @@
 {{#item-list as |list|}}
   {{list.header "Lists"}}
 
-  {{#list.actions}}
-    {{#link-to "lists.new"}}
-      {{svg-icon "ic_add_box_24px"}}
+  {{#list.actions as |link|}}
+    {{#link.new "lists.new"}}
       {{t "lists.link-new"}}
-    {{/link-to}}
+    {{/link.new}}
   {{/list.actions}}
 
   {{#list.items (sort-by 'name' lists) as |item list|}}

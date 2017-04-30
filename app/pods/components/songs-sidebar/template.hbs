@@ -3,11 +3,10 @@
 
   {{#list.filter items=songs attr="title" as |filtered|}}
 
-    {{#list.actions}}
-      {{#link-to "songs.new"}}
-        {{svg-icon "ic_add_box_24px"}}
+    {{#list.actions as |links|}}
+      {{#links.add "songs.new"}}
         {{t "songs.link-new"}}
-      {{/link-to}}
+      {{/links.add}}
       {{#link-to "songs.import"}}
         {{svg-icon "ic_file_upload_24px"}}
         {{t "songs.link-import"}}

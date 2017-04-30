@@ -1,11 +1,13 @@
 {{#item-list as |l|}}
   {{l.header (concat "List: " list.name)}}
 
-  {{#l.actions}}
-    {{#link-to "list.add" list}}
-      {{svg-icon "ic_add_box_24px"}}
+  {{#l.actions as |link|}}
+    {{#link.edit "list.edit" list}}
+      Edit
+    {{/link.edit}}
+    {{#link.add "list.add" list}}
       Add
-    {{/link-to}}
+    {{/link.add}}
   {{/l.actions}}
 
   {{#sortable-group onChange="reorderItems" as |group|}}
