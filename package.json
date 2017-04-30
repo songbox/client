@@ -12,7 +12,6 @@
   "scripts": {
     "build": "ember build",
     "start": "ember serve",
-    "fastboot": "ember fastboot --serve-assets",
     "test": "ember test",
     "heroku-postbuild": "npm rebuild node-sass"
   },
