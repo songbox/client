@@ -14,7 +14,7 @@
     {{/link-to}}
   {{/list.actions}}
 
-  {{#list.items (sort-by 'name' filtered) as |item song|}}
+  {{#list.items (sort-by 'title' filtered) as |item song|}}
     {{#item.link 'song' song as |link|}}
       {{link.title song.title}}
       {{link.details song.author}}
