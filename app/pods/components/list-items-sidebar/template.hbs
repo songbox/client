@@ -11,7 +11,7 @@
   {{#sortable-group onChange="reorderItems" as |group|}}
 
     {{#l.items (sort-by 'rank' list.listItems) as |i item index|}}
-      {{#i.sortable-link 'list.item' item (add index 1) group=group as |link|}}
+      {{#i.sortable-link 'list.item' list (add index 1) group=group as |link|}}
         {{link.title item.song.title}}
         {{link.details item.song.author}}
       {{/i.sortable-link}}
