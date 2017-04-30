@@ -1,5 +1,6 @@
-{{#each items as |item|}}
+{{#each items as |item index|}}
   {{yield (hash
     link=(component 'item-list/list-items/list-item-link')
-  ) item}}
+    sortable-link=(component 'item-list/list-items/list-item-sortable-link' model=item handle=".handle")
+  ) item index}}
 {{/each}}

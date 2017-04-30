@@ -21,3 +21,28 @@
     background-color: color("grey", "lighten-1");
   }
 }
+
+//
+
+.handle {
+  position: absolute;
+  right: 0;
+  top: 0;
+  height: 100%;
+  width: 30px;
+  cursor: move;
+  text-align: center;
+
+  &:before, &:after {
+    position: absolute;
+    right: 10px;
+  }
+  &:before {
+    content: "\2191";
+    top: 10px;
+  }
+  &:after {
+    content: "\2193";
+    bottom: 10px;
+  }
+}

@@ -8,5 +8,4 @@ export default Ember.Component.extend({
       this.get('onReorder')(itemModels, draggedModel);
     }
   }
-
 });

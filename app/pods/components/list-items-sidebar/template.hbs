@@ -1,21 +1,22 @@
+{{#item-list as |l|}}
+  {{l.header (concat "List: " list.name)}}
 
-<h1>List: {{list.name}}</h1>
+  {{#l.actions}}
+    {{#link-to "list.add" list}}
+      {{svg-icon "ic_add_box_24px"}}
+      Add
+    {{/link-to}}
+  {{/l.actions}}
 
-<div class="actions">
-  {{#link-to "list.add" list}}
-    {{svg-icon "ic_add_box_24px"}}
-    Add
-  {{/link-to}}
-</div>
+  {{#sortable-group onChange="reorderItems" as |group|}}
 
-{{#sortable-group tagName="ul" onChange="reorderItems" as |group|}}
-  {{#each (sort-by "rank" list.listItems) as |item index|}}
-    {{#sortable-item tagName="li" model=item group=group handle=".handle"}}
-      {{#link-to 'list.item' item.list (add index 1)}}
-        {{item.song.title}}
-      {{/link-to}}
-      <span class="handle">&varr;</span>
-    {{/sortable-item}}
-  {{/each}}
-{{/sortable-group}}
+    {{#l.items (sort-by 'rank' list.listItems) as |i item index|}}
+      {{#i.sortable-link 'list.item' item (add index 1) group=group as |link|}}
+        {{link.title item.song.title}}
+        {{link.details item.song.author}}
+      {{/i.sortable-link}}
+    {{/l.items}}
 
+  {{/sortable-group}}
+
+{{/item-list}}
