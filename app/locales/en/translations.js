@@ -1,18 +1,22 @@
 export default {
   // models
   "song": {
-    "title": "Title",
-    "author": "Author",
-    "key": "Key",
-    "tempo": "Tempo",
-    "time": "Time",
-    "license": "License",
-    "ccli": "CCLI",
-    "text": "Text"
+    "one": '1 song',
+    "other": '{{count}} songs'
   },
+  "song.title": "Title",
+  "song.author": "Author",
+  "song.key": "Key",
+  "song.tempo": "Tempo",
+  "song.time": "Time",
+  "song.license": "License",
+  "song.ccli": "CCLI",
+  "song.text": "Text",
   "list": {
-    "name": "Name"
+    "one": '1 list',
+    "other": '{{count}} lists'
   },
+  "list.name": "Name",
   "user": {
     "email": "Email",
     "password": "Password",

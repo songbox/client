@@ -11,7 +11,7 @@
   {{#list.items (sort-by 'name' lists) as |item list|}}
     {{#item.link 'list' list as |link|}}
       {{link.title list.name}}
-      {{link.details list.listItems.length}}
+      {{link.details (t 'song' count=list.listItems.length)}}
     {{/item.link}}
   {{/list.items}}
 
