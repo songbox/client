@@ -121,7 +121,11 @@ export default function opensong(lyrics) {
       // lyrics and everythings else
       default: {
         if (/^[ 0-9]/.test(line)) {
-          dataObject.lines.push({lyrics: [line.substr(1)]});
+          dataObject.lines.push({
+            lyrics: [
+              [line.substr(1)]
+            ]
+          });
         }
       }
     }
