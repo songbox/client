@@ -18,6 +18,14 @@
           <label>Night Mode</label>
           {{input type="checkbox" checked=settings.nightMode}}
         {{/menu.item}}
+        {{#menu.item}}
+          <label>Show Header</label>
+          {{input type="checkbox" checked=settings.showHeader}}
+        {{/menu.item}}
+        {{#menu.item}}
+          <label>Show Chords</label>
+          {{input type="checkbox" checked=settings.showChords}}
+        {{/menu.item}}
       </ul>
     </main>
   {{/burger.menu}}
@@ -30,8 +38,8 @@
     <main>
       {{song-sheet
         song=model
-        showSectionHeaders=false
-        showChords=false
+        showSectionHeaders=settings.showHeader
+        showChords=settings.showChords
       }}
     </main>
   {{/burger.outlet}}
