@@ -83,17 +83,17 @@ export default function opensong(lyrics) {
         while ((textLine = lyricsLines.shift()) &&
               (m = textLine.match(/^([ 1-9])(.*)/))) {
 
-          let textArr = [];
           textLine = m[2];
+
           // split lyrics line based on chord length
-          chordArr.forEach((chord) => {
+          let textArr = chordArr.map((chord) => {
             // split String with RegExp (is there a better way?)
             m = textLine.match(new RegExp(`(.{0,${chord.length}})(.*)`));
-            textArr.push(m[1]);
             textLine = m[2];
+            return m[1]
           });
           // add the whole string if at the end of the chord arr
-          textArr.push(textLine);
+          textArr[textArr.length - 1] += textLine;
 
           textLineArr.push(textArr);
         }
