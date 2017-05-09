@@ -55,7 +55,7 @@
     "ember-cli-sri": "^2.1.0",
     "ember-cli-template-lint": "^0.5.0",
     "ember-cli-test-loader": "^1.1.0",
-    "ember-cli-typescript": "^0.3.2",
+    "ember-cli-typescript": "^0.4.0",
     "ember-cli-uglify": "^1.2.0",
     "ember-component-css": "^0.3.3",
     "ember-composable-helpers": "^1.1.3",
