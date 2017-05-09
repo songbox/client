@@ -11,24 +11,20 @@ moduleForAcceptance('Acceptance | songs index', {
   }
 });
 
-test('should have a sidebar with items', function (assert) {
+test('should have a sidebar with items', async function (assert) {
   assert.expect(2);
 
-  page.visit();
+  await page.visit();
 
-  andThen(() => {
-    assert.equal(page.sidebar.header, 'Songs');
-    assert.equal(page.sidebar.items().count, 2);
-  });
+  assert.equal(page.sidebar.header, 'Songs');
+  assert.equal(page.sidebar.items().count, 2);
 });
 
-test('sidebar item should navigate to song', function (assert) {
+test('sidebar item should navigate to song', async function (assert) {
   assert.expect(1);
 
-  page.visit();
-  page.sidebar.items(0).click();
+  await page.visit();
+  await page.sidebar.items(0).click();
 
-  andThen(() => {
-    assert.equal(currentURL(), '/a/songs/2');
-  });
+  assert.equal(currentURL(), '/a/songs/2');
 });
