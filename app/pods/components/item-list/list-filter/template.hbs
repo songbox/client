@@ -1,0 +1,6 @@
+<div class="filter">
+  {{input placeholder="Search by title..." value=searchTerm}}
+  <button {{action "clearSearch"}}>Clear</button>
+</div>
+
+{{yield filtered}}

@@ -6,19 +6,20 @@ const {
 } = Ember;
 
 export default Ember.Component.extend({
-  songs: [],
+  items: [],
 
   searchTerm: '',
-  filteredSongs: computed('songs.[]', 'searchTerm', function () {
+  filtered: computed('items.[]', 'searchTerm', function () {
     const term = this.get('searchTerm');
+    const attr = this.get('attr');
 
     if (isEmpty(term)) {
-      return this.get('songs');
+      return this.get('items');
     }
 
     const regexp = new RegExp(term, 'i');
-    return this.get('songs').filter((song) => {
-      return regexp.test(song.get('title'));
+    return this.get('items').filter((item) => {
+      return regexp.test(item.get(attr));
     });
   }),
 

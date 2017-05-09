@@ -1,0 +1,23 @@
+& {
+  position: relative;
+  padding: 10px 0;
+  padding-left: 8px;
+  border-left: 2px solid transparent;
+
+  &.active {
+    border-left-color: $link-active-color;
+    background-color: color("grey", "lighten-4");
+  }
+}
+
+& + & {
+  &:before {
+    position: absolute;
+    content: '';
+    height: 1px;
+    top: 0;
+    left: 0;
+    right: 10px;
+    background-color: color("grey", "lighten-1");
+  }
+}

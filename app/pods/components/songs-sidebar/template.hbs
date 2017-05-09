@@ -1,28 +1,24 @@
+{{#item-list as |list|}}
+  {{list.header "Songs"}}
 
-<h1>Songs</h1>
+  {{#list.filter items=songs attr="title" as |filtered|}}
 
-<div class="actions">
-  {{#link-to "songs.new"}}
-    {{svg-icon "ic_add_box_24px"}}
-    {{t "songs.link-new"}}
-  {{/link-to}}
-  {{#link-to "songs.import"}}
-    {{svg-icon "ic_file_upload_24px"}}
-    {{t "songs.link-import"}}
-  {{/link-to}}
-</div>
-
-<div class="search">
-  {{input placeholder="Search by title..." value=searchTerm}}
-  <button {{action "clearSearch"}}>Clear</button>
-</div>
-
-<ul>
-  {{#each (sort-by "title" filteredSongs) as |song|}}
-    <li>
-      {{#link-to 'song' song.id}}
-        {{song.title}}
+    {{#list.actions as |links|}}
+      {{#links.add "songs.new"}}
+        {{t "songs.link-new"}}
+      {{/links.add}}
+      {{#link-to "songs.import"}}
+        {{svg-icon "ic_file_upload_24px"}}
+        {{t "songs.link-import"}}
       {{/link-to}}
-    </li>
-  {{/each}}
-</ul>
+    {{/list.actions}}
+
+    {{#list.items (sort-by 'title' filtered) as |item song|}}
+      {{#item.link 'song' song as |link|}}
+        {{link.title song.title}}
+        {{link.details song.author}}
+      {{/item.link}}
+    {{/list.items}}
+
+  {{/list.filter}}
+{{/item-list}}

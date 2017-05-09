@@ -1,5 +1,6 @@
 
 $text-color: color("grey", "darken-4");
+$link-active-color: color("amber", "darken-4");
 
 body {
   @include typography-style(body1);
@@ -19,7 +20,7 @@ a {
     border-bottom-style: solid;
   }
   &.active {
-    color: color("amber", "darken-4");
+    color: $link-active-color;
   }
 }
 

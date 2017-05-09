@@ -13,48 +13,39 @@ moduleForAcceptance('Acceptance | songs new', {
   }
 });
 
-test('creating a song', function (assert) {
+test('creating a song', async function (assert) {
   assert.expect(3);
 
-  page
-    .visit()
-    .form
-      .title('New Song')
-      .text('Song Text')
-      .submit();
+  await page.visit();
+  await page.form
+          .title('New Song')
+          .text('Song Text')
+          .submit();
 
-  andThen(function() {
-    let song = server.db.songs.find(3);
-    assert.equal(song.title, 'New Song', 'changed title');
-    assert.equal(song.text, 'Song Text', 'changed text');
-    assert.equal(currentURL(), '/a/songs', 'redirects to song list');
-  });
+  let song = server.db.songs.find(3);
+  assert.equal(song.title, 'New Song', 'changed title');
+  assert.equal(song.text, 'Song Text', 'changed text');
+  assert.equal(currentURL(), '/a/songs', 'redirects to song list');
 });
 
-test('shows validation error and prevents creation', function (assert) {
+test('shows validation error and prevents creation', async function (assert) {
   assert.expect(2);
 
-  page
-    .visit()
-    .form
-      .text('Song Text') // to make 'save' button active
-      .submit();
+  await page.visit();
+  await page.form
+          .text('Song Text') // to make 'save' button active
+          .submit();
 
-  andThen(() => {
-    assert.equal(currentURL(), '/a/songs/new', 'stays at page');
-    assert.ok(page.form.titleHasError, 'shows error for title');
-  });
+  assert.equal(currentURL(), '/a/songs/new', 'stays at page');
+  assert.ok(page.form.titleHasError, 'shows error for title');
 });
 
-test('cancel form', function (assert) {
+test('cancel form', async function (assert) {
   assert.expect(1);
 
-  page
-    .visit()
-    .form
-      .cancel();
+  await page.visit();
+  await page.form
+          .cancel();
 
-  andThen(() => {
-    assert.equal(currentURL(), '/a/songs', 'redirects to song list');
-  });
+  assert.equal(currentURL(), '/a/songs', 'redirects to song list');
 });

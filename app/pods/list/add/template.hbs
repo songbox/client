@@ -1,11 +1,15 @@
+{{#item-list as |list|}}
+  {{list.header "Add Songs"}}
 
-<h1>Click on the songs below</h1>
+  {{#list.filter items=model.songs attr="title" as |filtered|}}
 
-<ul>
-  {{#each model.songs as |song|}}
-    <li>
-      {{song.title}}
-      <button {{action "addSong" model.list song}}>Add</button>
-    </li>
-  {{/each}}
-</ul>
+    {{#list.items (sort-by 'title' filtered) as |item song|}}
+      {{#item.elem click=(route-action "addSong" model.list song) as |elem|}}
+        {{elem.title song.title}}
+        {{elem.details song.author}}
+      {{/item.elem}}
+    {{/list.items}}
+
+  {{/list.filter}}
+{{/item-list}}
+

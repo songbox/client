@@ -14,10 +14,17 @@ export default Ember.Route.extend(ModelChangeset, {
 
   actions: {
     save(changeset) {
-      const list = this.store.createRecord('list', changeset.get('change'));
-      list.save().then(() => {
-        this.transitionTo('lists');
+      return changeset.validate().then(() => {
+        if (changeset.get('isValid')) {
+          const list = this.store.createRecord('list', changeset.get('change'));
+          list.save().then(() => {
+            this.transitionTo('lists');
+          });
+        }
       });
+    },
+    show() {
+      this.transitionTo('lists');
     }
   }
 });

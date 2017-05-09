@@ -1,0 +1,6 @@
+& {
+  @include typography-style(caption);
+  @include truncate;
+  min-height: 1.25rem;
+}
+
