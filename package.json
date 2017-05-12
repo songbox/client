@@ -63,7 +63,7 @@
     "ember-elsewhere": "^1.0.1",
     "ember-export-application-global": "^2.0.0",
     "ember-form-for": "2.0.0-alpha.15",
-    "ember-hammertime": "1.1.2",
+    "ember-hammertime": "^1.2.1",
     "ember-href-to": "^1.11.1",
     "ember-i18n": "^5.0.0",
     "ember-keyboard": "^2.1.10",

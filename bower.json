@@ -1,7 +1,6 @@
 {
   "name": "songbox",
   "dependencies": {
-    "hammer-time": "^1.1.0",
     "inobounce": "^0.1.4"
   }
 }
