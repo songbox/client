@@ -1,22 +1,20 @@
 & {
-  position: absolute;
-  right: 0;
-  top: 0;
-  height: 100%;
-  width: 30px;
+  position: relative;
+  width: 20px;
   cursor: move;
   text-align: center;
 
   &:before, &:after {
     position: absolute;
-    right: 10px;
+    left: 0;
+    width: 100%;
   }
   &:before {
     content: "\2191";
-    top: 10px;
+    top: 0;
   }
   &:after {
     content: "\2193";
-    bottom: 10px;
+    bottom: 0;
   }
 }

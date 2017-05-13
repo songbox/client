@@ -28,6 +28,13 @@ export default Ember.Route.extend({
           return this.transitionTo('list.item', currentPos + 1);
         }
       });
+    },
+    addSong(list, song) {
+      const item = this.store.createRecord('list-item', {
+        list,
+        song
+      });
+      return item.save();
     }
   }
 });

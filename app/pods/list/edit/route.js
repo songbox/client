@@ -13,6 +13,14 @@ export default Ember.Route.extend(ModelChangeset, DirtyChangeset, {
         this.transitionTo('list', list);
       });
     },
+    remove(item) {
+      item.destroyRecord();
+    },
+    reorder(itemModels, draggedModel) {
+      const position = itemModels.indexOf(draggedModel);
+      draggedModel.setProperties({ position })
+      return draggedModel.save()
+    },
     show(list) {
       this.transitionTo('list', list);
     }

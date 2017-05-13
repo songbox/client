@@ -1,0 +1,28 @@
+{{#item-list as |l|}}
+  {{l.header "Edit Songs"}}
+
+  {{#l.actions as |link|}}
+    {{#link.edit "list" list}}
+      Done
+    {{/link.edit}}
+
+    {{#link.add "list.add" list}}
+      Add
+    {{/link.add}}
+  {{/l.actions}}
+
+  {{#sortable-group onChange="reorderItems" as |group|}}
+
+    {{#l.items (sort-by 'rank' list.listItems) as |i item index|}}
+      {{#i.sortable-link (query-params itemId=item.id) group=group as |link|}}
+        {{link.handle}}
+        {{#link.text as |text|}}
+          {{text.title item.song.title}}
+          {{text.details item.song.author}}
+        {{/link.text}}
+        {{link.button-remove click=(action "selectItem" item)}}
+      {{/i.sortable-link}}
+    {{/l.items}}
+
+  {{/sortable-group}}
+{{/item-list}}

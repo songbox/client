@@ -5,10 +5,19 @@ const {
 } = Ember;
 
 export default Ember.Route.extend({
-  model() {
+  queryParams: {
+    songId: {
+      refreshModel: true
+    }
+  },
+
+  model({ songId }) {
+    const options = { reload: false, backgroundReload: true };
+
     return RSVP.hash({
       list: this.modelFor('list'),
-      songs: this.store.findAll('song')
+      songs: this.store.findAll('song', options),
+      song: songId && this.store.findRecord('song', songId)
     })
   },
 
