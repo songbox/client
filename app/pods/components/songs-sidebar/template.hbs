@@ -15,8 +15,10 @@
 
     {{#list.items (sort-by 'title' filtered) as |item song|}}
       {{#item.link 'song' song as |link|}}
-        {{link.title song.title}}
-        {{link.details song.author}}
+        {{#link.text as |text|}}
+          {{text.title song.title}}
+          {{text.details song.author}}
+        {{/link.text}}
       {{/item.link}}
     {{/list.items}}
 

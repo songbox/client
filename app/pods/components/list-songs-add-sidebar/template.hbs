@@ -1,0 +1,26 @@
+{{#item-list as |l|}}
+  {{l.header "Add Songs"}}
+
+  {{#l.actions as |link|}}
+    {{#link.edit "list.edit" list}}
+      Edit
+    {{/link.edit}}
+
+    {{#link.add "list" list}}
+      Done
+    {{/link.add}}
+  {{/l.actions}}
+
+  {{#l.filter items=songs attr="title" as |filtered|}}
+
+    {{#l.items (sort-by 'title' filtered) as |item song|}}
+      {{#item.elem click=(action "selectSong" song) as |elem|}}
+        {{#elem.text as |text|}}
+          {{text.title song.title}}
+          {{text.details (join ' - ' (array song.author (get (filter-by "id" song.id (map-by "song" list.listItems)) "length")))}}
+        {{/elem.text}}
+      {{/item.elem}}
+    {{/l.items}}
+
+  {{/l.filter}}
+{{/item-list}}

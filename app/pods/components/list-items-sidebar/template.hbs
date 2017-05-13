@@ -14,8 +14,10 @@
 
     {{#l.items (sort-by 'rank' list.listItems) as |i item index|}}
       {{#i.sortable-link 'list.item' list (add index 1) group=group as |link|}}
-        {{link.title item.song.title}}
-        {{link.details item.song.author}}
+        {{#link.text as |text|}}
+          {{text.title item.song.title}}
+          {{text.details item.song.author}}
+        {{/link.text}}
         {{link.handle}}
       {{/i.sortable-link}}
     {{/l.items}}

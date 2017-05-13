@@ -1,15 +1,4 @@
-{{#item-list as |list|}}
-  {{list.header "Add Songs"}}
 
-  {{#list.filter items=model.songs attr="title" as |filtered|}}
+{{to-elsewhere named="sidebar" send=(component "list-songs-add-sidebar" onSelect=(route-action "addSong" model.list) list=model.list songs=model.songs)}}
 
-    {{#list.items (sort-by 'title' filtered) as |item song|}}
-      {{#item.elem click=(route-action "addSong" model.list song) as |elem|}}
-        {{elem.title song.title}}
-        {{elem.details song.author}}
-      {{/item.elem}}
-    {{/list.items}}
-
-  {{/list.filter}}
-{{/item-list}}
-
+<h1>Add Song on the left side.</h1>
