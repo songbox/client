@@ -13,7 +13,7 @@
 
   {{#sortable-group onChange="reorderItems" as |group|}}
 
-    {{#l.items (sort-by 'rank' list.listItems) as |i item index|}}
+    {{#l.items (sort-by 'rank' list.listItems) as |i item|}}
       {{#i.sortable-link (query-params itemId=item.id) group=group as |link|}}
         {{link.handle}}
         {{#link.text as |text|}}
