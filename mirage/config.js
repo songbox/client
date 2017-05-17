@@ -22,6 +22,7 @@ export default function() {
 
   this.get('/lists');
   this.get('/lists/:id');
+  this.del('/lists/:id');
   this.post('/lists');
 
   this.post('/list-items');

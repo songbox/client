@@ -1,4 +1,4 @@
 
-{{to-elsewhere named="sidebar" send=(component "lists-sidebar" lists=model)}}
+{{to-elsewhere named="sidebar" send=(component "lists-sidebar" lists=model editMode=editMode onRemove=(route-action "remove"))}}
 
 {{outlet}}

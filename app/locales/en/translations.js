@@ -56,7 +56,8 @@ export default {
   },
   "lists": {
     "header": "Lists",
-    "link-new": "New"
+    "link-new": "New",
+    "link-edit": "Edit"
   },
   "lists.new": {
     "header": "Add a new List"
