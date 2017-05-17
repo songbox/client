@@ -23,15 +23,13 @@
     {{/list.actions}}
 
     {{#list.items (sort-by 'title' filtered) as |item song|}}
-      {{#item.link 'song' song as |link|}}
-        {{#link.text as |text|}}
-          {{text.title song.title}}
-          {{text.details song.author}}
-        {{/link.text}}
-        {{#if editMode}}
-          {{link.button-remove click=(action "removeSong" song)}}
-        {{/if}}
-      {{/item.link}}
+      {{#item.text click=(action "selectSong" song) as |text|}}
+        {{text.title song.title}}
+        {{text.details song.author}}
+      {{/item.text}}
+      {{#if editMode}}
+        {{item.button-remove click=(action "removeSong" song)}}
+      {{/if}}
     {{/list.items}}
 
   {{/list.filter}}

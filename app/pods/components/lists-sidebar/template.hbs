@@ -17,15 +17,13 @@
   {{/list.actions}}
 
   {{#list.items (sort-by 'name' lists) as |item list|}}
-    {{#item.link 'list' list as |link|}}
-      {{#link.text as |text|}}
-        {{text.title list.name}}
-        {{text.details (t 'song' count=list.listItems.length)}}
-      {{/link.text}}
-      {{#if editMode}}
-        {{link.button-remove click=(action "removeList" list)}}
-      {{/if}}
-    {{/item.link}}
+    {{#item.text click=(action "selectList" list) as |text|}}
+      {{text.title list.name}}
+      {{text.details (t 'song' count=list.listItems.length)}}
+    {{/item.text}}
+    {{#if editMode}}
+      {{item.button-remove click=(action "removeList" list)}}
+    {{/if}}
   {{/list.items}}
 
 {{/item-list}}

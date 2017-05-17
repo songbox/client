@@ -6,6 +6,9 @@ export default Ember.Route.extend({
   },
 
   actions: {
+    select(song) {
+      return this.transitionTo('song', song);
+    },
     remove(song) {
       return song.destroyRecord();
     }

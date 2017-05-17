@@ -14,7 +14,7 @@ moduleForAcceptance('Acceptance | lists index', {
 });
 
 test('sidebar should enable removal of lists', async function (assert) {
-  assert.expect(3);
+  assert.expect(4);
 
   server.create('list');
 
@@ -27,4 +27,5 @@ test('sidebar should enable removal of lists', async function (assert) {
   await page.sidebar.items(0).buttons.remove();
 
   assert.equal(page.sidebar.items().count, 0, 'no list in sidebar');
+  assert.equal(currentURL(), '/a/lists?edit=true', 'stays at same page');
 });

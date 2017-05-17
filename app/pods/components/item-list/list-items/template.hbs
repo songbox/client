@@ -1,7 +1,14 @@
-{{#each items as |item index|}}
-  {{yield (hash
-    link=(component 'item-list/list-items/list-item-link')
-    sortable-link=(component 'item-list/list-items/list-item-sortable-link' model=item handle=".handle")
-    elem=(component 'item-list/list-items/list-item-elem')
-  ) item index}}
+{{#each models as |model index|}}
+  {{#item-list/list-items/list-item group=group model=model handle=".handle"}}
+    {{yield
+      (hash
+        text=(component 'item-list/list-items/list-item/item-text' data-test-item-text=1)
+        handle=(component 'item-list/list-items/list-item/item-handle' data-test-item-handle=1)
+        button-add=(component 'item-list/list-items/list-item/item-button' icon="ic_add_circle_24px" text="Add" data-test-item-button-add=1)
+        button-remove=(component 'item-list/list-items/list-item/item-button' icon="ic_remove_circle_24px" text="Remove" data-test-item-button-remove=1)
+      )
+      model
+      index
+    }}
+  {{/item-list/list-items/list-item}}
 {{/each}}

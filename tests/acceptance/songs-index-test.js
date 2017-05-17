@@ -30,7 +30,7 @@ test('sidebar item should navigate to song', async function (assert) {
 });
 
 test('sidebar should enable removal of songs', async function (assert) {
-  assert.expect(3);
+  assert.expect(4);
 
   await page.visit();
   await page.sidebar.actions.edit();
@@ -41,4 +41,5 @@ test('sidebar should enable removal of songs', async function (assert) {
   await page.sidebar.items(0).buttons.remove();
 
   assert.equal(page.sidebar.items().count, 1, 'only 1 song in the list');
+  assert.equal(currentURL(), '/a/songs?edit=true', 'stays on same page');
 });

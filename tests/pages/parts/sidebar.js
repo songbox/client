@@ -19,7 +19,7 @@ export default {
     itemScope: 'ul li',
 
     item: {
-      click: clickable(),
+      click: clickable('[data-test-item-text]'),
       text: {
         scope: '[data-test-item-text]',
 

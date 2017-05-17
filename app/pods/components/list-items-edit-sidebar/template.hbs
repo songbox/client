@@ -13,15 +13,13 @@
 
   {{#sortable-group onChange="reorderItems" as |group|}}
 
-    {{#l.items (sort-by 'rank' list.listItems) as |i item|}}
-      {{#i.sortable-link (query-params itemId=item.id) group=group as |link|}}
-        {{link.handle}}
-        {{#link.text as |text|}}
-          {{text.title item.song.title}}
-          {{text.details item.song.author}}
-        {{/link.text}}
-        {{link.button-remove click=(action "selectItem" item)}}
-      {{/i.sortable-link}}
+    {{#l.items (sort-by 'rank' list.listItems) group=group as |item model|}}
+      {{item.handle}}
+      {{#item.text as |text|}}
+        {{text.title model.song.title}}
+        {{text.details model.song.author}}
+      {{/item.text}}
+      {{item.button-remove click=(action "selectItem" model)}}
     {{/l.items}}
 
   {{/sortable-group}}

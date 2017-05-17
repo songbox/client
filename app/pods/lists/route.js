@@ -6,6 +6,9 @@ export default Ember.Route.extend({
   },
 
   actions: {
+    select(list) {
+      return this.transitionTo('list', list);
+    },
     remove(list) {
       return list.destroyRecord();
     }
