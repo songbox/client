@@ -38,6 +38,7 @@ export default {
     "link-logout": "Logout"
   },
   "songs": {
+    "link-edit": "Edit",
     "link-new": "New",
     "link-import": "Import"
   },

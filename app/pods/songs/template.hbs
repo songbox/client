@@ -1,4 +1,4 @@
-{{to-elsewhere named="sidebar" send=(component "songs-sidebar" songs=model)}}
+{{to-elsewhere named="sidebar" send=(component "songs-sidebar" songs=model editMode=editMode onRemove=(route-action "remove"))}}
 
 {{outlet}}
 

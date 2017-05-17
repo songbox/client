@@ -4,6 +4,15 @@
   {{#list.filter items=songs attr="title" as |filtered|}}
 
     {{#list.actions as |links|}}
+      {{#unless editMode}}
+        {{#links.edit (query-params editMode=true)}}
+          {{t "songs.link-edit"}}
+        {{/links.edit}}
+      {{else}}
+        {{#links.edit (query-params editMode=false)}}
+          Done
+        {{/links.edit}}
+      {{/unless}}
       {{#links.add "songs.new"}}
         {{t "songs.link-new"}}
       {{/links.add}}
@@ -19,6 +28,9 @@
           {{text.title song.title}}
           {{text.details song.author}}
         {{/link.text}}
+        {{#if editMode}}
+          {{link.button-remove click=(action "removeSong" song)}}
+        {{/if}}
       {{/item.link}}
     {{/list.items}}
 

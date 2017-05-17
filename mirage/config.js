@@ -16,6 +16,7 @@ export default function() {
 
   this.get('/songs');
   this.get('/songs/:id');
+  this.del('/songs/:id');
   this.patch('/songs/:id');
   this.post('/songs');
 
