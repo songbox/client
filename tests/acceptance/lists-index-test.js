@@ -13,6 +13,19 @@ moduleForAcceptance('Acceptance | lists index', {
   }
 });
 
+test('sidebar should show list infos', async function (assert) {
+  assert.expect(3);
+
+  const name = 'My new List';
+  server.create('list', { name });
+
+  await page.visit();
+
+  assert.equal(page.sidebar.items().count, 1, '1 list in sidebar');
+  assert.equal(page.sidebar.items(0).text.title, name, 'shows list name');
+  assert.equal(page.sidebar.items(0).text.details, '0 songs', 'shows amount of songs');
+});
+
 test('sidebar should enable removal of lists', async function (assert) {
   assert.expect(4);
 
