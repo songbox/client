@@ -6,7 +6,7 @@ import {
 import sidebar from './parts/sidebar';
 
 export default create({
-  visit: visitable('/a/songs'),
+  visit: visitable('/a/lists'),
 
   sidebar
 });
