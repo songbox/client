@@ -5,7 +5,7 @@ module.exports = function(defaults) {
   var app = new EmberApp(defaults, {
     autoprefixer: {
     },
-    babel: {
+    'ember-cli-babel': {
       includePolyfill: true
     },
     fingerprint: {
