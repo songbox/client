@@ -10,7 +10,7 @@
     {{/link.add}}
   {{/l.actions}}
 
-  {{#l.items (sort-by 'rank' list.listItems) as |item model index|}}
+  {{#l.items (sort-by 'rank' list.listItems) selected=selected as |item model index|}}
     {{#item.text click=(action "selectItem" model index) as |text|}}
       {{text.title model.song.title}}
       {{text.details model.song.author}}

@@ -22,7 +22,7 @@
       {{/link-to}}
     {{/list.actions}}
 
-    {{#list.items (sort-by 'title' filtered) as |item song|}}
+    {{#list.items (sort-by 'title' filtered) selected=selected as |item song|}}
       {{#item.text click=(action "selectSong" song) as |text|}}
         {{text.title song.title}}
         {{text.details song.author}}

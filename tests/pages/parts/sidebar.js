@@ -1,6 +1,7 @@
 import {
   clickable,
   collection,
+  hasClass,
   text
 } from 'ember-cli-page-object';
 
@@ -20,6 +21,7 @@ export default {
 
     item: {
       click: clickable('[data-test-item-text]'),
+      isSelected: hasClass('active'),
       text: {
         scope: '[data-test-item-text]',
 

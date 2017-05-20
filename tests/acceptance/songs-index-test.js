@@ -20,13 +20,23 @@ test('should have a sidebar with items', async function (assert) {
   assert.equal(page.sidebar.items().count, 2);
 });
 
-test('sidebar item should navigate to song', async function (assert) {
-  assert.expect(1);
+test('sidebar item should navigate to song and select it', async function (assert) {
+  assert.expect(6);
 
   await page.visit();
+
+  assert.equal(page.sidebar.items().count, 2, 'has 2 songs in list');
+  assert.notOk(page.sidebar.items(0).isSelected, 'song is not selected');
+
   await page.sidebar.items(0).click();
 
   assert.equal(currentURL(), '/a/songs/2');
+  assert.ok(page.sidebar.items(0).isSelected, 'song is selected');
+
+  await page.visit();
+
+  assert.equal(currentURL(), '/a/songs');
+  assert.notOk(page.sidebar.items(0).isSelected, 'song is not selected');
 });
 
 test('sidebar should enable removal of songs', async function (assert) {

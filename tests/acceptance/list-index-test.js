@@ -39,6 +39,29 @@ test('should show song items', async function (assert) {
   assert.equal(currentURL(), `/a/lists/${list.id}/1`, 'shows first list item');
 });
 
+test('sidebar item should navigate to song and select it', async function (assert) {
+  assert.expect(6);
+
+  const list = server.create('list');
+  const song = server.schema.songs.find(1);
+  server.create('list-item', { list, song });
+
+  await page.visit({ id: list.id });
+
+  assert.equal(page.sidebar.items().count, 1, 'has 1 song in list');
+  assert.notOk(page.sidebar.items(0).isSelected, 'song is not selected');
+
+  await page.sidebar.items(0).click();
+
+  assert.equal(currentURL(), `/a/lists/${list.id}/1`);
+  assert.ok(page.sidebar.items(0).isSelected, 'song is selected');
+
+  await page.visit({ id: list.id });
+
+  assert.equal(currentURL(), `/a/lists/${list.id}`);
+  assert.notOk(page.sidebar.items(0).isSelected, 'song is not selected');
+});
+
 test('should allow adding songs', async function (assert) {
   assert.expect(7);
 
