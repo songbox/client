@@ -10,12 +10,11 @@
     {{/link.add}}
   {{/l.actions}}
 
-  {{#l.items (sort-by 'rank' list.listItems) as |i item index|}}
-    {{#i.link 'list.item' list (add index 1) group=group as |link|}}
-      {{#link.text as |text|}}
-        {{text.title item.song.title}}
-        {{text.details item.song.author}}
-      {{/link.text}}
-    {{/i.link}}
+  {{#l.items (sort-by 'rank' list.listItems) as |item model index|}}
+    {{#item.text click=(action "selectItem" model index) as |text|}}
+      {{text.title model.song.title}}
+      {{text.details model.song.author}}
+    {{/item.text}}
   {{/l.items}}
+
 {{/item-list}}

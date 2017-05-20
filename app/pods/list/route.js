@@ -18,6 +18,9 @@ export default Ember.Route.extend({
     }
   },
   actions: {
+    select(list, item, index) {
+      this.transitionTo('list.item', list, index + 1);
+    },
     reorder(itemModels, draggedModel) {
       const currentItem = this.modelFor('list.item');
       const position = itemModels.indexOf(draggedModel);

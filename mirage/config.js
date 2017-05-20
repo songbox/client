@@ -26,6 +26,7 @@ export default function() {
   this.post('/lists');
 
   this.post('/list-items');
+  this.get('/list-items/:id');
   this.patch('/list-items/:id');
 
   this.get('/rooms/:id');

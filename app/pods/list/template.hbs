@@ -1,4 +1,4 @@
 
-{{to-elsewhere named="sidebar" send=(component "list-items-sidebar" list=model onReorder=(route-action "reorder"))}}
+{{to-elsewhere named="sidebar" send=(component "list-items-sidebar" list=model onSelect=(route-action "select" model) onReorder=(route-action "reorder"))}}
 
 {{outlet}}
