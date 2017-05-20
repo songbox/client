@@ -22,12 +22,15 @@ export default Ember.Route.extend({
   },
 
   actions: {
-    addSong(list, song) {
+    add(list, song) {
       const item = this.store.createRecord('list-item', {
         list,
         song
       });
       return item.save();
+    },
+    select(list, song) {
+      this.transitionTo({ queryParams: { songId: song.get('id') }});
     }
   }
 });

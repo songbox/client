@@ -5,6 +5,9 @@ export default Ember.Component.extend({
   songs: [],
 
   actions: {
+    addSong(song) {
+      this.get('onAdd')(song);
+    },
     selectSong(song) {
       this.get('onSelect')(song);
     }

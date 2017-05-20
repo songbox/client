@@ -14,13 +14,11 @@
   {{#l.filter items=songs attr="title" as |filtered|}}
 
     {{#l.items (sort-by 'title' filtered) as |item song|}}
-      {{#item.link (query-params songId=song.id) as |l|}}
-        {{#l.text as |text|}}
-          {{text.title song.title}}
-          {{text.details (join ' - ' (array song.author (get (filter-by "id" song.id (map-by "song" list.listItems)) "length")))}}
-        {{/l.text}}
-        {{l.button-add click=(action "selectSong" song)}}
-      {{/item.link}}
+      {{#item.text click=(action "selectSong" song) as |text|}}
+        {{text.title song.title}}
+        {{text.details (join ' - ' (array song.author (get (filter-by "id" song.id (map-by "song" list.listItems)) "length")))}}
+      {{/item.text}}
+      {{item.button-add click=(action "addSong" song)}}
     {{/l.items}}
 
   {{/l.filter}}

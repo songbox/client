@@ -39,6 +39,31 @@ test('should show song items', async function (assert) {
   assert.equal(currentURL(), `/a/lists/${list.id}/1`, 'shows first list item');
 });
 
+test('should allow adding songs', async function (assert) {
+  assert.expect(6);
+
+  const list = server.create('list');
+  const song = server.schema.songs.find(1);
+
+  await page.visit({ id: list.id });
+
+  assert.equal(page.sidebar.items().count, 0, 'has 0 items in sidebar');
+
+  await page.sidebar.actions.add();
+
+  assert.equal(page.sidebar.items().count, server.db.songs.length, 'shows all songs');
+  assert.equal(page.sidebar.items(1).text.title, song.title, 'shows song title');
+  assert.equal(page.sidebar.items(1).text.details, `${song.author} - 0`, 'shows song author with song count');
+
+  await page.sidebar.items(1).buttons.add();
+
+  assert.equal(page.sidebar.items(1).text.details, `${song.author} - 1`, 'shows song author with song count');
+
+  await page.sidebar.actions.add();
+
+  assert.equal(page.sidebar.items().count, 1, 'has 1 item in sidebar');
+});
+
 test('should allow deleting songs', async function (assert) {
   assert.expect(4);
 
