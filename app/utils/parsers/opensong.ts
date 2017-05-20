@@ -18,7 +18,7 @@ json = [
 ]
 
 */
-export default function opensong(lyrics) {
+export default function opensong(lyrics: string) {
   if (! lyrics) {
     return [];
   }
