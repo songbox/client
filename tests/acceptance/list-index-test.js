@@ -22,6 +22,8 @@ test('should redirect to list overview if list not found', async function (asser
 });
 
 test('should show song items', async function (assert) {
+  assert.expect(4);
+
   const list = server.create('list');
   const song = server.schema.songs.find(1);
   server.create('list-item', { list, song });
@@ -36,3 +38,23 @@ test('should show song items', async function (assert) {
 
   assert.equal(currentURL(), `/a/lists/${list.id}/1`, 'shows first list item');
 });
+
+test('should allow deleting songs', async function (assert) {
+  assert.expect(4);
+
+  const list = server.create('list');
+  const song = server.schema.songs.find(1);
+  server.create('list-item', { list, song });
+
+  await page.visit({ id: list.id });
+  await page.sidebar.actions.edit();
+
+  assert.equal(page.sidebar.items().count, 1, 'has 1 item in sidebar');
+  assert.equal(page.sidebar.items(0).text.title, song.title, 'shows song title');
+  assert.equal(page.sidebar.items(0).text.details, song.author, 'shows song author');
+
+  await page.sidebar.items(0).buttons.remove();
+
+  assert.equal(page.sidebar.items().count, 0, 'has 0 items in sidebar');
+});
+
