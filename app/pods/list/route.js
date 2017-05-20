@@ -32,7 +32,7 @@ export default Ember.Route.extend({
         }
       });
     },
-    addSong(list, song) {
+    add(list, song) {
       const item = this.store.createRecord('list-item', {
         list,
         song

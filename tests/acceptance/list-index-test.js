@@ -40,7 +40,7 @@ test('should show song items', async function (assert) {
 });
 
 test('should allow adding songs', async function (assert) {
-  assert.expect(6);
+  assert.expect(7);
 
   const list = server.create('list');
   const song = server.schema.songs.find(1);
@@ -61,6 +61,7 @@ test('should allow adding songs', async function (assert) {
 
   await page.sidebar.actions.add();
 
+  assert.equal(currentURL(), `/a/lists/${list.id}`, 'shows list');
   assert.equal(page.sidebar.items().count, 1, 'has 1 item in sidebar');
 });
 
