@@ -2,19 +2,36 @@
   {{l.header (concat "List: " list.name)}}
 
   {{#l.actions as |link|}}
-    {{#link.edit "list.edit" list}}
-      Edit
-    {{/link.edit}}
+    {{#unless editMode}}
+      {{#link.edit "list.edit" list}}
+        Edit
+      {{/link.edit}}
+    {{else}}
+      {{#link.edit "list" list}}
+        Done
+      {{/link.edit}}
+    {{/unless}}
+
     {{#link.add "list.add" list}}
       Add
     {{/link.add}}
   {{/l.actions}}
 
-  {{#l.items (sort-by 'rank' list.listItems) selected=selected as |item model index|}}
-    {{#item.text click=(action "selectItem" model index) as |text|}}
-      {{text.title model.song.title}}
-      {{text.details model.song.author}}
-    {{/item.text}}
-  {{/l.items}}
+  {{#sortable-group onChange="reorderItems" as |group|}}
+
+    {{#l.items (sort-by 'rank' list.listItems) group=group selected=selected as |item model index|}}
+      {{#if editMode}}
+        {{item.handle}}
+      {{/if}}
+      {{#item.text click=(action "selectItem" model index) as |text|}}
+        {{text.title model.song.title}}
+        {{text.details model.song.author}}
+      {{/item.text}}
+      {{#if editMode}}
+        {{item.button-remove click=(action "removeItem" model)}}
+      {{/if}}
+    {{/l.items}}
+
+  {{/sortable-group}}
 
 {{/item-list}}

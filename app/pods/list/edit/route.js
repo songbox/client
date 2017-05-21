@@ -7,19 +7,23 @@ import ListValidation from 'songbox/validations/list';
 export default Ember.Route.extend(ModelChangeset, DirtyChangeset, {
   validator: ListValidation,
 
+  setupController(/* controller, model*/) {
+    this._super(...arguments)
+
+    this.controllerFor('list').setProperties({ editMode: true });
+  },
+
+  resetController(controller, isExiting/*, transition*/) {
+    if (isExiting) {
+      this.controllerFor('list').setProperties({ editMode: false });
+    }
+  },
+
   actions: {
     save(changeset) {
       changeset.save().then((list) => {
         this.transitionTo('list', list);
       });
-    },
-    remove(item) {
-      item.destroyRecord();
-    },
-    reorder(itemModels, draggedModel) {
-      const position = itemModels.indexOf(draggedModel);
-      draggedModel.setProperties({ position })
-      return draggedModel.save()
     },
     show(list) {
       this.transitionTo('list', list);
