@@ -72,7 +72,6 @@ Router.map(function() {
         resetNamespace: true
       }, function () {
         this.route('add');
-        this.route('edit');
 
         this.route('item', {
           path: ':position'

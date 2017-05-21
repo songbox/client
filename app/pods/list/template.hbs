@@ -1,4 +1,10 @@
 
 {{to-elsewhere named="sidebar" send=(component "list-items-sidebar" list=model selected=selected editMode=editMode onSelect=(route-action "select" model) onRemove=(route-action "remove") onReorder=(route-action "reorder"))}}
 
+{{#if editMode}}
+  {{t "list.edit.header" name=model.name}}
+
+  {{list-form changeset=changeset onSave=(route-action "save" changeset) onCancel=(route-action "show" model)}}
+{{/if}}
+
 {{outlet}}

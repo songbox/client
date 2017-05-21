@@ -1,11 +1,17 @@
 import Ember from 'ember';
 
+import ModelChangeset from 'songbox/mixins/routes/model-changeset';
+import DirtyChangeset from 'songbox/mixins/routes/dirty-changeset';
+import ListValidation from 'songbox/validations/list';
+
 const {
   inject: { service }
 } = Ember;
 
-export default Ember.Route.extend({
+export default Ember.Route.extend(ModelChangeset, DirtyChangeset, {
   flashMessages: service(),
+
+  validator: ListValidation,
 
   model(params) {
     return this.store.find('list', params.list_id).catch((/*err*/) => {
@@ -18,8 +24,16 @@ export default Ember.Route.extend({
     }
   },
   actions: {
+    save(changeset) {
+      changeset.save().then((list) => {
+        this.transitionTo('list', list);
+      });
+    },
     select(list, item, index) {
       this.transitionTo('list.item', list, index + 1);
+    },
+    show(list) {
+      this.transitionTo('list', list);
     },
     remove(item) {
       item.destroyRecord();

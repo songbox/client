@@ -3,11 +3,11 @@
 
   {{#l.actions as |link|}}
     {{#unless editMode}}
-      {{#link.edit "list.edit" list}}
-        Edit
+      {{#link.edit (query-params editMode=true)}}
+        {{t "lists.link-edit"}}
       {{/link.edit}}
     {{else}}
-      {{#link.edit "list" list}}
+      {{#link.edit (query-params editMode=false)}}
         Done
       {{/link.edit}}
     {{/unless}}

@@ -2,7 +2,7 @@
   {{l.header "Add Songs"}}
 
   {{#l.actions as |link|}}
-    {{#link.edit "list.edit" list}}
+    {{#link.edit "list" list (query-params editMode=true)}}
       Edit
     {{/link.edit}}
 
