@@ -1,0 +1,13 @@
+{{#from-elsewhere name="modal" as |modal|}}
+  {{#liquid-bind modal containerless=true use=modalAnimation as |currentModal|}}
+    {{#if currentModal}}
+      <div class="modal-container">
+        <div class="modal-background" onclick={{action currentModal.onOutsideClick}}></div>
+        <div class="modal-dialog" >
+          <h1 class="modal-title">{{currentModal.title}}</h1>
+          {{component currentModal.body}}
+        </div>
+      </div>
+    {{/if}}
+  {{/liquid-bind}}
+{{/from-elsewhere}}
