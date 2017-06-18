@@ -55,8 +55,8 @@ form {
   margin-bottom: 5px;
 }
 .form-button {
-  @include button(color("grey", "darken-1"), color("grey", "lighten-4"), color("grey", "lighten-2"));
+  @include button(color("grey", "darken-1"), color("grey", "lighten-4"));
 }
 .form-button--submit {
-  @include button(color("grey", "lighten-5"), color("green", "lighten-1"), color("green", "darken-1"));
+  @include button(color("grey", "lighten-5"), color("green", "lighten-1"));
 }
