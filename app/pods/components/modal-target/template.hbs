@@ -2,7 +2,7 @@
   {{#liquid-bind modal containerless=true use=modalAnimation as |currentModal|}}
     {{#if currentModal}}
       <div class="modal-container">
-        <div class="modal-background" onclick={{action currentModal.onOutsideClick}}></div>
+        <div class="modal-background" role="button" onclick={{action currentModal.onOutsideClick}}></div>
         <div class="modal-dialog" >
           <h1 class="modal-title">{{currentModal.title}}</h1>
           {{component currentModal.body}}
