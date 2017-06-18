@@ -58,7 +58,7 @@ export default function opensong(lyrics: string) {
       case ".": {
         let chordsLine = line.substr(1);
         let chordArr = [];
-        let m = null;
+        let m : RegExpMatchArray= null;
 
         // split cords
         while (chordsLine.length > 0) {
@@ -77,7 +77,7 @@ export default function opensong(lyrics: string) {
         });
 
         let textLine = "";
-        let textLineArr = [];
+        let textLineArr: string[][] = [];
 
         // while we have lines that match a textLine create an html table row
         while ((textLine = lyricsLines.shift()) &&
@@ -86,11 +86,11 @@ export default function opensong(lyrics: string) {
           textLine = m[2];
 
           // split lyrics line based on chord length
-          let textArr = chordArr.map((chord) => {
+          let textArr: string[] = chordArr.map((chord) => {
             // split String with RegExp (is there a better way?)
             m = textLine.match(new RegExp(`(.{0,${chord.length}})(.*)`));
             textLine = m[2];
-            return m[1]
+            return m[1];
           });
           // add the whole string if at the end of the chord arr
           textArr[textArr.length - 1] += textLine;
