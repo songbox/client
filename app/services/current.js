@@ -18,7 +18,7 @@ export default Ember.Service.extend({
   room: readOnly('user.room'),
 
   load() {
-    return this.get('ajax').request('/user/current').then(json => {
+    return this.get('ajax').request('/users/current').then(json => {
       this.get('store').pushPayload(json);
       this.set('userId', json.data.id);
       return this.get('user');

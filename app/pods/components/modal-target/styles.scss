@@ -30,10 +30,10 @@
 }
 
 .modal-dialog {
-  background-color: white;
-  padding: 4em;
-  border-radius: 5px;
-  border: 1px solid #B4B4E8;
   position: relative;
+  padding: 4em;
+  border: solid 1px color("grey", "lighten-1");
+  border-radius: $global-border-radius * 2;
+  background-color: color("shades", "white");
   z-index: 1;
 }

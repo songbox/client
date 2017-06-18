@@ -1,0 +1,9 @@
+{{#form-for changeset submit=onSubmit as |f|}}
+  <input type="hidden" name="user[email]" value={{changeset.email}}>
+  {{f.password-field "password"}}
+  {{f.password-field "passwordConfirmation"}}
+  {{f.submit "Change" disabled=(or changeset.isPristine changeset.isInvalid)}}
+  {{f.button "Cancel" click=onCancel}}
+{{/form-for}}
+
+<button class="button button--warn" {{action onLogout}}>Logout</button>

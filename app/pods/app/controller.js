@@ -10,7 +10,9 @@ export default Ember.Controller.extend({
   queryParams: {
     // NOTE: disable query-param for now
     //showMenu: 'open'
+    editUser: 'account'
   },
-  showMenu: true
+  showMenu: true,
+  editUser: false
 
 });

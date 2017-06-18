@@ -50,7 +50,7 @@ test('invalid authtoken', function (assert) {
 
   seed();
   authenticateSession(this.application);
-  server.get('/user/current', { errors: ['There was an error'] }, 401);
+  server.get('/users/current', { errors: ['There was an error'] }, 401);
 
   visit('/');
 

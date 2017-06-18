@@ -35,7 +35,7 @@ export default {
   "app": {
     "link-songs": "Songs",
     "link-lists": "Lists",
-    "link-logout": "Logout"
+    "link-account": "Account"
   },
   "songs": {
     "link-edit": "Edit",

@@ -32,7 +32,7 @@ export default function() {
 
   this.get('/rooms/:id');
 
-  this.get('/user/current', function (schema) {
+  this.get('/users/current', function (schema) {
     let currentUser = schema.users.find(1) || {};
     return this.serialize(currentUser);
   });

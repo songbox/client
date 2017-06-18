@@ -1,6 +1,10 @@
 import Ember from 'ember';
 import AuthenticatedRouteMixin from 'ember-simple-auth/mixins/authenticated-route-mixin';
 
+import Changeset from 'ember-changeset';
+import lookupValidator from 'ember-changeset-validations';
+import UserValidation from 'songbox/validations/user';
+
 const {
   computed,
   inject: { service },
@@ -43,7 +47,26 @@ export default Ember.Route.extend(AuthenticatedRouteMixin, {
     }
   },
 
+  setupController(controller, model) {
+    this._super(...arguments);
+    const validator = UserValidation;
+    const changeset = new Changeset(model.user, lookupValidator(validator), validator);
+    controller.set('changeset', changeset);
+  },
+
   actions: {
+    editUser(/*user*/) {
+      this.transitionTo({ queryParams: { editUser: true }});
+    },
+    saveUser(changeset) {
+      return changeset.validate().then(() => {
+        if (changeset.get('isValid')) {
+          changeset.save().then(() => {
+            this.transitionTo({ queryParams: { editUser: false }});
+          });
+        }
+      });
+    },
     logout() {
       this.get('session').invalidate();
     }

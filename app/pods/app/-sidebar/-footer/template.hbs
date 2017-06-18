@@ -6,9 +6,9 @@
     </li>
 
     <li>
-      <a {{action (route-action "logout")}}>
+      <a {{action (route-action "editUser" model.user)}}>
         {{svg-icon "ic_person_outline_24px"}}
-        {{t "app.link-logout"}}
+        {{t "app.link-account"}}
       </a>
     </li>
   </ul>
