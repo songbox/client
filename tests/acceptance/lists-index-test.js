@@ -21,9 +21,9 @@ test('sidebar should show list infos', async function (assert) {
 
   await page.visit();
 
-  assert.equal(page.sidebar.items().count, 1, '1 list in sidebar');
-  assert.equal(page.sidebar.items(0).text.title, name, 'shows list name');
-  assert.equal(page.sidebar.items(0).text.details, '0 songs', 'shows amount of songs');
+  assert.equal(page.sidebar.main.items().count, 1, '1 list in sidebar');
+  assert.equal(page.sidebar.main.items(0).text.title, name, 'shows list name');
+  assert.equal(page.sidebar.main.items(0).text.details, '0 songs', 'shows amount of songs');
 });
 
 test('sidebar should enable removal of lists', async function (assert) {
@@ -32,13 +32,13 @@ test('sidebar should enable removal of lists', async function (assert) {
   server.create('list');
 
   await page.visit();
-  await page.sidebar.actions.edit();
+  await page.sidebar.main.actions.edit();
 
   assert.equal(currentURL(), '/a/lists?edit=true');
-  assert.equal(page.sidebar.items().count, 1, '1 list in sidebar');
+  assert.equal(page.sidebar.main.items().count, 1, '1 list in sidebar');
 
-  await page.sidebar.items(0).buttons.remove();
+  await page.sidebar.main.items(0).buttons.remove();
 
-  assert.equal(page.sidebar.items().count, 0, 'no list in sidebar');
+  assert.equal(page.sidebar.main.items().count, 0, 'no list in sidebar');
   assert.equal(currentURL(), '/a/lists?edit=true', 'stays at same page');
 });

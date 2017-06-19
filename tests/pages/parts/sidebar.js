@@ -6,32 +6,36 @@ import {
 } from 'ember-cli-page-object';
 
 export default {
-  scope: '.bm-menu main',
+  scope: '.bm-menu',
 
-  header: text('h1'),
+  main: {
+    scope: 'main',
 
-  actions: {
-    new: clickable('[data-test-list-action-new]'),
-    add: clickable('[data-test-list-action-add]'),
-    edit: clickable('[data-test-list-action-edit]')
-  },
+    header: text('h1'),
 
-  items: collection({
-    itemScope: 'ul li',
+    actions: {
+      new: clickable('[data-test-list-action-new]'),
+      add: clickable('[data-test-list-action-add]'),
+      edit: clickable('[data-test-list-action-edit]')
+    },
 
-    item: {
-      click: clickable('[data-test-item-text]'),
-      isSelected: hasClass('active'),
-      text: {
-        scope: '[data-test-item-text]',
+    items: collection({
+      itemScope: 'ul li',
 
-        title: text('div', { at: 0 }),
-        details: text('div', { at: 1 })
-      },
-      buttons: {
-        add: clickable('[data-test-item-button-add]'),
-        remove: clickable('[data-test-item-button-remove]')
+      item: {
+        click: clickable('[data-test-item-text]'),
+        isSelected: hasClass('active'),
+        text: {
+          scope: '[data-test-item-text]',
+
+          title: text('div', { at: 0 }),
+          details: text('div', { at: 1 })
+        },
+        buttons: {
+          add: clickable('[data-test-item-button-add]'),
+          remove: clickable('[data-test-item-button-remove]')
+        }
       }
-    }
-  })
+    })
+  }
 };
