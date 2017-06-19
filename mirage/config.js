@@ -34,6 +34,11 @@ export default function() {
 
   this.get('/users/current', function (schema) {
     let currentUser = schema.users.find(1) || {};
-    return this.serialize(currentUser);
+    return currentUser;
+  });
+  this.patch('/users/current', function (schema/*, request*/) {
+    let currentUser = schema.users.find(1) || {};
+    let attrs = this.normalizedRequestAttrs();
+    return currentUser.update(attrs);
   });
 }

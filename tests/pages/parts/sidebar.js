@@ -37,5 +37,10 @@ export default {
         }
       }
     })
+  },
+  footer: {
+    scope: 'footer',
+
+    openAccount: clickable('a')
   }
 };

@@ -68,7 +68,7 @@ export default Ember.Route.extend(AuthenticatedRouteMixin, {
       });
     },
     logout() {
-      this.get('session').invalidate();
+      return this.get('session').invalidate();
     }
   }
 });
