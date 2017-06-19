@@ -15,7 +15,7 @@ dependencies:
 
 test:
   override:
-    - COVERAGE=true ember test
+    - COVERAGE=true FASTBOOT_DISABLED=true ember test
   post:
     - cp -R coverage* $CIRCLE_TEST_REPORTS
 
