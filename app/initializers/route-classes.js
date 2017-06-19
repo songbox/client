@@ -11,10 +11,14 @@ export function initialize(/*owner*/) {
         return;
       }
 
-      Ember.$('body').addClass(cssClass);
+      if (typeof(FastBoot) === "undefined") {
+        Ember.$('body').addClass(cssClass);
+      }
     },
     deactivate() {
-      Ember.$('body').removeClass(this.toCssClass());
+      if (typeof(FastBoot) === "undefined") {
+        Ember.$('body').removeClass(this.toCssClass());
+      }
     },
     toCssClass() {
       return this.routeName.replace(/\./g, '-').dasherize();

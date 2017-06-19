@@ -15,7 +15,7 @@ dependencies:
 
 test:
   override:
-    - COVERAGE=true FASTBOOT_DISABLED=true ember test
+    - COVERAGE=true ember test
   post:
     - cp -R coverage* $CIRCLE_TEST_REPORTS
 
@@ -28,8 +28,8 @@ deployment:
   staging:
     branch: master
     commands:
-      - CDN_HOST='//cdn.songbox.co/staging/' FASTBOOT_DISABLED=true ember deploy staging --activate
+      - CDN_HOST='//cdn.songbox.co/staging/' ember deploy staging --activate
   production:
     branch: production
     commands:
-      - CDN_HOST='//cdn.songbox.co/production/' FASTBOOT_DISABLED=true ember deploy production --activate
+      - CDN_HOST='//cdn.songbox.co/production/' ember deploy production --activate
