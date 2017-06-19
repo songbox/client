@@ -2,8 +2,8 @@
   <input type="hidden" name="user[email]" value={{changeset.email}}>
   {{f.password-field "password"}}
   {{f.password-field "passwordConfirmation"}}
-  {{f.submit "Change" disabled=(or changeset.isPristine changeset.isInvalid)}}
+  {{f.submit "Save" disabled=(or changeset.isPristine changeset.isInvalid)}}
   {{f.button "Cancel" click=onCancel}}
 {{/form-for}}
 
-<button class="button button--warn" {{action onLogout}}>Logout</button>
+<button class="button button--warn" onclick={{action onLogout}}>Logout</button>

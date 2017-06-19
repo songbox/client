@@ -23,7 +23,7 @@ test('should be opened from sidebar', async function (assert) {
   assert.ok(modal.isOpen);
 });
 
-test('should have a form to change password', async function (assert) {
+test('should have form to change password', async function (assert) {
   assert.expect(2);
 
   await modal.open();
@@ -32,8 +32,33 @@ test('should have a form to change password', async function (assert) {
     .passwordConfirmation('mypassword')
     .submit();
 
-  assert.equal(server.db.users[0].password, 'mypassword', 'database updated');
   assert.notOk(modal.isOpen, 'modal is closed');
+  assert.equal(server.db.users[0].password, 'mypassword', 'database updated');
+
+  // FIXME: clean saved form
+  /*
+  await modal.open();
+
+  assert.equal(modal.form.passwordValue, '', 'field was reset');
+  assert.equal(modal.form.passwordConfirmationValue, '', 'field was reset');
+  */
+});
+
+test('should have cancel button in password form', async function (assert) {
+  assert.expect(3);
+
+  await modal.open();
+  await modal.form
+    .password('mypassword')
+    .passwordConfirmation('mypassword')
+    .cancel();
+
+  assert.notOk(modal.isOpen, 'modal is closed');
+
+  await modal.open();
+
+  assert.equal(modal.form.passwordValue, '', 'field was reset');
+  assert.equal(modal.form.passwordConfirmationValue, '', 'field was reset');
 });
 
 skip('should have a logout button', async function (assert) {

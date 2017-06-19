@@ -1,7 +1,7 @@
 {{#if editUser}}
   {{to-elsewhere named="modal" send=(hash title="Account"
-                                          body=(component "user-edit-form" changeset=changeset onSubmit=(route-action "saveUser" changeset) onCancel=(action (mut editUser) false) onLogout=(route-action "logout"))
-                                          onOutsideClick=(action (mut editUser) false)
+                                          body=(component "user-edit-form" changeset=changeset onSubmit=(route-action "saveUser" changeset) onCancel=(route-action "cancelUser" changeset) onLogout=(route-action "logout"))
+                                          onOutsideClick=(route-action "cancelUser" changeset)
                                     )
   }}
 {{/if}}

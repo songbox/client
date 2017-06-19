@@ -62,10 +62,15 @@ export default Ember.Route.extend(AuthenticatedRouteMixin, {
       return changeset.validate().then(() => {
         if (changeset.get('isValid')) {
           changeset.save().then(() => {
+            changeset.rollback();
             this.transitionTo({ queryParams: { editUser: false }});
           });
         }
       });
+    },
+    cancelUser(changeset) {
+      changeset.rollback();
+      this.transitionTo({ queryParams: { editUser: false }});
     },
     logout() {
       return this.get('session').invalidate();
