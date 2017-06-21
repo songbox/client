@@ -2,7 +2,8 @@
   margin-top: 10px;
   margin-left: -10px;
   margin-right: -10px;
-  max-height: calc(100vh - 190px);
+  height: 100vh; // needed for vertical-collection
+  max-height: calc(100vh - 170px);
   overflow-y: scroll;
   -webkit-overflow-scrolling: touch; // momentum scrolling on iOS
 }

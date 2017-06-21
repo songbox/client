@@ -1,4 +1,10 @@
-{{#each models as |model index|}}
+{{#vertical-collection models
+  tagName="ul"
+  bufferSize=2
+  minHeight=60
+  staticHeight=true
+  as |model index|
+}}
   {{#item-list/list-items/list-item group=group model=model selected=selected handle=".handle"}}
     {{yield
       (hash
@@ -11,4 +17,4 @@
       index
     }}
   {{/item-list/list-items/list-item}}
-{{/each}}
+{{/vertical-collection}}
