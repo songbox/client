@@ -1,0 +1,9 @@
+& {
+  @include typography-style(title);
+
+  &.center {
+    @include typography-style(headline);
+    margin-top: 25vh;
+    text-align: center;
+  }
+}

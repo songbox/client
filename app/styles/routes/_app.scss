@@ -67,14 +67,6 @@ body.app {
       top: 3px;
       border-bottom: 0;
     }
-
-    main {
-      > h1 {
-        @include typography-style(headline);
-        margin-top: 25vh;
-        text-align: center;
-      }
-    }
   }
 
 }

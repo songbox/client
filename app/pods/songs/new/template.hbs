@@ -1,4 +1,4 @@
 
-{{t "songs.new.header"}}
+{{#em-header}}{{t "songs.new.header"}}{{/em-header}}
 
 {{song-form changeset=changeset onSave=(route-action "save" changeset) onCancel=(route-action "list")}}

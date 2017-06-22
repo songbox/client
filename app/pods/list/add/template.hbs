@@ -2,7 +2,7 @@
 {{to-elsewhere named="sidebar" send=(component "list-songs-add-sidebar" onSelect=(route-action "select" model.list) onAdd=(route-action "add" model.list) list=model.list songs=model.songs)}}
 
 {{#unless model.song}}
-  <h1>Add Song on the left side.</h1>
+  {{#em-header center=true}}Add Song on the left side.{{/em-header}}
 {{else}}
   {{song-sheet song=model.song}}
 {{/unless}}
