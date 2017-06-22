@@ -1,5 +1,10 @@
-<form {{action "doImport" model on="submit"}}>
-  {{input type="file" multiple="multiple" value=model.files}}
 
-  <button type="submit">Save</button>
-</form>
+{{#em-header}}{{t "songs.import.header"}}{{/em-header}}
+
+{{#form-for model submit=(route-action "doImport") as |f|}}
+  {{f.file-field "files" multiple="multiple"}}
+  {{#em-note}}We currently only support the Opensong file format.{{/em-note}}
+
+  {{f.submit "Save"}}
+  {{f.button "Cancel" classNames="" click=(route-action "cancel")}}
+{{/form-for}}

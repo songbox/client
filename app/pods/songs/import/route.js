@@ -10,6 +10,7 @@ const {
 export default Ember.Route.extend({
   model() {
     return {
+      modelName: 'song', // used in ember-form-for
     };
   },
 
@@ -43,6 +44,9 @@ export default Ember.Route.extend({
             console.warn(file.type + ' not supported yet');
         }
       });
+    },
+    cancel() {
+      this.transitionTo('songs');
     }
   }
 });

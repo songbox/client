@@ -12,6 +12,7 @@ export default {
   "song.license": "License",
   "song.ccli": "CCLI",
   "song.text": "Text",
+  "song.files": "Files", // used for import
   "list": {
     "one": '1 list',
     "other": '{{count}} lists'
@@ -40,7 +41,8 @@ export default {
   "songs": {
     "link-edit": "Edit",
     "link-new": "New",
-    "link-import": "Import"
+    "link-import": "Import",
+    "import.header": "Import"
   },
   "songs.index": {
     "text": "Select a song"
