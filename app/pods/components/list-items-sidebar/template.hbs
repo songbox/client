@@ -2,7 +2,7 @@
   {{l.header (concat "List: " list.name)}}
 
   {{#l.actions as |link|}}
-    {{#unless editMode}}
+    {{#if (not editMode)}}
       {{#link.edit (query-params editMode=true)}}
         {{t "lists.link-edit"}}
       {{/link.edit}}
@@ -10,7 +10,7 @@
       {{#link.edit (query-params editMode=false)}}
         Done
       {{/link.edit}}
-    {{/unless}}
+    {{/if}}
 
     {{#link.add "list.add" list}}
       Add

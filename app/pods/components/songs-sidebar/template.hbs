@@ -4,7 +4,7 @@
   {{#list.filter items=songs attr="title" as |filtered|}}
 
     {{#list.actions as |links|}}
-      {{#unless editMode}}
+      {{#if (not editMode)}}
         {{#links.edit (query-params editMode=true)}}
           {{t "songs.link-edit"}}
         {{/links.edit}}
@@ -12,7 +12,7 @@
         {{#links.edit (query-params editMode=false)}}
           Done
         {{/links.edit}}
-      {{/unless}}
+      {{/if}}
       {{#links.add "songs.new"}}
         {{t "songs.link-new"}}
       {{/links.add}}
