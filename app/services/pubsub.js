@@ -5,6 +5,7 @@ import ENV from '../config/environment';
 
 const {
   assert,
+  computed: { equal },
   inject: { service },
   RSVP,
   Service
@@ -14,16 +15,23 @@ const PhoenixSocketService = PhoenixSocket.extend({
   session: service(),
   flashMessages: service(),
 
+  statusCode: 0,
+  statusMessage: '',
+
+  isSuccess: equal('statusCode', 2),
+  isInfo: equal('statusCode', 1),
+  isDanger: equal('statusCode', 0),
+
   init() {
     // You may listen to open, "close" and "error"
     this.on('open', () => {
-      this.get('flashMessages').success('Socket was opened!');
+      this._success('Connection established!')
     });
     this.on('close', () => {
-      this.get('flashMessages').danger('Socket was closed!');
+      this._danger('Connection lost!')
     });
     this.on('error', () => {
-      this.get('flashMessages').danger('Socket could not be opened!');
+      this._danger('Error connecting!')
     });
   },
 
@@ -45,19 +53,32 @@ const PhoenixSocketService = PhoenixSocket.extend({
       const channel = socket.channel(name, params);
       channel.join()
         .receive('ok', () => {
-          this.get('flashMessages').success('Room joined!');
+          this._success('Ready to broadcast!')
           resolve(channel);
         })
         .receive('error', ({ reason }) => {
-          this.get('flashMessages').danger('Room could not be joined!');
+          this._danger('Cannot broadcast!')
           reject(reason);
         })
         .receive('timeout', () => {
-          this.get('flashMessages').info('Networking issue. Still waiting...');
+          this._info('Networking issue. Still waiting...');
         });
     });
-  }
+  },
 
+  // status changes
+  _success(message) {
+    this.get('flashMessages').success(message);
+    this.setProperties({ statusCode: 2, statusMessage: message });
+  },
+  _info(message) {
+    this.get('flashMessages').info(message);
+    this.setProperties({ statusCode: 1, statusMessage: message });
+  },
+  _danger(message) {
+    this.get('flashMessages').danger(message);
+    this.setProperties({ statusCode: 0, statusMessage: message });
+  }
 });
 
 // DummySocketService used while dev with `ember-cli-mirage` or while testing.
