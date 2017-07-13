@@ -88,9 +88,15 @@ const DummySocketService = Service.extend({
     return new RSVP.resolve({
     });
   },
+  connectViewer() {
+    return new RSVP.resolve({
+    });
+  },
   joinChannel(/*name, params*/) {
     return new RSVP.resolve({
       push() {
+      },
+      on() {
       }
     });
   }

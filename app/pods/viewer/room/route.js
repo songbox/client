@@ -6,7 +6,6 @@ const {
 
 export default Ember.Route.extend({
   pubsub: service(),
-  fastboot: service(),
 
   model() {
     return {
@@ -17,7 +16,7 @@ export default Ember.Route.extend({
   },
 
   setupController(controller/*, model*/) {
-    if (! this.get('fastboot.isFastBoot')) {
+    if (typeof(FastBoot) === "undefined") {
       const pathElems = window.location.pathname.split('/');
       const roomId = pathElems[pathElems.length -1];
 
