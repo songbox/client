@@ -28,6 +28,7 @@ body.viewer-room {
 
   .bm-content {
     padding: 20px;
+    background-color: $background-color;
 
     // burger icon
     > a {
@@ -42,11 +43,11 @@ body.viewer-room {
 
 // night mode
 .bm-content {
-  filter: invert(0);
-  transition-property: filter;
+  transition-property: color, background-color;
   transition-duration: .5s;
 
   .night-mode & {
-    filter: invert(100%);
+    color: invert($text-color) !important;
+    background-color: invert($background-color) !important;
   }
 }
