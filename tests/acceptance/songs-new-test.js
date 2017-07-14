@@ -25,7 +25,7 @@ test('creating a song', async function (assert) {
   let song = server.db.songs.find(3);
   assert.equal(song.title, 'New Song', 'changed title');
   assert.equal(song.text, 'Song Text', 'changed text');
-  assert.equal(currentURL(), '/a/songs', 'redirects to song list');
+  assert.equal(currentURL(), `/a/songs/${song.id}`, 'redirects to new song');
 });
 
 test('shows validation error and prevents creation', async function (assert) {

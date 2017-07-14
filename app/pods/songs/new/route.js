@@ -19,7 +19,7 @@ export default Ember.Route.extend(ModelChangeset, {
         if (changeset.get('isValid')) {
           const song = this.store.createRecord('song', changeset.get('change'));
           song.save().then(() => {
-            this.transitionTo('songs');
+            this.transitionTo('song', song);
           });
         }
       });
