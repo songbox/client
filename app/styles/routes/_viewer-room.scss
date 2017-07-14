@@ -24,6 +24,10 @@ body.viewer-room {
     h2 {
       @include typography-style(subheading1)
     }
+
+    li + li {
+      margin-top: 15px;
+    }
   }
 
   .bm-content {

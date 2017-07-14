@@ -1,0 +1,6 @@
+{{#x-toggle size="small" value=setting showLabels=true onToggle=(action (mut setting)) as |t|}}
+  {{t.switch}}
+  {{#t.label value=(not setting)}}
+    {{label}}
+  {{/t.label}}
+{{/x-toggle}}

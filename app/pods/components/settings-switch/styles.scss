@@ -1,0 +1,17 @@
+
+.x-toggle-component {
+  justify-content: flex-start;
+
+  label.on-label,
+  label.off-label {
+    padding-left: 20px;
+  }
+}
+
+label > .x-toggle-default.x-toggle-btn {
+  background-color: color('grey', 'lighten-1');
+}
+
+.x-toggle:checked + label > .x-toggle-default.x-toggle-btn {
+  background-color: color('green', 'lighten-1');
+}

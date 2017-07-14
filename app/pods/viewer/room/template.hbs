@@ -15,16 +15,13 @@
     <main>
       <ul>
         {{#menu.item}}
-          <label>Night Mode</label>
-          {{input type="checkbox" checked=settings.nightMode}}
+          {{settings-switch key="nightMode" label="Night Mode"}}
         {{/menu.item}}
         {{#menu.item}}
-          <label>Show Header</label>
-          {{input type="checkbox" checked=settings.showHeader}}
+          {{settings-switch key="showHeader" label="Show Header"}}
         {{/menu.item}}
         {{#menu.item}}
-          <label>Show Chords</label>
-          {{input type="checkbox" checked=settings.showChords}}
+          {{settings-switch key="showChords" label="Show Chords"}}
         {{/menu.item}}
       </ul>
     </main>
