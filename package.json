@@ -69,6 +69,7 @@
     "ember-keyboard": "^2.1.10",
     "ember-load": "0.0.11",
     "ember-load-initializers": "^1.0.0",
+    "ember-local-settings": "^1.0.4",
     "ember-math-helpers": "^2.0.5",
     "ember-metrics": "^0.10.0",
     "ember-native-dom-helpers": "^0.3.12",

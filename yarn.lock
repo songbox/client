@@ -3444,6 +3444,14 @@ ember-load@0.0.11:
     ember-cli-htmlbars "^1.0.10"
     ember-cli-version-checker "^1.1.4"
 
+ember-local-settings@^1.0.4:
+  version "1.0.4"
+  resolved "https://registry.yarnpkg.com/ember-local-settings/-/ember-local-settings-1.0.4.tgz#47edde29e49f320e188821875387f4adfe3356c6"
+  dependencies:
+    ember-cli-babel "^5.1.7"
+    ember-runtime-enumerable-includes-polyfill "^1.0.4"
+    js-cookie "^2.1.4"
+
 ember-lodash@^4.0:
   version "4.17.2"
   resolved "https://registry.yarnpkg.com/ember-lodash/-/ember-lodash-4.17.2.tgz#0ed40ab89c2f9846765fc2504c0034000f666933"
@@ -3551,7 +3559,7 @@ ember-router-generator@^1.0.0:
   dependencies:
     recast "^0.11.3"
 
-ember-runtime-enumerable-includes-polyfill@^1.0.1:
+ember-runtime-enumerable-includes-polyfill@^1.0.1, ember-runtime-enumerable-includes-polyfill@^1.0.4:
   version "1.0.4"
   resolved "https://registry.yarnpkg.com/ember-runtime-enumerable-includes-polyfill/-/ember-runtime-enumerable-includes-polyfill-1.0.4.tgz#16a7612e347a2edf07da8b2f2f09dbfee70deba0"
   dependencies:
@@ -5196,6 +5204,10 @@ jquery@^3.2.1:
 js-base64@^2.1.8, js-base64@^2.1.9:
   version "2.1.9"
   resolved "https://registry.yarnpkg.com/js-base64/-/js-base64-2.1.9.tgz#f0e80ae039a4bd654b5f281fc93f04a914a7fcce"
+
+js-cookie@^2.1.4:
+  version "2.1.4"
+  resolved "https://registry.yarnpkg.com/js-cookie/-/js-cookie-2.1.4.tgz#da4ec503866f149d164cf25f579ef31015025d8d"
 
 js-reporters@1.2.0:
   version "1.2.0"
