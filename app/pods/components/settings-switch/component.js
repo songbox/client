@@ -5,7 +5,7 @@ const {
   inject: { service }
 } = Ember;
 
-export default Ember.Component.extend({
+const SettingsSwitch = Ember.Component.extend({
   settings: service(),
 
   key: null,
@@ -23,3 +23,9 @@ export default Ember.Component.extend({
   })
 
 });
+
+SettingsSwitch.reopenClass({
+  positionalParams: ['key']
+});
+
+export default SettingsSwitch;
