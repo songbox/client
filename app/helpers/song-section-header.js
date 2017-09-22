@@ -1,8 +1,5 @@
-import Ember from 'ember';
-
-const {
-  isEmpty
-} = Ember;
+import { helper } from '@ember/component/helper';
+import { isEmpty } from '@ember/utils';
 
 export function songSectionHeader([abbr]/*, hash*/) {
   const replacements = {
@@ -38,4 +35,4 @@ export function songSectionHeader([abbr]/*, hash*/) {
   return abbArr.join(' ');
 }
 
-export default Ember.Helper.helper(songSectionHeader);
+export default helper(songSectionHeader);

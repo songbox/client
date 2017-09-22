@@ -1,11 +1,8 @@
-import Ember from 'ember';
+import Component from '@ember/component';
+import { computed } from '@ember/object';
 import parsers from 'songbox/utils/parsers';
 
-const {
-  computed
-} = Ember;
-
-export default Ember.Component.extend({
+export default Component.extend({
   song: null,
 
   showChords: true,

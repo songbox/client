@@ -1,9 +1,9 @@
-import Ember from 'ember';
+import Route from '@ember/routing/route';
 
 import ModelChangeset from 'songbox/mixins/routes/model-changeset';
 import ListValidation from 'songbox/validations/list';
 
-export default Ember.Route.extend(ModelChangeset, {
+export default Route.extend(ModelChangeset, {
   validator: ListValidation,
 
   model() {

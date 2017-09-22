@@ -1,11 +1,8 @@
-import Ember from 'ember';
+import Component from '@ember/component';
+import { computed } from '@ember/object';
+import { isEmpty } from '@ember/utils';
 
-const {
-  computed,
-  isEmpty
-} = Ember;
-
-export default Ember.Component.extend({
+export default Component.extend({
   items: [],
 
   searchTerm: '',

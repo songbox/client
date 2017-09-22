@@ -1,15 +1,10 @@
+import { assert } from '@ember/debug';
+import { equal } from '@ember/object/computed';
+import RSVP from 'rsvp';
+import Service, { inject as service } from '@ember/service';
 import PhoenixSocket from 'phoenix/services/phoenix-socket';
-import Ember from 'ember';
 
 import ENV from '../config/environment';
-
-const {
-  assert,
-  computed: { equal },
-  inject: { service },
-  RSVP,
-  Service
-} = Ember;
 
 const PhoenixSocketService = PhoenixSocket.extend({
   session: service(),

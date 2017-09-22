@@ -1,17 +1,14 @@
-import Ember from 'ember';
+import Route from '@ember/routing/route';
+import { computed } from '@ember/object';
+import { inject as service } from '@ember/service';
+import RSVP from 'rsvp';
 import AuthenticatedRouteMixin from 'ember-simple-auth/mixins/authenticated-route-mixin';
 
 import Changeset from 'ember-changeset';
 import lookupValidator from 'ember-changeset-validations';
 import UserValidation from 'songbox/validations/user';
 
-const {
-  computed,
-  inject: { service },
-  RSVP
-} = Ember;
-
-export default Ember.Route.extend(AuthenticatedRouteMixin, {
+export default Route.extend(AuthenticatedRouteMixin, {
   pubsub: service(),
   session: service(),
   current: service(),

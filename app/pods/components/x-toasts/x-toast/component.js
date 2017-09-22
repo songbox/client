@@ -1,13 +1,9 @@
-import Ember from 'ember';
+import Component from '@ember/component';
+import { readOnly } from '@ember/object/computed';
+import { getWithDefault, computed } from '@ember/object';
+import { cancel, next } from '@ember/runloop';
 
-const {
-  computed,
-  computed: { readOnly },
-  getWithDefault,
-  run: { next, cancel }
-} = Ember;
-
-export default Ember.Component.extend({
+export default Component.extend({
   classNames: ['material-toast', 'toast'],
   classNameBindings: ['active', 'exiting', 'color'],
   active: false,

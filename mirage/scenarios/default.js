@@ -8,8 +8,7 @@ export default function(server) {
   */
 
   const user = server.create('user');
-  const room = server.create('room', { user });
-  user.update({ room });
+  server.create('room', { user });
 
   server.loadFixtures()
   // server.createList('post', 10);

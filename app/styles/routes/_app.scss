@@ -1,72 +1,7 @@
-$app-aside-width: 200px;
-
 body.app {
 
   & > .ember-view {
     height: 100%;
-  }
-
-  .bm-menu {
-    display: flex;
-    flex-direction: column;
-
-    header, footer {
-      padding: 15px 10px;
-      background-color: color("grey", "lighten-2");
-
-      ul {
-        display: flex;
-      }
-      li {
-        display: inline-block;
-      }
-      li + li {
-        margin-left: 10px;
-      }
-    }
-
-    header {
-      position: relative;
-      > a {
-        @include typography-style(title)
-        position: absolute;
-        right: 10px;
-        top: 3px;
-        border-bottom: 0;
-      }
-    }
-
-    footer {
-      .screen-share {
-        input {
-          width: 180px;
-          height: 20px;
-          text-align: center;
-        }
-      }
-    }
-
-    main {
-      flex-grow: 1;
-      padding: 10px;
-      background-color: color("grey", "lighten-6");
-      border-right: 1px solid color("grey", "lighten-2");
-      overflow: hidden;
-    }
-  }
-
-  .bm-content {
-    padding: 20px;
-    padding-left: 40px;
-    -webkit-overflow-scrolling: touch; // momentum scrolling on iOS
-
-    > a {
-      @include typography-style(title)
-      position: absolute;
-      left: 10px;
-      top: 3px;
-      border-bottom: 0;
-    }
   }
 
 }

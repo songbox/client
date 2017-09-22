@@ -1,0 +1,13 @@
+& {
+  padding: 20px;
+  padding-left: 40px;
+  -webkit-overflow-scrolling: touch; // momentum scrolling on iOS
+
+  > a {
+    @include typography-style(title)
+    position: absolute;
+    left: 10px;
+    top: 3px;
+    border-bottom: 0;
+  }
+}

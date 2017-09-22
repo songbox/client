@@ -1,11 +1,8 @@
-import Ember from 'ember';
+import Component from '@ember/component';
+import { computed } from '@ember/object';
+import { inject as service } from '@ember/service';
 
-const {
-  computed,
-  inject: { service }
-} = Ember;
-
-const SettingsSwitch = Ember.Component.extend({
+const SettingsSwitch = Component.extend({
   settings: service(),
 
   key: null,

@@ -1,14 +1,11 @@
-import Ember from 'ember';
+import Route from '@ember/routing/route';
+import { inject as service } from '@ember/service';
 
 import ModelChangeset from 'songbox/mixins/routes/model-changeset';
 import DirtyChangeset from 'songbox/mixins/routes/dirty-changeset';
 import ListValidation from 'songbox/validations/list';
 
-const {
-  inject: { service }
-} = Ember;
-
-export default Ember.Route.extend(ModelChangeset, DirtyChangeset, {
+export default Route.extend(ModelChangeset, DirtyChangeset, {
   flashMessages: service(),
 
   validator: ListValidation,

@@ -1,6 +1,6 @@
-import Ember from 'ember';
+import Component from '@ember/component';
 
-const TextComponent = Ember.Component.extend({
+const TextComponent = Component.extend({
 });
 
 TextComponent.reopenClass({

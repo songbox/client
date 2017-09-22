@@ -1,12 +1,8 @@
-import Ember from 'ember';
+import { computed } from '@ember/object';
+import { readOnly } from '@ember/object/computed';
+import Service, { inject as service } from '@ember/service';
 
-const {
-  computed,
-  computed: { readOnly },
-  inject: { service }
-} = Ember;
-
-export default Ember.Service.extend({
+export default Service.extend({
   ajax: service(),
   store: service(),
 

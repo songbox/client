@@ -1,8 +1,9 @@
-import Ember from 'ember';
+import $ from 'jquery';
+import Route from '@ember/routing/route';
 
 // https://dockyard.com/blog/ember/2013/03/27/body-class-tags-in-ember
 export function initialize(/*owner*/) {
-  Ember.Route.reopen({
+  Route.reopen({
     activate() {
       var cssClass = this.toCssClass();
       // you probably don't need the application class
@@ -12,12 +13,12 @@ export function initialize(/*owner*/) {
       }
 
       if (typeof(FastBoot) === "undefined") {
-        Ember.$('body').addClass(cssClass);
+        $('body').addClass(cssClass);
       }
     },
     deactivate() {
       if (typeof(FastBoot) === "undefined") {
-        Ember.$('body').removeClass(this.toCssClass());
+        $('body').removeClass(this.toCssClass());
       }
     },
     toCssClass() {

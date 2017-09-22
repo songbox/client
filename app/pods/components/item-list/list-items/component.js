@@ -1,6 +1,6 @@
-import Ember from 'ember';
+import Component from '@ember/component';
 
-const ItemsComponent = Ember.Component.extend({
+const ItemsComponent = Component.extend({
   models: [],
   group: null
 });

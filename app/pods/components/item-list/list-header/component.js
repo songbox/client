@@ -1,6 +1,6 @@
-import Ember from 'ember';
+import Component from '@ember/component';
 
-const ListHeaderComponent = Ember.Component.extend({
+const ListHeaderComponent = Component.extend({
   tagName: 'h1'
 });
 

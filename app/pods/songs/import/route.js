@@ -1,13 +1,11 @@
 /* eslint no-console: ["error", { allow: ["warn", "error"] }] */
 
-import Ember from 'ember';
+import Route from '@ember/routing/route';
+
+import $ from 'jquery';
 import { readAsText } from 'songbox/utils/promise-file-reader';
 
-const {
-  $
-} = Ember;
-
-export default Ember.Route.extend({
+export default Route.extend({
   model() {
     return {
       modelName: 'song', // used in ember-form-for

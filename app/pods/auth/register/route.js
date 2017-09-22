@@ -1,12 +1,8 @@
-import Ember from 'ember';
+import Route from '@ember/routing/route';
+import { inject as service } from '@ember/service';
+import { camelize } from '@ember/string';
 import ModelChangeset from 'songbox/mixins/routes/model-changeset';
 import UserValidation from 'songbox/validations/user';
-
-const {
-  Route,
-  inject: { service },
-  String: { camelize }
-} = Ember;
 
 export default Route.extend(ModelChangeset, {
   validator: UserValidation,

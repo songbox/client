@@ -2,13 +2,13 @@ import ENV from '../config/environment';
 
 export default function() {
   this.passthrough('/write-coverage');
-  this.post('https://sentry.io/**', function () {
+  this.post('https://sentry.io/**', () => {
   });
 
   this.urlPrefix = ENV.api.host;
   this.namespace = ENV.api.namespace;
 
-  this.post('/token', function () {
+  this.post('/token', () => {
     return {
       "access_token": "dummy.token1234"
     };
@@ -32,13 +32,13 @@ export default function() {
 
   this.get('/rooms/:id');
 
-  this.get('/users/current', function (schema) {
+  this.get('/users/current', (schema) => {
     let currentUser = schema.users.find(1) || {};
     return currentUser;
   });
-  this.patch('/users/current', function (schema/*, request*/) {
+  this.patch('/users/current', (schema, request) => {
     let currentUser = schema.users.find(1) || {};
-    let attrs = this.normalizedRequestAttrs();
+    let attrs = JSON.parse(request.requestBody)['data']['attributes'];
     return currentUser.update(attrs);
   });
 }

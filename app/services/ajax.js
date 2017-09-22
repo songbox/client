@@ -1,11 +1,7 @@
-import Ember from 'ember';
+import { computed } from '@ember/object';
+import { inject as service } from '@ember/service';
 import AjaxService from 'ember-ajax/services/ajax';
 import ENV from '../config/environment';
-
-const {
-  computed,
-  inject: { service }
-} = Ember;
 
 const {
   api: { host, namespace }

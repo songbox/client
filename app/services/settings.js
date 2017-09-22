@@ -1,9 +1,7 @@
+import Service from '@ember/service';
+import { computed } from '@ember/object';
 import Ember from 'ember';
 import LocalSettingsInterface from 'songbox/local-settings-interface';
-
-const {
-  computed
-} = Ember;
 
 /**
   Creates a setting being stored
@@ -22,7 +20,7 @@ function setting(name) {
   })
 }
 
-export default Ember.Service.extend({
+export default Service.extend({
 
   nightMode: setting('nightMode'),
   showChords: setting('showChords'),

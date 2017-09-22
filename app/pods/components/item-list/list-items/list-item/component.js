@@ -1,11 +1,8 @@
-import Ember from 'ember';
+import Component from '@ember/component';
+import { computed } from '@ember/object';
 import SortableItemMixin from 'ember-sortable/mixins/sortable-item';
 
-const {
-  computed
-} = Ember;
-
-export default Ember.Component.extend(SortableItemMixin, {
+export default Component.extend(SortableItemMixin, {
   tagName: 'li',
 
   classNameBindings: ['isSelected:active'],

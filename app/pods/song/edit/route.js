@@ -1,10 +1,10 @@
-import Ember from 'ember';
+import Route from '@ember/routing/route';
 
 import ModelChangeset from 'songbox/mixins/routes/model-changeset';
 import DirtyChangeset from 'songbox/mixins/routes/dirty-changeset';
 import SongValidation from 'songbox/validations/song';
 
-export default Ember.Route.extend(ModelChangeset, DirtyChangeset, {
+export default Route.extend(ModelChangeset, DirtyChangeset, {
   validator: SongValidation,
 
   actions: {

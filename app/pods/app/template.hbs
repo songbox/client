@@ -15,17 +15,13 @@
   as |burger|}}
 
   {{#burger.menu}}
-    {{partial "app/sidebar"}}
+    {{app-sidebar onClose=(action burger.state.actions.toggle)}}
   {{/burger.menu}}
 
   {{#burger.outlet}}
-    <a {{action burger.state.actions.toggle}}>
-      {{svg-icon "ic_menu_24px"}}
-    </a>
-
-    <main>
+    {{#app-content onToggle=(action burger.state.actions.toggle)}}
       {{outlet}}
-    </main>
+    {{/app-content}}
   {{/burger.outlet}}
 
 {{/burger-menu}}

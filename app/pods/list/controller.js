@@ -1,11 +1,7 @@
-import Ember from 'ember';
+import Controller, { inject as controller } from '@ember/controller';
+import { readOnly } from '@ember/object/computed';
 
-const {
-  inject: { controller },
-  computed: { readOnly }
-} = Ember;
-
-export default Ember.Controller.extend({
+export default Controller.extend({
   listsController: controller('lists'),
 
   editMode: readOnly('listsController.editMode')
