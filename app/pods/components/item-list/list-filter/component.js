@@ -3,9 +3,9 @@ import { computed } from '@ember/object';
 import { isEmpty } from '@ember/utils';
 
 export default Component.extend({
-  items: [],
-
+  items: null,
   searchTerm: '',
+
   filtered: computed('items.[]', 'searchTerm', function () {
     const term = this.get('searchTerm');
     const attr = this.get('attr');

@@ -3671,6 +3671,13 @@ ember-qunit@^2.2.0:
   dependencies:
     ember-test-helpers "^0.6.3"
 
+ember-raf-test-waiter@^0.1.0:
+  version "0.1.0"
+  resolved "https://registry.yarnpkg.com/ember-raf-test-waiter/-/ember-raf-test-waiter-0.1.0.tgz#388dcc1e2eb633794282012399dbf27b39f767cd"
+  dependencies:
+    broccoli-funnel "^2.0.1"
+    ember-cli-babel "^6.3.0"
+
 ember-require-module@^0.1.1:
   version "0.1.1"
   resolved "https://registry.yarnpkg.com/ember-require-module/-/ember-require-module-0.1.1.tgz#5a2130f691ad1578b1d236dd11196721fd5526b2"

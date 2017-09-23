@@ -1,6 +1,9 @@
 import resolver from './helpers/resolver';
 import './helpers/flash-message';
 
+import { registerWaiter } from 'ember-raf-test-waiter';
+registerWaiter();
+
 import {
   setResolver
 } from 'ember-qunit';

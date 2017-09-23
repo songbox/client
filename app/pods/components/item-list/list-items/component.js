@@ -1,7 +1,7 @@
 import Component from '@ember/component';
 
 const ItemsComponent = Component.extend({
-  models: [],
+  models: null,
   group: null
 });
 

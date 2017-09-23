@@ -9,7 +9,7 @@ export default Component.extend({
   showSectionHeaders: true,
   showMultiColumn: false,
 
-  sections: computed('song.text', 'song.format', function () {
+  sections: computed('song.{text,format}', function () {
     const parser = parsers[this.get('song.format') || 'opensong'];
     return parser(this.get('song.text'));
   })

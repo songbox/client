@@ -5,11 +5,11 @@ import ModelChangeset from 'songbox/mixins/routes/model-changeset';
 import UserValidation from 'songbox/validations/user';
 
 export default Route.extend(ModelChangeset, {
-  validator: UserValidation,
-
   i18n: service(),
   session: service(),
   flashMessages: service(),
+
+  validator: UserValidation,
 
   model() {
     return {

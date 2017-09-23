@@ -8,6 +8,7 @@ export default Component.extend({
   classNameBindings: ['active', 'exiting', 'color'],
   active: false,
 
+  exiting: readOnly('content.exiting'),
   color: computed('content.type', function() {
     switch(this.get('content.type')) {
       case 'danger':
@@ -17,14 +18,6 @@ export default Component.extend({
       default: return '';
     }
   }),
-  exiting: readOnly('content.exiting'),
-
-  _destroyFlashMessage() {
-    const flash = getWithDefault(this, 'content', false);
-    if (flash) {
-      flash.destroyMessage();
-    }
-  },
 
   didInsertElement() {
     this._super(...arguments);
@@ -44,6 +37,13 @@ export default Component.extend({
     // task to add the "active" class (see: didInsertElement)
     if (this._applyActiveClass) {
       cancel(this._applyActiveClass);
+    }
+  },
+
+  _destroyFlashMessage() {
+    const flash = getWithDefault(this, 'content', false);
+    if (flash) {
+      flash.destroyMessage();
     }
   }
 });

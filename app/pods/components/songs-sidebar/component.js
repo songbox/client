@@ -1,7 +1,7 @@
 import Component from '@ember/component';
 
 export default Component.extend({
-  songs: [],
+  songs: null,
 
   actions: {
     selectSong(song) {
