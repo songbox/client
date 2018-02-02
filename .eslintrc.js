@@ -18,11 +18,6 @@ module.exports = {
     browser: true
   },
   rules: {
-    'ember/alias-model-in-controller': 0,
-    'ember/named-functions-in-promises': 0,
-    'ember/new-module-imports': 2,
-    'ember/require-super-in-init': 2,
-    'ember/use-ember-get-and-set': 0
   },
   overrides: [
     // node files

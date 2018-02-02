@@ -4482,7 +4482,7 @@ escodegen@1.8.x, escodegen@1.x.x, escodegen@^1.6.1, escodegen@^1.8.0:
   optionalDependencies:
     source-map "~0.2.0"
 
-eslint-plugin-ember@^5.0.0:
+eslint-plugin-ember@^5.0.3:
   version "5.0.3"
   resolved "https://registry.yarnpkg.com/eslint-plugin-ember/-/eslint-plugin-ember-5.0.3.tgz#9f5e2048ab3ddc1548d4d17bf318cf1bb5cf37f1"
   dependencies:
