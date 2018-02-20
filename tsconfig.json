@@ -7,20 +7,28 @@
     "noImplicitThis": true,
     "noEmitOnError": false,
     "noEmit": true,
-    "sourceMap": true,
+    "inlineSourceMap": true,
+    "inlineSources": true,
     "baseUrl": ".",
     "module": "es6",
     "paths": {
-      "songbox/tests/*": ["tests/*"],
+      "songbox/tests/*": [
+        "tests/*"
+      ],
+      "songbox/mirage/*": [
+        "mirage/*"
+      ],
       "songbox/*": [
         "app/*"
+      ],
+      "*": [
+        "types/*"
       ]
     }
   },
-  "exclude": [
-    "tmp",
-    "dist",
-    "node_modules",
-    "bower_components"
+  "include": [
+    "app",
+    "tests",
+    "mirage"
   ]
 }
