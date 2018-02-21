@@ -18,7 +18,7 @@ json = [
 ]
 
 */
-export default function opensong(lyrics: string) {
+export default function opensong(lyrics) {
   if (! lyrics) {
     return [];
   }
@@ -58,7 +58,7 @@ export default function opensong(lyrics: string) {
       case ".": {
         let chordsLine = line.substr(1);
         let chordArr = [];
-        let m : RegExpMatchArray= null;
+        let m = null;
 
         // split cords
         while (chordsLine.length > 0) {
@@ -77,7 +77,7 @@ export default function opensong(lyrics: string) {
         });
 
         let textLine = "";
-        let textLineArr: string[][] = [];
+        let textLineArr = [];
 
         // while we have lines that match a textLine create an html table row
         while ((textLine = lyricsLines.shift()) &&
@@ -86,7 +86,7 @@ export default function opensong(lyrics: string) {
           textLine = m[2];
 
           // split lyrics line based on chord length
-          let textArr: string[] = chordArr.map((chord) => {
+          let textArr = chordArr.map((chord) => {
             // split String with RegExp (is there a better way?)
             m = textLine.match(new RegExp(`(.{0,${chord.length}})(.*)`));
             textLine = m[2];
