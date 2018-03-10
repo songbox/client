@@ -5,11 +5,9 @@
 
 @import "pod-styles";
 
-@import "routes/app";
-@import "routes/auth-login";
-@import "routes/list-add";
-@import "routes/song-index";
-@import "routes/viewer-room";
+body > .ember-view {
+  height: 100%;
+}
 
 .ember-load-indicator {
   @include typography-style(headline);

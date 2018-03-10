@@ -1,0 +1,16 @@
+.bm-content {
+  main {
+    position: relative;
+
+    .actions {
+      position: absolute;
+      top: 20px;
+      left: -30px;
+
+      a {
+        border-bottom: 0;
+      }
+    }
+  }
+}
+
