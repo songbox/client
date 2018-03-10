@@ -1,0 +1,5 @@
+{{#each sections.parsedLines as |line|}}
+  <div class="line">
+    {{#each line as |obj|}}{{#if (and showChords obj.chord)}}<span class="chord">{{obj.chord}}</span>{{/if}}<span class="{{obj.type}}">{{obj.lyrics}}</span>{{/each}}
+  </div>
+{{/each}}

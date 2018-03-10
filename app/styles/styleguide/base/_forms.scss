@@ -17,7 +17,7 @@ form {
   &--control {
     height: $global-input-height;
     width: 250px;
-    padding: 10px;
+    padding: 0 10px;
     background-color: color("grey", "lighten-5");
     border: solid 1px color("grey", "lighten-1");
     border-radius: $global-border-radius;
@@ -35,6 +35,21 @@ form {
   .form-field--label {
     padding-top: 5px; // a bit offset from top
     vertical-align: top;
+  }
+}
+
+.form-field.select-field {
+  select {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    text-indent: 0.01px;
+    text-overflow: '';
+  }
+}
+
+.form-field {
+  textarea {
+    padding: 10px;
   }
 }
 

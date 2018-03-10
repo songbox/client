@@ -11,6 +11,7 @@ export default {
   "song.time": "Time",
   "song.license": "License",
   "song.ccli": "CCLI",
+  "song.format": "Format",
   "song.text": "Text",
   "song.files": "Files", // used for import
   "list": {

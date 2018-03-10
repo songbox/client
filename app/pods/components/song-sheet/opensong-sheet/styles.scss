@@ -1,0 +1,52 @@
+& {
+
+  .song-section-header {
+    @include typography-style(headline);
+    margin-top: 15px;
+    margin-bottom: 5px;
+  }
+
+  // minimum width
+  table, td {
+    width: 1px;
+  }
+
+  table {
+    border-collapse: collapse;
+    white-space: pre;
+  }
+
+  td {
+    padding: 0;
+  }
+
+  tr.chords td {
+    font-weight: bold;
+    font-size: 1.0em;
+  }
+
+  tr.lyrics td {
+    font-size: 1.0em;
+    padding-bottom: .5em;
+  }
+
+  // wrap sections in columns
+  .song-sections.multi-column {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-content: flex-start;
+    max-height: 80vh;
+  }
+
+  .song-section {
+    min-width: 45%; // TODO: use flexbox
+    margin-bottom: 10px;
+    margin-right: 40px; // to other columns
+  }
+
+  .comments {
+    font-style: italic;
+    font-size: 0.8em;
+  }
+}

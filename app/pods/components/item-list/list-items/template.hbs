@@ -1,8 +1,10 @@
 {{#vertical-collection models
   tagName="ul"
-  bufferSize=2
+  bufferSize=1
   estimateHeight=60
   staticHeight=true
+  renderAll=true
+  renderFromLast=false
   as |model index|
 }}
   {{#item-list/list-items/list-item group=group model=model selected=selected handle=".handle"}}
