@@ -1,61 +1,55 @@
-/* global server */
-
-import { test } from 'qunit';
-import moduleForAcceptance from 'songbox/tests/helpers/module-for-acceptance';
-import { authenticateSession } from 'songbox/tests/helpers/ember-simple-auth';
+import { module, test } from 'qunit';
+import { setupApplicationTest } from 'ember-qunit';
+import { currentURL, visit } from '@ember/test-helpers';
+import { authenticateSession } from 'ember-simple-auth/test-support';
+import setupMirage from 'ember-cli-mirage/test-support/setup-mirage';
 import seed from 'songbox/tests/helpers/seed-mirage-db';
 import page from 'songbox/tests/pages/auth-login';
 
-moduleForAcceptance('Acceptance | auth login');
+module('Acceptance | auth login', function(hooks) {
+  setupApplicationTest(hooks);
+  setupMirage(hooks);
 
-test('login', function (assert) {
-  assert.expect(1);
+  test('login', async function (assert) {
+    assert.expect(1);
 
-  seed();
+    seed();
 
-  page
-    .visit()
-    .form
-      .email('john@example.com')
-      .password('mysecret')
-      .submit();
+    await page.visit();
+    await page.form
+            .email('john@example.com')
+            .password('mysecret')
+            .submit();
 
-  andThen(() => {
     assert.equal(currentURL(), '/a/songs', 'redirects to songs page');
   });
-});
 
-test('it shows errors without server request when form invalid', function (assert) {
-  assert.expect(3);
+  test('it shows errors without server request when form invalid', async function (assert) {
+    assert.expect(3);
 
-  seed();
-  server.post('/token', function () {
-    assert.notOk('should not post to the server');
-  });
+    seed();
+    this.server.post('/token', function () {
+      assert.notOk('should not post to the server');
+    });
 
-  page
-    .visit()
-    .form
-      .submit();
+    await page.visit();
+    await page.form
+            .submit();
 
-  andThen(() => {
     assert.equal(currentURL(), '/auth/login', 'stay on login page');
     assert.ok(page.form.emailHasError, 'shows error for email');
     assert.ok(page.form.passwordHasError, 'shows error for password');
   });
-});
 
-test('invalid authtoken', function (assert) {
-  assert.expect(1);
+  test('invalid authtoken', async function(assert) {
+    assert.expect(1);
 
-  seed();
-  authenticateSession(this.application);
-  server.get('/users/current', { errors: ['There was an error'] }, 401);
+    seed();
+    authenticateSession(this.application);
+    this.server.get('/users/current', { errors: ['There was an error'] }, 401);
 
-  visit('/');
+    await visit('/');
 
-  andThen(() => {
     assert.equal(currentURL(), '/auth/login', 'redirects to login page');
   });
 });
-
