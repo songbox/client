@@ -46,8 +46,8 @@
   transition-property: color, background-color;
   transition-duration: .5s;
 
-  .night-mode & {
-    color: invert($text-color) !important;
-    background-color: invert($background-color) !important;
-  }
+}
+.night-mode .bm-content {
+  color: invert($text-color) !important;
+  background-color: invert($background-color) !important;
 }
