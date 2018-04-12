@@ -17,7 +17,7 @@ export default Route.extend({
 
   afterModel(model) {
     if (! model.item) {
-      this.get('flashMessages').danger('Item not found');
+      this.flashMessages.danger('Item not found');
       this.transitionTo('list', model.list);
     }
   }

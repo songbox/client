@@ -5,13 +5,13 @@ export default Component.extend({
 
   actions: {
     selectItem(item, index) {
-      this.get('onSelect')(item, index);
+      this.onSelect(item, index);
     },
     removeItem(item) {
-      this.get('onRemove')(item);
+      this.onRemove(item);
     },
     reorderItems(itemModels, draggedModel) {
-      this.get('onReorder')(itemModels, draggedModel);
+      this.onReorder(itemModels, draggedModel);
     }
   }
 });

@@ -18,26 +18,26 @@ export default Route.extend(AuthenticatedRouteMixin, {
   }),
 
   model() {
-    return this.get('current').load().then((user) => {
+    return this.current.load().then((user) => {
       let channel = null;
-      if (! this.get('_isFastBoot')) {
-        this.get('pubsub').connectUser();
+      if (! this._isFastBoot) {
+        this.pubsub.connectUser();
         const channelName = `room:${user.get('room.uid')}`;
-        channel = this.get('pubsub').joinChannel(channelName);
+        channel = this.pubsub.joinChannel(channelName);
       }
       return RSVP.hash({ user, channel });
     }).catch((/*err*/) => {
-      return this.get('session').invalidate();
+      return this.session.invalidate();
     });
   },
 
   // copied from 'AuthenticatedRouteMixin'
   afterModel(model, transition) {
     if (! this.get('session.isAuthenticated')) {
-      if (! this.get('_isFastBoot')) {
+      if (! this._isFastBoot) {
         this.set('session.attemptedTransition', transition);
       }
-      let authenticationRoute = this.get('authenticationRoute');
+      let authenticationRoute = this.authenticationRoute;
       return this.transitionTo(authenticationRoute);
     } else {
       return this._super(...arguments);
@@ -70,7 +70,7 @@ export default Route.extend(AuthenticatedRouteMixin, {
       this.transitionTo({ queryParams: { editUser: false }});
     },
     logout() {
-      return this.get('session').invalidate();
+      return this.session.invalidate();
     }
   }
 });

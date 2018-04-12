@@ -6,10 +6,10 @@ export default Component.extend({
 
   actions: {
     addSong(song) {
-      this.get('onAdd')(song);
+      this.onAdd(song);
     },
     selectSong(song) {
-      this.get('onSelect')(song);
+      this.onSelect(song);
     }
   }
 });

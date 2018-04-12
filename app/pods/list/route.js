@@ -12,7 +12,7 @@ export default Route.extend(ModelChangeset, DirtyChangeset, {
 
   model(params) {
     return this.store.find('list', params.list_id).catch((/*err*/) => {
-      this.get('flashMessages').warning(`Could not retrieve List with ID ${params.list_id}`);
+      this.flashMessages.warning(`Could not retrieve List with ID ${params.list_id}`);
     });
   },
   afterModel(model) {

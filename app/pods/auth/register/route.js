@@ -22,7 +22,7 @@ export default Route.extend(ModelChangeset, {
       const user = this.store.createRecord('user', changeset.get('change'));
       return user.save().then(() => {
         this.transitionTo('auth.login');
-        this.get('flashMessages').success('Registered! Please login now');
+        this.flashMessages.success('Registered! Please login now');
       }).catch((resp) => {
         this.store.unloadRecord(user);
         resp.errors.forEach((error) => {

@@ -17,8 +17,8 @@ export default Route.extend({
       const pathElems = window.location.pathname.split('/');
       const roomId = pathElems[pathElems.length -1];
 
-      this.get('pubsub').connectViewer();
-      this.get('pubsub').joinChannel(`room:${roomId}`, { type: 'Viewer' }).then((channel) => {
+      this.pubsub.connectViewer();
+      this.pubsub.joinChannel(`room:${roomId}`, { type: 'Viewer' }).then((channel) => {
         channel.on('share', (resp) => {
           controller.set('model', resp);
         });

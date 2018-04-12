@@ -5,10 +5,10 @@ export default Component.extend({
 
   actions: {
     selectSong(song) {
-      this.get('onSelect')(song);
+      this.onSelect(song);
     },
     removeSong(song) {
-      this.get('onRemove')(song);
+      this.onRemove(song);
     }
   }
 });

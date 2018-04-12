@@ -7,15 +7,15 @@ export default Component.extend({
   searchTerm: '',
 
   filtered: computed('items.[]', 'searchTerm', function () {
-    const term = this.get('searchTerm');
-    const attr = this.get('attr');
+    const term = this.searchTerm;
+    const attr = this.attr;
 
     if (isEmpty(term)) {
-      return this.get('items');
+      return this.items;
     }
 
     const regexp = new RegExp(term, 'i');
-    return this.get('items').filter((item) => {
+    return this.items.filter((item) => {
       return regexp.test(item.get(attr));
     });
   }),

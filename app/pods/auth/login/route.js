@@ -20,22 +20,22 @@ export default Route.extend(ModelChangeset, {
     doLogin(changeset) {
       return changeset.validate().then(() => {
         if (changeset.get('isValid')) {
-          return this.get('session').authenticate(
+          return this.session.authenticate(
             'authenticator:songbox',
             changeset.get('email'),
             changeset.get('password')
           ).then(() => {
-            const message = this.get('i18n').t('auth.login.flash-200');
-            this.get('flashMessages').success(message);
+            const message = this.i18n.t('auth.login.flash-200');
+            this.flashMessages.success(message);
           }).catch((response) => {
             const { errors } = response;
 
             if (errors.mapBy('code').includes(401)) {
-              const message = this.get('i18n').t('auth.login.flash-401');
-              this.get('flashMessages').danger(message);
+              const message = this.i18n.t('auth.login.flash-401');
+              this.flashMessages.danger(message);
             } else {
-              const message = this.get('i18n').t('auth.login.flash-500');
-              this.get('flashMessages').danger(message);
+              const message = this.i18n.t('auth.login.flash-500');
+              this.flashMessages.danger(message);
             }
           });
         }

@@ -9,15 +9,15 @@ export default Service.extend({
   userId: null,
 
   user: computed('userId', function () {
-    return this.get('store').peekRecord('user', this.get('userId'));
+    return this.store.peekRecord('user', this.userId);
   }),
   room: readOnly('user.room'),
 
   load() {
-    return this.get('ajax').request('/users/current').then(json => {
-      this.get('store').pushPayload(json);
+    return this.ajax.request('/users/current').then(json => {
+      this.store.pushPayload(json);
       this.set('userId', json.data.id);
-      return this.get('user');
+      return this.user;
     });
   }
 

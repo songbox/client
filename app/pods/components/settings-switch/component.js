@@ -9,11 +9,11 @@ const SettingsSwitch = Component.extend({
 
   setting: computed('key', {
     get(/*key*/) {
-      let key = this.get('key');
+      let key = this.key;
       return this.get(`settings.${key}`);
     },
     set(_key, value) {
-      let key = this.get('key');
+      let key = this.key;
       this.set(`settings.${key}`, value);
       return value;
     }

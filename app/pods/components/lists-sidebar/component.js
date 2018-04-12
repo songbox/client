@@ -5,10 +5,10 @@ export default Component.extend({
 
   actions: {
     selectList(list) {
-      this.get('onSelect')(list);
+      this.onSelect(list);
     },
     removeList(list) {
-      this.get('onRemove')(list);
+      this.onRemove(list);
     }
   }
 });

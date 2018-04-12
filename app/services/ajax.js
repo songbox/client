@@ -18,7 +18,7 @@ export default AjaxService.extend({
       let headers = {
         'Accept': 'application/vnd.api+json'
       };
-      this.get('session').authorize('authorizer:oauth2', (headerName, headerValue) => {
+      this.session.authorize('authorizer:oauth2', (headerName, headerValue) => {
         headers[headerName] = headerValue;
       });
       return headers;

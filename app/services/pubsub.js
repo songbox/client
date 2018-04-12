@@ -41,7 +41,7 @@ const PhoenixSocketService = PhoenixSocket.extend({
   },
 
   joinChannel(name, params) {
-    const socket = this.get('socket');
+    const socket = this.socket;
     assert('must connect to a socket first', socket);
 
     return new RSVP.Promise((resolve, reject) => {
@@ -63,15 +63,15 @@ const PhoenixSocketService = PhoenixSocket.extend({
 
   // status changes
   _success(message) {
-    this.get('flashMessages').success(message);
+    this.flashMessages.success(message);
     this.setProperties({ statusCode: 2, statusMessage: message });
   },
   _info(message) {
-    this.get('flashMessages').info(message);
+    this.flashMessages.info(message);
     this.setProperties({ statusCode: 1, statusMessage: message });
   },
   _danger(message) {
-    this.get('flashMessages').danger(message);
+    this.flashMessages.danger(message);
     this.setProperties({ statusCode: 0, statusMessage: message });
   }
 });
