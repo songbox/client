@@ -28,8 +28,8 @@ deployment:
   staging:
     branch: master
     commands:
-      - CDN_HOST='//cdn.songbox.co/staging/' ember deploy staging --activate
+      - CDN_HOST='https://cdn.songbox.co/staging/' ember deploy staging --activate
   production:
     branch: production
     commands:
-      - CDN_HOST='//cdn.songbox.co/production/' ember deploy production --activate
+      - CDN_HOST='https://cdn.songbox.co/production/' ember deploy production --activate

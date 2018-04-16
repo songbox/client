@@ -4,7 +4,7 @@ module.exports = function(deployTarget) {
   var ENV = {
     pipeline: {
       alias: {
-        s3: { as: ['s3-assets', 's3-sw'] },
+        's3-index': { as: ['s3-index-html', 's3-sw-js'] },
       },
     },
   };
@@ -24,7 +24,7 @@ module.exports = function(deployTarget) {
     sentryBearerApiKey: process.env.SENTRY_KEY
   };
 
-  ENV['s3-assets'] = {
+  ENV['s3'] = {
     accessKeyId: process.env.AWS_ACCESS_KEY_ID,
     secretAccessKey: process.env.AWS_SECRET_ACCESS_KEY,
     bucket: 'cdn.songbox.co',
@@ -32,16 +32,16 @@ module.exports = function(deployTarget) {
     prefix: deployTarget
   };
 
-  ENV['s3-sw'] = {
+  ENV['s3-index-html'] = {
     accessKeyId: process.env.AWS_ACCESS_KEY_ID,
     secretAccessKey: process.env.AWS_SECRET_ACCESS_KEY,
-    filePattern:  '**/sw.js',
-    region: 'eu-west-1',
+    region: 'eu-west-1'
   };
 
-  ENV['s3-index'] = {
+  ENV['s3-sw-js'] = {
     accessKeyId: process.env.AWS_ACCESS_KEY_ID,
     secretAccessKey: process.env.AWS_SECRET_ACCESS_KEY,
+    filePattern:  'sw.js',
     region: 'eu-west-1'
   };
 
@@ -66,16 +66,16 @@ module.exports = function(deployTarget) {
   if (deployTarget === 'staging') {
     ENV.build.environment = 'production';
     ENV.sentry.publicUrl = 'https://beta.songbox.co';
-    ENV['s3-index'].bucket = 'beta.songbox.co';
-    ENV['s3-sw'].bucket = 'beta.songbox.co';
+    ENV['s3-index-html'].bucket = 'beta.songbox.co';
+    ENV['s3-sw-js'].bucket = 'beta.songbox.co';
     ENV.cloudfront.distribution = 'E12U3HZRAX3PY'
   }
 
   if (deployTarget === 'production') {
     ENV.build.environment = 'production';
     ENV.sentry.publicUrl = 'https://app.songbox.co';
-    ENV['s3-index'].bucket = 'app.songbox.co';
-    ENV['s3-sw'].bucket = 'app.songbox.co';
+    ENV['s3-index-html'].bucket = 'app.songbox.co';
+    ENV['s3-sw-js'].bucket = 'app.songbox.co';
     ENV.cloudfront.distribution = 'E3MXXT7QS53WJA';
   }
 
