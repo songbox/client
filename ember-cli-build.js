@@ -9,6 +9,14 @@ module.exports = function(defaults) {
     'ember-cli-babel': {
       includePolyfill: true
     },
+    'ember-service-worker': {
+      enabled: true
+    },
+    'esw-cache-fallback': {
+      patterns: [
+        'https://api.songbox.co/(.+)'
+      ]
+    },
     fingerprint: {
       prepend: process.env.CDN_HOST
     },
