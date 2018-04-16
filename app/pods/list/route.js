@@ -33,9 +33,9 @@ export default Route.extend(ModelChangeset, DirtyChangeset, {
       this.transitionTo('list', list);
     },
     remove(item) {
-      if (window.confirm('Really?')) {
-        item.destroyRecord();
-      }
+      //if (window.confirm('Really?')) {
+      item.destroyRecord();
+      //}
     },
     reorder(itemModels, draggedModel) {
       const currentItem = this.modelFor('list.item');
