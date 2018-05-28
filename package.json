@@ -51,7 +51,7 @@
     "ember-cli-page-object": "^1.15.0-beta.2",
     "ember-cli-qunit": "^4.3.2",
     "ember-cli-sass": "^7.1.5",
-    "ember-cli-sentry": "^2.4.4",
+    "ember-cli-sentry": "^3.0.0",
     "ember-cli-shims": "^1.2.0",
     "ember-cli-sri": "^2.1.0",
     "ember-cli-template-lint": "^0.7.5",
@@ -67,9 +67,9 @@
     "ember-href-to": "^1.15.1",
     "ember-i18n": "^5.1.0",
     "ember-keyboard": "^3.0.0",
-    "ember-load": "0.0.11",
+    "ember-load": "0.0.12",
     "ember-load-initializers": "^1.0.0",
-    "ember-local-settings": "^1.0.4",
+    "ember-local-settings": "^2.0.1",
     "ember-lodash": "^4.18.0",
     "ember-math-helpers": "^2.4.0",
     "ember-maybe-import-regenerator": "^0.1.6",
@@ -85,8 +85,8 @@
     "ember-simple-auth": "^1.5.1",
     "ember-sortable": "^1.11.1",
     "ember-source": "~3.1.0",
-    "ember-svg-jar": "^0.12.0",
-    "ember-test-selectors": "^0.3.5",
+    "ember-svg-jar": "^1.2.0",
+    "ember-test-selectors": "^1.0.0",
     "ember-toggle": "^5.2.1",
     "ember-truth-helpers": "^2.0.0",
     "ember-web-app": "^2.3.0",
@@ -94,8 +94,8 @@
     "liquid-fire": "^0.29.2",
     "loader.js": "^4.2.3",
     "material-design-icons": "^3.0.1",
-    "normalize.css": "^6.0.0",
-    "splicon": "^0.0.11"
+    "normalize.css": "^8.0.0",
+    "splicon": "^0.0.14"
   },
   "fastbootDependencies": [
     "node-fetch"
