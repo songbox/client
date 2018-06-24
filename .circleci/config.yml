@@ -1,0 +1,101 @@
+defaults: &defaults
+  docker:
+    - image: circleci/node:8-browsers
+      environment:
+        JOBS: 2
+  working_directory: ~/project
+
+
+version: 2
+jobs:
+  install_dependencies_and_lint:
+    <<: *defaults
+    steps:
+      - checkout
+      - restore_cache:
+          keys:
+            - v1-deps-{{ .Branch }}-{{ checksum "yarn.lock" }}
+            - v1-deps-{{ .Branch }}-
+            - v1-deps-
+      - run:
+          name: Install dependencies
+          command: |
+            yarn install --non-interactive
+            ./node_modules/.bin/bower install
+            npm rebuild node-sass
+      - save_cache:
+          key: v1-deps-{{ .Branch }}-{{ checksum "yarn.lock" }}
+          paths:
+            - node_modules
+            - bower_components
+      - persist_to_workspace:
+          root: .
+          paths:
+            - node_modules
+            - bower_components
+      - run:
+          name: Lint JS
+          command: |
+            yarn run lint:js
+
+  run_tests:
+    <<: *defaults
+    steps:
+      - checkout
+      - attach_workspace:
+          at: .
+      - run:
+          name: Run Tests
+          command: yarn test
+          environment:
+            COVERAGE: true
+      - store_artifacts:
+          path: coverage
+
+  deploy_staging:
+    <<: *defaults
+    steps:
+      - checkout
+      - attach_workspace:
+          at: .
+      - run:
+          name: Deploy
+          command: |
+            ./node_modules/.bin/ember deploy staging --activate=true --verbose
+          environment:
+            CDN_HOST: "https://cdn.songbox.co/staging/"
+
+  deploy_production:
+    <<: *defaults
+    steps:
+      - checkout
+      - attach_workspace:
+          at: .
+      - run:
+          name: Deploy
+          command: |
+            ./node_modules/.bin/ember deploy production --activate=true --verbose
+          environment:
+            CDN_HOST: "https://cdn.songbox.co/production/"
+
+workflows:
+  version: 2
+  test_and_deploy:
+    jobs:
+      - install_dependencies_and_lint
+      - run_tests:
+          requires:
+            - install_dependencies_and_lint
+      - deploy_staging:
+          requires:
+            - run_tests
+          filters:
+            branches:
+              only: master
+      - deploy_production:
+          requires:
+            - run_tests
+          filters:
+            branches:
+              only: production
+
