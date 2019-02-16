@@ -1,0 +1,5 @@
+ports:
+- port: 4200
+- port: 7020
+tasks:
+- command: yarn install; ./node_modules/.bin/bower install

@@ -21,7 +21,7 @@
   header {
     position: relative;
     > a {
-      @include typography-style(title)
+      @include typography-style(title);
       position: absolute;
       right: 10px;
       top: 3px;
