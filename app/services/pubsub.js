@@ -19,6 +19,7 @@ const PhoenixSocketService = PhoenixSocket.extend({
 
   init() {
     // You may listen to open, "close" and "error"
+    this._super(...arguments);
     this.on('open', () => {
       this._success('Connection established!')
     });
