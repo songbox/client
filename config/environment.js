@@ -107,7 +107,11 @@ module.exports = function(environment) {
     // ENV.APP.LOG_TRANSITIONS_INTERNAL = true;
     // ENV.APP.LOG_VIEW_LOOKUPS = true;
 
-    ENV['ember-cli-mirage'].enabled = false;
+    ENV['ember-cli-mirage'].enabled = true;
+
+    if (ENV['ember-cli-mirage'].enabled) {
+      ENV['api'].host = '';
+    }
   }
 
   if (environment === 'test') {
