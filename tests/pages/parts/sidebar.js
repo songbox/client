@@ -19,22 +19,18 @@ export default {
       edit: clickable('[data-test-list-action-edit]')
     },
 
-    items: collection({
-      itemScope: 'ul li',
-
-      item: {
-        click: clickable('[data-test-item-text]'),
-        isSelected: hasClass('active'),
-        text: {
+    items: collection('ul li', {
+      click: clickable('[data-test-item-text]'),
+      isSelected: hasClass('active'),
+      text: {
           scope: '[data-test-item-text]',
 
           title: text('div', { at: 0 }),
           details: text('div', { at: 1 })
-        },
-        buttons: {
+      },
+      buttons: {
           add: clickable('[data-test-item-button-add]'),
           remove: clickable('[data-test-item-button-remove]')
-        }
       }
     })
   },
