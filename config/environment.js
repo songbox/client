@@ -32,10 +32,6 @@ module.exports = function(environment) {
     host: 'ws://localhost:4000'
   };
 
-  ENV['i18n'] = {
-    defaultLocale: 'en'
-  };
-
   ENV['fastboot'] = {
     hostWhitelist: ['app.songbox.co', 'songbox-app.herokuapp.com', /^localhost:\d+$/]
   };
@@ -71,6 +67,12 @@ module.exports = function(environment) {
   ENV['EmberHammertime'] = {
     //touchActionSelectors: ['button', 'input', 'a', 'textarea'],
     //touchActionProperties: 'touch-action: manipulation; -ms-touch-action: manipulation; cursor: pointer;'
+  };
+
+  ENV['localSettings'] = {
+    serializer: 'json',
+    adapter: 'local-storage',
+    prefix: 'songbox/'
   };
 
   ENV['metricsAdapters'] = [
@@ -118,6 +120,8 @@ module.exports = function(environment) {
 
     ENV.APP.rootElement = '#ember-testing';
     ENV.APP.autoboot = false;
+
+    ENV.localSettings.adapter = 'local-memory';
   }
 
   if (environment === 'production') {
