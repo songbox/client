@@ -32,7 +32,7 @@ module('Acceptance | list index', function(hooks) {
 
     await page.visit({ id: list.id });
 
-    assert.equal(page.sidebar.main.items.lenth, 1, '1 item in sidebar');
+    assert.equal(page.sidebar.main.items.length, 1, '1 item in sidebar');
     assert.equal(page.sidebar.main.items.objectAt(0).text.title, song.title, 'shows song title');
     assert.equal(page.sidebar.main.items.objectAt(0).text.details, song.author, 'shows song author');
 
