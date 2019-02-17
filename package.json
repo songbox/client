@@ -16,7 +16,7 @@
     "lint:js": "eslint .",
     "start": "SW_DISABLED=true ember serve",
     "test": "ember test",
-    "heroku-postbuild": "npm rebuild node-sass"
+    "heroku-postbuild": ""
   },
   "devDependencies": {
     "@ember/jquery": "^0.5.2",
@@ -51,7 +51,7 @@
     "ember-cli-htmlbars-inline-precompile": "^1.0.3",
     "ember-cli-inject-live-reload": "^1.8.2",
     "ember-cli-mirage": "^0.4.2",
-    "ember-cli-page-object": "^1.15.0-beta.2",
+    "ember-cli-page-object": "^1.15.1",
     "ember-cli-sass": "10.0.0",
     "ember-cli-sentry": "^4.0.0",
     "ember-cli-sri": "^2.1.1",
@@ -80,7 +80,7 @@
     "ember-qunit": "^3.4.1",
     "ember-raf-test-waiter": "^0.1.0",
     "ember-resolver": "^5.0.1",
-    "ember-route-action-helper": "^2.0.2",
+    "ember-route-action-helper": "^2.0.6",
     "ember-service-worker": "^0.7.2",
     "ember-service-worker-asset-cache": "^0.6.2",
     "ember-service-worker-index": "^0.6.6",
