@@ -1,7 +1,6 @@
 # Songbox
 
 [![CircleCI](https://circleci.com/gh/songbox/client/tree/master.svg?style=svg)](https://circleci.com/gh/songbox/client/tree/master)
-[![Greenkeeper badge](https://badges.greenkeeper.io/songbox/client.svg)](https://greenkeeper.io/)
 
 This README outlines the details of collaborating on this Ember application.
 A short introduction of this app could easily go here.
