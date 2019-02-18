@@ -1,6 +1,8 @@
 {
   "name": "songbox",
   "dependencies": {
-    "inobounce": "^0.1.4"
+    "inobounce": "^0.1.4",
+    "js-cookie": "~2.0.4",
+    "ember-cli-shims": "~0.1.1"
   }
 }

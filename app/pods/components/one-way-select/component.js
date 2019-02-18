@@ -1,25 +1,17 @@
 // Workaround for https://github.com/martndemus/ember-form-for/issues/196
 /* eslint-disable */
 
-import Ember from 'ember';
+import Component from '@ember/component';
+
+import { or, not, empty, alias } from '@ember/object/computed';
+import { isArray, A as emberArray } from '@ember/array';
+import { isPresent, isNone } from '@ember/utils';
+import EmberObject, { set, get, computed } from '@ember/object';
+import { w } from '@ember/string';
 import layout from './template';
 import DynamicAttributeBindings from 'ember-one-way-controls/-private/dynamic-attribute-bindings';
 
 import { invokeAction } from 'ember-invoke-action';
-
-const {
-  A: emberArray,
-  Component,
-  computed,
-  computed: { alias, empty, not, or },
-  Object: EmberObject,
-  get,
-  isArray,
-  isNone,
-  isPresent,
-  set,
-  String: { w }
-} = Ember;
 
 const OneWaySelectComponent = Component.extend(DynamicAttributeBindings, {
   layout,

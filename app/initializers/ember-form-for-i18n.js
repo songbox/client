@@ -1,5 +1,5 @@
 export function initialize(application) {
-  application.inject('component', 'i18n', 'service:i18n');
+  application.inject('component', 'i18n', 'service:intl');
 }
 
 export default {
