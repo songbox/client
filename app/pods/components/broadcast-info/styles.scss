@@ -9,7 +9,7 @@ $config: (
 );
 
 @each $name, $color in $config {
-  &.#{$name} input {
+  .#{$name} input {
     color: color($color, 'darken-1');
     border: 1px solid color($color, 'lighten-2');
     border-radius: $global-border-radius;

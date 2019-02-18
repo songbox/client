@@ -32,10 +32,6 @@ module.exports = function(environment) {
     host: 'ws://localhost:4000'
   };
 
-  ENV['i18n'] = {
-    defaultLocale: 'en'
-  };
-
   ENV['fastboot'] = {
     hostWhitelist: ['app.songbox.co', 'songbox-app.herokuapp.com', /^localhost:\d+$/]
   };
@@ -73,6 +69,12 @@ module.exports = function(environment) {
     //touchActionProperties: 'touch-action: manipulation; -ms-touch-action: manipulation; cursor: pointer;'
   };
 
+  ENV['localSettings'] = {
+    serializer: 'json',
+    adapter: 'local-storage',
+    prefix: 'songbox/'
+  };
+
   ENV['metricsAdapters'] = [
     {
       name: 'GoogleAnalytics',
@@ -105,7 +107,11 @@ module.exports = function(environment) {
     // ENV.APP.LOG_TRANSITIONS_INTERNAL = true;
     // ENV.APP.LOG_VIEW_LOOKUPS = true;
 
-    ENV['ember-cli-mirage'].enabled = false;
+    ENV['ember-cli-mirage'].enabled = true;
+
+    if (ENV['ember-cli-mirage'].enabled) {
+      ENV['api'].host = '';
+    }
   }
 
   if (environment === 'test') {
@@ -118,6 +124,8 @@ module.exports = function(environment) {
 
     ENV.APP.rootElement = '#ember-testing';
     ENV.APP.autoboot = false;
+
+    ENV.localSettings.adapter = 'local-memory';
   }
 
   if (environment === 'production') {

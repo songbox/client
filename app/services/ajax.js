@@ -1,6 +1,7 @@
-import { computed } from '@ember/object';
-import { inject as service } from '@ember/service';
 import AjaxService from 'ember-ajax/services/ajax';
+import { inject as service } from '@ember/service';
+import { computed } from '@ember/object';
+import { isPresent } from '@ember/utils';
 import ENV from '../config/environment';
 
 const {
@@ -18,9 +19,12 @@ export default AjaxService.extend({
       let headers = {
         'Accept': 'application/vnd.api+json'
       };
-      this.session.authorize('authorizer:oauth2', (headerName, headerValue) => {
-        headers[headerName] = headerValue;
-      });
+
+      let { access_token } = this.get('session.data.authenticated');
+      if (isPresent(access_token)) {
+        headers['Authorization'] = `Bearer ${access_token}`;
+      }
+
       return headers;
     }
   })
