@@ -4403,14 +4403,6 @@ ember-changeset-validations@^1.2.11:
     ember-get-config "^0.2.4"
     ember-validators "^1.2.0"
 
-ember-changeset@1.4.1:
-  version "1.4.1"
-  resolved "https://registry.yarnpkg.com/ember-changeset/-/ember-changeset-1.4.1.tgz#e9a8f9c2bb3bfc1bc973c21a9e86a8cf8143df38"
-  integrity sha1-6aj5wrs7/BvJc8Ianoaoz4FD3zg=
-  dependencies:
-    ember-cli-babel "^6.8.2"
-    ember-deep-set "^0.1.2"
-
 ember-changeset@1.6.0:
   version "1.6.0"
   resolved "https://registry.yarnpkg.com/ember-changeset/-/ember-changeset-1.6.0.tgz#5a8352fbedcd34c0e4a7f7938338f47254f4946c"
@@ -5142,13 +5134,6 @@ ember-debug-handlers-polyfill@^1.1.1:
   version "1.1.1"
   resolved "https://registry.yarnpkg.com/ember-debug-handlers-polyfill/-/ember-debug-handlers-polyfill-1.1.1.tgz#e9ae0a720271a834221179202367421b580002ef"
   integrity sha512-lO7FBAqJjzbL+IjnWhVfQITypPOJmXdZngZR/Vdn513W4g/Q6Sjicao/mDzeDCb48Y70C4Facwk0LjdIpSZkRg==
-
-ember-deep-set@^0.1.2:
-  version "0.1.4"
-  resolved "https://registry.yarnpkg.com/ember-deep-set/-/ember-deep-set-0.1.4.tgz#a9989969498d89685be155b72109b037af4d5645"
-  integrity sha512-W010ZSvrZQ2Xsm+UkRInfixRwipLoU58G3Xm1cGNzLG7WNvon6NKF1p35jTPjhMI2CS6RZZuCd6DtJ7BHvUJ7w==
-  dependencies:
-    ember-cli-babel "^6.6.0"
 
 ember-deep-set@^0.2.0:
   version "0.2.0"
