@@ -1,6 +1,6 @@
 # Songbox
 
-[![Build Status](https://travis-ci.org/songbox/client.svg?branch=master)](https://travis-ci.org/songbox/client) [![Code Climate](https://codeclimate.com/github/songbox/client/badges/gpa.svg)](https://codeclimate.com/github/songbox/client) [![Greenkeeper badge](https://badges.greenkeeper.io/songbox/client.svg)](https://greenkeeper.io/)
+[![CircleCI](https://circleci.com/gh/songbox/client/tree/master.svg?style=svg)](https://circleci.com/gh/songbox/client/tree/master)
 
 This README outlines the details of collaborating on this Ember application.
 A short introduction of this app could easily go here.
@@ -37,6 +37,7 @@ Make use of the many generators for code, try `ember help generate` for more det
 
 ### Linting
 
+* `npm run lint:hbs`
 * `npm run lint:js`
 * `npm run lint:js -- --fix`
 

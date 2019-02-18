@@ -2,7 +2,7 @@ import { assert } from '@ember/debug';
 import { equal } from '@ember/object/computed';
 import RSVP from 'rsvp';
 import Service, { inject as service } from '@ember/service';
-import PhoenixSocket from 'phoenix/services/phoenix-socket';
+import PhoenixSocket from 'ember-phoenix/services/phoenix-socket';
 
 import ENV from '../config/environment';
 
@@ -19,6 +19,7 @@ const PhoenixSocketService = PhoenixSocket.extend({
 
   init() {
     // You may listen to open, "close" and "error"
+    this._super(...arguments);
     this.on('open', () => {
       this._success('Connection established!')
     });

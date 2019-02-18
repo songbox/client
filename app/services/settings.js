@@ -1,7 +1,6 @@
 import Service from '@ember/service';
 import { computed } from '@ember/object';
-import Ember from 'ember';
-import LocalSettingsInterface from 'songbox/local-settings-interface';
+import { inject as service } from '@ember/service';
 
 /**
   Creates a setting being stored
@@ -11,28 +10,21 @@ import LocalSettingsInterface from 'songbox/local-settings-interface';
 function setting(name) {
   return computed({
     get(/*key*/) {
-      return this.get(`lsi.settings.${name}`);
+      return this.get(`_lsi.settings.${name}`);
     },
     set(_key, value) {
-      this.set(`lsi.settings.${name}`, value);
+      this.set(`_lsi.settings.${name}`, value);
       return value;
     }
   })
 }
 
 export default Service.extend({
+  _lsi: service('local-settings'),
 
+  // define settings here
   nightMode: setting('nightMode'),
   showChords: setting('showChords'),
-  showHeader: setting('showHeader'),
+  showHeader: setting('showHeader')
 
-  init() {
-    this._super(...arguments);
-    let lsi = LocalSettingsInterface.create({
-      serializer: 'json',
-      adapter: Ember.testing ? 'local-memory' : 'local-storage',
-      prefix: 'songbox/'
-    });
-    this.set('lsi', lsi);
-  }
 });
