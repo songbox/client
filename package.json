@@ -48,7 +48,7 @@
     "ember-cli-fastclick": "1.5.0",
     "ember-cli-flash": "1.7.1",
     "ember-cli-htmlbars": "3.0.1",
-    "ember-cli-htmlbars-inline-precompile": "1.0.5",
+    "ember-cli-htmlbars-inline-precompile": "2.1.0",
     "ember-cli-inject-live-reload": "1.10.2",
     "ember-cli-mirage": "0.4.14",
     "ember-cli-page-object": "1.15.1",
