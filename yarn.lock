@@ -4338,7 +4338,7 @@ ember-assign-polyfill@~2.4.0:
     ember-cli-babel "^6.6.0"
     ember-cli-version-checker "^2.0.0"
 
-ember-auto-import@^1.2.13:
+ember-auto-import@^1.2.13, ember-auto-import@^1.2.19:
   version "1.2.20"
   resolved "https://registry.yarnpkg.com/ember-auto-import/-/ember-auto-import-1.2.20.tgz#c90675e1e32bd99ce70e696326813c6c55bdac19"
   integrity sha512-HZ9ZC5VMPF0KtpTII4US1QYtq8qHxlYgwWOMaxwWG9c9v12UpH8paVuUs2MjUEJCbas6sXOkMb6gY41xASGrWA==
@@ -4755,10 +4755,10 @@ ember-cli-lodash-subset@^2.0.1:
   resolved "https://registry.yarnpkg.com/ember-cli-lodash-subset/-/ember-cli-lodash-subset-2.0.1.tgz#20cb68a790fe0fde2488ddfd8efbb7df6fe766f2"
   integrity sha1-IMtop5D+D94kiN39jvu332/nZvI=
 
-ember-cli-mirage@0.4.14:
-  version "0.4.14"
-  resolved "https://registry.yarnpkg.com/ember-cli-mirage/-/ember-cli-mirage-0.4.14.tgz#95bf2966c05646be998fb042860a54a0340c7fe1"
-  integrity sha512-1eieAC9hHPT0x3wSsIYenIgyOlCp6uWofhCSDt9xnvwh/xqf/bQB2Cx3f+wbU5TaqLrSio6lYmRqswCZYTLNzw==
+ember-cli-mirage@0.4.15:
+  version "0.4.15"
+  resolved "https://registry.yarnpkg.com/ember-cli-mirage/-/ember-cli-mirage-0.4.15.tgz#dcf878e785853232d8ac725bb425aa545da63e79"
+  integrity sha512-5wCycS40pkohNPaLcyCn5BUjJ/4PGK9lz6j1tftJms5tBQhSjkZ37+pfhVKh3iYSId/+z0RTxVknykQH4P0sQA==
   dependencies:
     "@xg-wang/whatwg-fetch" "^3.0.0"
     broccoli-file-creator "^2.1.1"
@@ -4767,13 +4767,14 @@ ember-cli-mirage@0.4.14:
     broccoli-stew "^2.0.1"
     broccoli-string-replace "^0.1.2"
     chalk "^1.1.1"
+    ember-auto-import "^1.2.19"
     ember-cli-babel "^6.16.0"
     ember-cli-node-assets "^0.2.2"
     ember-get-config "^0.2.2"
     ember-inflector "^2.0.0 || ^3.0.0"
-    ember-lodash "^4.19.4"
     fake-xml-http-request "^2.0.0"
     faker "^3.0.0"
+    lodash "^4.17.11"
     pretender "2.1.1"
     route-recognizer "^0.3.4"
 
@@ -5334,7 +5335,7 @@ ember-local-settings@2.0.3:
     ember-cli-babel "^7.1.2"
     js-cookie "^2.1.4"
 
-ember-lodash@4.19.4, ember-lodash@^4.19.4:
+ember-lodash@4.19.4:
   version "4.19.4"
   resolved "https://registry.yarnpkg.com/ember-lodash/-/ember-lodash-4.19.4.tgz#3e76e6cb04c9312c2158180bf16d7983aae05774"
   integrity sha512-4O1YjFfFA1EL53XXxyjRwRRl1f1MahxON7dbPhe5Ex3f8lmuvB0fEc1U+kJ1IwefmUqeSyOBsYXG6L9ushOKQQ==
