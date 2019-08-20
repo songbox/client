@@ -92,7 +92,7 @@
     "ember-toggle": "5.3.2",
     "ember-truth-helpers": "2.1.0",
     "ember-web-app": "3.0.0-beta.2",
-    "eslint-plugin-ember": "5.4.0",
+    "eslint-plugin-ember": "6.10.0",
     "liquid-fire": "0.29.5",
     "loader.js": "4.7.0",
     "material-design-icons": "3.0.1",
