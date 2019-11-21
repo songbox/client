@@ -4401,6 +4401,14 @@ ember-changeset@1.6.0:
     ember-cli-babel "^6.8.2"
     ember-deep-set "^0.2.0"
 
+ember-changeset@2.2.4:
+  version "2.2.4"
+  resolved "https://registry.yarnpkg.com/ember-changeset/-/ember-changeset-2.2.4.tgz#2bf8c67815a57ee2e7ff76e6b58fc63bd3bdf1b9"
+  integrity sha512-JRcX/o8TpDhCkMwxcFxFepZ1nMJHFVwvEGXkZCdO1YZCzDkdkFCieaDQD+5S+B8kTRCLiiXPeClhG8XQOzcEkg==
+  dependencies:
+    ember-cli-babel "^7.1.2"
+    ember-deep-set "^0.2.0"
+
 ember-cli-app-version@3.2.0:
   version "3.2.0"
   resolved "https://registry.yarnpkg.com/ember-cli-app-version/-/ember-cli-app-version-3.2.0.tgz#7b9ad0e1b63ae0518648356ee24c703e922bc26e"
