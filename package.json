@@ -69,7 +69,7 @@
     "ember-intl": "3.5.0",
     "ember-keyboard": "3.0.2",
     "ember-load": "0.0.17",
-    "ember-load-initializers": "1.1.0",
+    "ember-load-initializers": "2.1.2",
     "ember-local-settings": "2.0.3",
     "ember-lodash": "4.19.4",
     "ember-math-helpers": "2.10.0",
