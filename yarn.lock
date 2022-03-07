@@ -11749,10 +11749,10 @@ spdx-license-ids@^3.0.0:
   resolved "https://registry.yarnpkg.com/spdx-license-ids/-/spdx-license-ids-3.0.3.tgz#81c0ce8f21474756148bbb5f3bfc0f36bf15d76e"
   integrity sha512-uBIcIl3Ih6Phe3XHK1NqboJLdGfwr1UN3k6wSD1dZpmPsIkb8AGNbZYJ1fOBk834+Gxy8rpfDxrS6XLEMZMY2g==
 
-splicon@0.0.11:
-  version "0.0.11"
-  resolved "https://registry.yarnpkg.com/splicon/-/splicon-0.0.11.tgz#ab4639595464077d7ea4fd589e10247d4c5afe2b"
-  integrity sha512-6hfgvsKfvg0KsR0Jn9RItEW7CUZ34XyLoWc/26xzlSpP7ytc7VsHZSIjze0TEQv7sRruKXFUkh13jj5LddrpqA==
+splicon@0.0.15:
+  version "0.0.15"
+  resolved "https://registry.yarnpkg.com/splicon/-/splicon-0.0.15.tgz#af841309ef609da023af02f0337406b191ad3bf8"
+  integrity sha512-CTtfLQikuoPden1woJAZV9GhuuZS6RWfd0E7l12Fsl2Bomk4569v4H2JTW3iTQ0SHMmsLfYpnErmWsWJgbmBRw==
   dependencies:
     chalk "^0.4.0"
     lodash "^4.13.1"

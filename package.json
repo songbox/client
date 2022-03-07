@@ -99,7 +99,7 @@
     "normalize.css": "6.0.0",
     "qunit-dom": "0.8.4",
     "sass": "1.17.0",
-    "splicon": "0.0.11"
+    "splicon": "0.0.15"
   },
   "fastbootDependencies": [
     "node-fetch"
