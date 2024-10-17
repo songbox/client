@@ -98,7 +98,7 @@
     "material-design-icons": "3.0.1",
     "normalize.css": "6.0.0",
     "qunit-dom": "0.8.4",
-    "sass": "1.17.0",
+    "sass": "1.80.2",
     "splicon": "0.0.11"
   },
   "fastbootDependencies": [
